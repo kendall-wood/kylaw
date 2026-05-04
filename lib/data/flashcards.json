@@ -1,0 +1,416 @@
+{
+  "decks": [
+    {
+      "id": "lr_question_types",
+      "title": "LR Question Types",
+      "description": "Master all 12 Logical Reasoning question types",
+      "cards": [
+        {
+          "id": "lrqt_01",
+          "front": "\"The argument above is most vulnerable to criticism on the grounds that it...\" — What question type is this, and what's the strategy?",
+          "back": "FLAW\n\nStrategy: Find what's wrong with the argument's reasoning — not the conclusion itself, but the logical leap from premises to conclusion. Common flaws: confusing correlation with causation, false dichotomy, hasty generalization, circular reasoning, equivocation. Ask: 'What logical mistake is being made?'",
+          "tip": "The flaw is always in HOW the argument reasons, not in WHAT it concludes."
+        },
+        {
+          "id": "lrqt_02",
+          "front": "\"Which one of the following must be true on the basis of the statements above?\" — What question type is this, and what's the strategy?",
+          "back": "MUST BE TRUE / INFERENCE\n\nStrategy: The correct answer must be proven by the stimulus — not likely, not probably, but MUST be true. Apply the negation test: if you can imagine the answer being false while the stimulus is still true, it's wrong. Stay conservative — the answer is often less extreme than it seems.",
+          "tip": "Must Be True answers are usually cautious understatements, not bold claims."
+        },
+        {
+          "id": "lrqt_03",
+          "front": "\"Which one of the following, if true, most strengthens the argument?\" — What question type is this, and what's the strategy?",
+          "back": "STRENGTHEN\n\nStrategy: Identify the conclusion and the gap between the premises and conclusion. The correct answer closes or narrows that gap — it makes the conclusion more likely to be true. Common strengtheners: provide supporting evidence, rule out an alternative explanation, confirm a key assumption.",
+          "tip": "Strengtheners don't need to prove the conclusion — they just need to make it more plausible."
+        },
+        {
+          "id": "lrqt_04",
+          "front": "\"The argument relies on assuming which one of the following?\" — What question type is this, and what's the strategy?",
+          "back": "NECESSARY ASSUMPTION\n\nStrategy: Use the NEGATION TEST — negate each answer choice. If negating the answer causes the argument to fall apart (fail or become seriously weakened), that's the necessary assumption. The correct answer fills an unstated gap the argument absolutely requires.",
+          "tip": "Negate it. If the argument breaks, it's necessary. If the argument still works, it's not."
+        },
+        {
+          "id": "lrqt_05",
+          "front": "\"Which one of the following, if true, most seriously weakens the argument?\" — What question type is this, and what's the strategy?",
+          "back": "WEAKEN\n\nStrategy: Attack the gap between premises and conclusion. The correct answer gives a reason the conclusion might not follow from the premises. Best weakeners: provide an alternative explanation, show a premise is unreliable, introduce a counterexample, undermine a key assumption.",
+          "tip": "Weakening ≠ disproving. You just need to make the conclusion less likely, not impossible."
+        },
+        {
+          "id": "lrqt_06",
+          "front": "\"Which one of the following, if assumed, allows the conclusion to be properly drawn?\" — What question type is this, and what's the strategy?",
+          "back": "SUFFICIENT ASSUMPTION\n\nStrategy: The correct answer, when added to the premises, makes the conclusion logically guaranteed — not just more likely. This is stronger than Necessary Assumption. The correct answer often takes the form of a conditional statement that bridges the gap perfectly.",
+          "tip": "SA answers guarantee the conclusion. NA answers just support it. SA is a heavier lift."
+        },
+        {
+          "id": "lrqt_07",
+          "front": "\"The argument proceeds by...\" — What question type is this, and what's the strategy?",
+          "back": "METHOD OF REASONING\n\nStrategy: Describe HOW the argument is structured, not whether it's valid. Ignore the content — focus on the logical move being made. Common techniques: analogy, example to generalization, reductio ad absurdum, counterexample, distinguishing two cases, questioning relevance of evidence.",
+          "tip": "Translate the argument into abstract logical language first, then match to an answer choice."
+        },
+        {
+          "id": "lrqt_08",
+          "front": "\"Which one of the following most accurately expresses the main conclusion of the argument?\" — What question type is this, and what's the strategy?",
+          "back": "MAIN CONCLUSION\n\nStrategy: Find the statement the argument is trying to prove — not a premise, not background info. Test each statement: 'Is this being supported by the other statements, or is it supporting them?' Signal words: therefore, thus, hence, so, consequently. But sometimes the conclusion has no signal word.",
+          "tip": "A premise supports the conclusion. The conclusion is what all the premises are building toward."
+        },
+        {
+          "id": "lrqt_09",
+          "front": "\"The argument above is most consistent with which one of the following principles?\" — What question type is this, and what's the strategy?",
+          "back": "PRINCIPLE\n\nStrategy: Two subtypes — (1) Apply a principle: use the given rule to determine which situation conforms to it. (2) Identify a principle: find the general rule that justifies the specific argument. The principle must be general enough to apply beyond just this case.",
+          "tip": "Principles are general rules. Apply them like legal statutes — literally and precisely."
+        },
+        {
+          "id": "lrqt_10",
+          "front": "\"Which one of the following, if true, most helps to explain the discrepancy?\" — What question type is this, and what's the strategy?",
+          "back": "RESOLVE / PARADOX\n\nStrategy: The stimulus presents two facts that seem contradictory. Your job: find the answer that makes BOTH facts true simultaneously. The correct answer doesn't just explain one side — it reconciles both. Wrong answers often explain only one of the two facts.",
+          "tip": "Test each answer by asking: 'Does this make BOTH surprising facts make sense?'"
+        },
+        {
+          "id": "lrqt_11",
+          "front": "\"The pattern of reasoning in which one of the following is most similar to the argument above?\" — What question type is this, and what's the strategy?",
+          "back": "PARALLEL REASONING\n\nStrategy: Abstract the logical structure of the stimulus argument (e.g., 'All A are B; X is A; therefore X is B'). Then find the answer choice that uses the same abstract structure — regardless of topic. Match: premises structure, conclusion type, validity/invalidity.",
+          "tip": "Translate both the stimulus and each answer to abstract form. Ignore the content, match the structure."
+        },
+        {
+          "id": "lrqt_12",
+          "front": "\"The dialogue most strongly suggests that Jana and Marcus disagree about whether...\" — What question type is this, and what's the strategy?",
+          "back": "POINT AT ISSUE / DISAGREE\n\nStrategy: The stimulus has two speakers. Find what one explicitly asserts that the other explicitly denies (or vice versa). Both speakers must have a clear position on the correct answer. Wrong answers: only one speaker addresses it, or both would actually agree.",
+          "tip": "Apply the 'Yes/No test': Would Speaker A say yes? Would Speaker B say no? Both must be clearly yes OR no."
+        }
+      ]
+    },
+    {
+      "id": "rc_question_types",
+      "title": "RC Question Types",
+      "description": "Master all 7 Reading Comprehension question types",
+      "cards": [
+        {
+          "id": "rcqt_01",
+          "front": "\"The main point of the passage is...\" — RC question type and strategy?",
+          "back": "MAIN POINT / PRIMARY PURPOSE\n\nStrategy: The correct answer captures the overall argument/purpose of the entire passage — not a detail, not a sub-argument. Ask: 'If I had to summarize this passage in one sentence for someone who hadn't read it, what would I say?' Wrong answers: too narrow (just one paragraph), too broad, accurate but peripheral.",
+          "tip": "Main point answers usually include the author's stance, not just the topic."
+        },
+        {
+          "id": "rcqt_02",
+          "front": "\"Which one of the following can be inferred from the passage?\" — RC question type and strategy?",
+          "back": "INFERENCE\n\nStrategy: Like LR Must Be True — the answer must follow necessarily from the passage. Go back to the text. The answer is usually a modest, carefully qualified statement. Strong answers like 'always,' 'never,' 'all,' 'none' are usually wrong unless the passage makes an equally strong claim.",
+          "tip": "RC Inferences stay very close to what's stated. Don't read between the lines too aggressively."
+        },
+        {
+          "id": "rcqt_03",
+          "front": "\"According to the passage, which one of the following is true?\" — RC question type and strategy?",
+          "back": "DETAIL / SPECIFIC REFERENCE\n\nStrategy: This is a fact retrieval question. Go back to the passage and find the exact location. Don't rely on memory. Wrong answers often include accurate-sounding but slightly modified statements that contradict what the passage actually says.",
+          "tip": "Detail questions are won or lost by going back to the passage. Never answer from memory."
+        },
+        {
+          "id": "rcqt_04",
+          "front": "\"The author mentions X primarily in order to...\" — RC question type and strategy?",
+          "back": "FUNCTION / PURPOSE\n\nStrategy: Identify what rhetorical work the specific element (sentence, paragraph, example, quote) is doing in the argument. Is it supporting the main claim? Introducing an objection? Providing evidence? Transitioning? Answer describes the ROLE, not just the content.",
+          "tip": "Ask: 'Why did the author include this here? What would be lost if it were removed?'"
+        },
+        {
+          "id": "rcqt_05",
+          "front": "\"The author's attitude toward X can best be described as...\" — RC question type and strategy?",
+          "back": "AUTHOR'S ATTITUDE / TONE\n\nStrategy: Look for tone words and evaluative language in the passage. Is the author enthusiastic? Skeptical? Neutral? Critical? Cautiously optimistic? Wrong answers: too extreme (contemptuous, enthusiastic), opposite of actual tone, or describing the tone toward a different subject.",
+          "tip": "LSAT authors are rarely strongly negative or positive. Look for qualified, measured stances."
+        },
+        {
+          "id": "rcqt_06",
+          "front": "\"The situation described in the passage is most analogous to which one of the following?\" — RC question type and strategy?",
+          "back": "ANALOGY\n\nStrategy: Identify the key structural features of the situation in the passage (not the content — the abstract relationship). Then find the answer choice with the same structure in a different domain. Focus on: what is the relationship between the elements? What is the key tension or dynamic?",
+          "tip": "Strip the content away. What's the underlying pattern? Find that same pattern in an answer choice."
+        },
+        {
+          "id": "rcqt_07",
+          "front": "\"Both passages are primarily concerned with...\" or \"How would the author of Passage A most likely respond to Passage B?\" — RC question type and strategy?",
+          "back": "COMPARATIVE READING\n\nStrategy: Track points of agreement AND disagreement between the two passages. Map each author's main claim and tone. For 'both passages' questions: find what genuinely applies to BOTH. For response questions: what would Author A think about Author B's argument, based on what A explicitly says?",
+          "tip": "Build a mental comparison chart: What does each author argue? Where do they agree? Where do they differ?"
+        }
+      ]
+    },
+    {
+      "id": "logical_fallacies",
+      "title": "Logical Fallacies",
+      "description": "20 common LSAT flaws you must recognize instantly",
+      "cards": [
+        {
+          "id": "fallacy_01",
+          "front": "A study found that people who eat breakfast weigh less than those who skip it. Therefore, eating breakfast causes weight loss.",
+          "back": "CORRELATION ≠ CAUSATION\n\nJust because two things are correlated doesn't mean one causes the other. Alternative explanations: reverse causation (lighter people feel hungry in the morning), confounding variable (health-conscious people both eat breakfast and exercise more).\n\nOn LSAT: Any argument that infers a causal relationship from mere correlation commits this flaw.",
+          "tip": "Ask: 'Could there be a third factor explaining both?' or 'Could causation run the other way?'"
+        },
+        {
+          "id": "fallacy_02",
+          "front": "Either we ban all social media, or our democracy will collapse. We shouldn't ban social media. Therefore, our democracy will collapse.",
+          "back": "FALSE DICHOTOMY (False Dilemma)\n\nThe argument presents only two options when more exist. This is only valid reasoning if the two options are truly exhaustive (and mutually exclusive). The flaw is assuming there are no middle-ground solutions.\n\nOn LSAT: Watch for 'either...or' constructions where other options clearly exist.",
+          "tip": "Ask: 'Are these really the ONLY two options? What's being left out?'"
+        },
+        {
+          "id": "fallacy_03",
+          "front": "Senator Chen has argued for reducing carbon emissions. But Chen drives a gas-powered car. Therefore, Chen's argument about carbon emissions should be rejected.",
+          "back": "AD HOMINEM (Attacking the Person)\n\nThe argument attacks the person making the argument rather than the argument itself. A person's behavior, character, or motives do not determine whether their argument is valid.\n\nOn LSAT: Often appears as 'criticizing the source' rather than engaging with the reasoning.",
+          "tip": "A hypocrite can still make valid arguments. The argument stands or falls on its own merits."
+        },
+        {
+          "id": "fallacy_04",
+          "front": "We surveyed 50 students at one university and found that 80% prefer online learning. Therefore, most college students prefer online learning.",
+          "back": "HASTY GENERALIZATION\n\nDrawing a broad conclusion from a sample that is too small, unrepresentative, or biased. The generalization may not hold because the sample doesn't represent the broader population.\n\nOn LSAT: Look for sweeping conclusions drawn from limited or selective data.",
+          "tip": "Ask: 'Is this sample large enough? Is it representative of the group being discussed?'"
+        },
+        {
+          "id": "fallacy_05",
+          "front": "This policy is ethical because it conforms to our society's moral standards. Our society's moral standards require policies like this one.",
+          "back": "CIRCULAR REASONING (Begging the Question)\n\nThe conclusion is used (in disguised form) as one of the premises. The argument assumes what it's trying to prove. No independent support is given.\n\nOn LSAT: Identify when the premise and conclusion are essentially the same statement rephrased.",
+          "tip": "Rephrase the argument: 'X is true because X is true.' If that captures it, it's circular."
+        },
+        {
+          "id": "fallacy_06",
+          "front": "The law says all citizens must pay taxes. Corporations are legal persons. Therefore, corporations must pay taxes. But corporations aren't really people — they can't vote or feel pain.",
+          "back": "EQUIVOCATION\n\nUsing the same word or phrase in two different senses within one argument. 'Legal person' means one thing in law (an entity with legal standing) and something else in common usage (a human being with subjective experience).\n\nOn LSAT: Watch for key terms used in subtly different ways between premises and conclusion.",
+          "tip": "Find the key term being used twice. Does it mean the same thing both times?"
+        },
+        {
+          "id": "fallacy_07",
+          "front": "Dr. Patel, a prominent cardiologist, says that Supplement X reduces heart disease risk. Therefore, Supplement X reduces heart disease risk.",
+          "back": "APPEAL TO AUTHORITY (Inappropriate)\n\nNot all appeals to authority are fallacious — citing a genuine expert in their field is valid. The flaw occurs when: (1) the authority isn't an expert in the relevant field, (2) the expert's view is contested among peers, or (3) the authority is used as the SOLE support for an empirical claim.\n\nOn LSAT: The question is whether the expert's opinion alone, without other evidence, is sufficient.",
+          "tip": "Expert testimony is evidence, but it must be relevant expertise and the argument shouldn't rest on it alone."
+        },
+        {
+          "id": "fallacy_08",
+          "front": "My opponent claims we should reduce military spending. So my opponent wants to leave our country defenseless and at the mercy of our enemies.",
+          "back": "STRAW MAN\n\nMisrepresenting an opponent's position — making it weaker or more extreme than it actually is — then attacking that distorted version. The actual argument (reduce spending somewhat) is ignored in favor of an easier-to-attack extreme version.\n\nOn LSAT: Often appears in dialogue format where one speaker exaggerates the other's position.",
+          "tip": "Ask: 'Did the original speaker actually say THAT? Or is this an exaggeration?'"
+        },
+        {
+          "id": "fallacy_09",
+          "front": "Every molecule in this table is invisible to the naked eye. Therefore, this table is invisible to the naked eye.",
+          "back": "COMPOSITION FALLACY\n\nAssuming that what is true of the parts is therefore true of the whole. Properties of individual components don't necessarily transfer to the assembled whole.\n\nDivision Fallacy (reverse): Assuming what's true of the whole is true of each part. ('The team is excellent, so each player must be excellent.')\n\nOn LSAT: Often involves properties of individuals being applied to groups or vice versa.",
+          "tip": "Parts → Whole: Composition. Whole → Parts: Division. Both are invalid transfers."
+        },
+        {
+          "id": "fallacy_10",
+          "front": "A recent survey found that 73% of voters support this tax policy. Therefore, the tax policy is the right approach.",
+          "back": "APPEAL TO POPULAR OPINION (Ad Populum)\n\nArgumentum ad populum: what is popular is not necessarily correct or true. Majority opinion is not evidence of truth or moral rightness.\n\nOn LSAT: The flaw is using public support as a justification for a policy's correctness rather than its viability or democratic legitimacy.",
+          "tip": "Ask: 'Does popularity make something TRUE?' Usually no — people can collectively be wrong."
+        },
+        {
+          "id": "fallacy_11",
+          "front": "All doctors are required to take an oath. If someone takes this oath, they are acting ethically. Therefore, all doctors are acting ethically.",
+          "back": "CONFUSING NECESSARY AND SUFFICIENT CONDITIONS\n\nTaking the oath is stated as a requirement (necessary) for being a doctor, but the argument treats it as sufficient for acting ethically. Necessary condition: required but not enough. Sufficient condition: guarantees the outcome.\n\nKey: If A is sufficient for B, then B is necessary for A — but not the reverse.\n\nOn LSAT: This is one of the most common structural flaws. Map out the conditional logic carefully.",
+          "tip": "Sufficient → guarantees. Necessary → required. Confusing them is the flaw."
+        },
+        {
+          "id": "fallacy_12",
+          "front": "In a study of 200 marathon runners, scientists found low rates of heart disease. Scientists concluded that running marathons prevents heart disease.",
+          "back": "SAMPLING / SELECTION BIAS\n\nThe sample may not be representative: only healthy people run marathons. People with heart disease may have already been excluded from the activity. The sample was drawn from a population with pre-existing health advantages.\n\nOn LSAT: Selection bias often creates the appearance of causation when the actual cause is that only certain people end up in the studied group.",
+          "tip": "Ask: 'Who was included in this study? Who was left out? Why?'"
+        },
+        {
+          "id": "fallacy_13",
+          "front": "The Rowandale City budget crisis was solved after hiring consultant firm Nexus. City officials are now considering hiring Nexus for their neighboring city's budget problems.",
+          "back": "FALSE ANALOGY\n\nAssuming that because two situations are similar in some respects, they are similar in all relevant respects. Rowandale and the neighboring city may have fundamentally different causes of their budget crises, different political contexts, or different financial structures.\n\nOn LSAT: Analogies are valid to the extent that the compared cases are relevantly similar. The flaw is assuming similarity where there is actually relevant difference.",
+          "tip": "Ask: 'Are the two situations similar in the WAYS THAT MATTER for this conclusion?'"
+        },
+        {
+          "id": "fallacy_14",
+          "front": "This new medication should not be approved because, once approved, doctors will over-prescribe it, leading to widespread misuse, addiction, and eventually a public health crisis.",
+          "back": "SLIPPERY SLOPE\n\nAssuming that one event will inevitably lead to a chain of increasingly negative consequences without sufficient evidence that each step in the chain will occur. Each causal link must be independently supported.\n\nOn LSAT: Not every slope is slippery. The flaw is the UNSUPPORTED assumption that each step will necessarily follow.",
+          "tip": "Ask: 'Is there actually evidence that each step in the chain will happen?'"
+        },
+        {
+          "id": "fallacy_15",
+          "front": "No one has ever proven that this ancient remedy doesn't work. Therefore, it must work.",
+          "back": "APPEAL TO IGNORANCE (Argument from Ignorance)\n\nArgumentum ad ignorantiam: the absence of disproof is not proof. The lack of evidence against X is not evidence for X (and vice versa). The burden of proof must be assigned correctly.\n\nOn LSAT: Often appears as 'since it hasn't been disproven, it's valid' or 'since there's no evidence of X, X must not exist.'",
+          "tip": "Absence of evidence ≠ evidence of absence. Who bears the burden of proof?"
+        },
+        {
+          "id": "fallacy_16",
+          "front": "Countries that have stricter gun laws tend to have lower rates of gun violence. If we implement strict gun laws in our country, gun violence will decrease.",
+          "back": "CONFOUND / OMITTED VARIABLE\n\nThe correlation may be real, but the conclusion ignores that other variables (cultural factors, economic inequality, historical context, police structure) may explain both the stricter laws AND the lower violence rates. Implementing the law in isolation may not produce the same effect.\n\nOn LSAT: Common in policy arguments — don't assume that what works in one context will work in another without addressing confounding variables.",
+          "tip": "Ask: 'What other factors might explain the correlation? Would removing them change the result?'"
+        },
+        {
+          "id": "fallacy_17",
+          "front": "My grandfather smoked two packs of cigarettes a day and lived to age 95. Therefore, smoking cannot be that harmful.",
+          "back": "ANECDOTAL EVIDENCE / EXCEPTION PROVES THE RULE\n\nUsing a single anecdote (or a few exceptional cases) to refute a statistical generalization. Individual exceptions don't invalidate population-level evidence. Survivorship bias may also be at play.\n\nOn LSAT: Single examples can illustrate or support claims but cannot overturn statistical or broadly supported evidence.",
+          "tip": "One counterexample is not sufficient to overturn a general statistical claim about populations."
+        },
+        {
+          "id": "fallacy_18",
+          "front": "We should teach children that the sun revolves around the earth, because that's what it looks like from their perspective, and it's easier to understand.",
+          "back": "APPEAL TO CONVENIENCE / SIMPLICITY\n\nJustifying a false belief by its convenience or simplicity, rather than its truth. Ease of understanding does not make something accurate. The standard for what to teach should be truth, not pedagogical ease.\n\nOn LSAT: Arguments that justify conclusions on grounds of convenience, tradition, or ease rather than logic or evidence.",
+          "tip": "Convenience and simplicity are practical virtues — they're not evidence of truth."
+        },
+        {
+          "id": "fallacy_19",
+          "front": "This practice has been done for thousands of years. Therefore, it must be correct and should be continued.",
+          "back": "APPEAL TO TRADITION (Argumentum ad antiquitatem)\n\nThe mere antiquity of a practice does not justify it. Many longstanding practices have been recognized as mistaken or harmful. Age provides evidence of persistence, not correctness.\n\nOn LSAT: 'We've always done it this way' is not a logical justification. Look for arguments that confuse tradition with correctness.",
+          "tip": "Ask: 'Does the age of a practice tell us anything about its correctness or value?'"
+        },
+        {
+          "id": "fallacy_20",
+          "front": "You can't say anything negative about this politician's healthcare policy — you're not a doctor!",
+          "back": "APPEAL TO INAPPROPRIATE EXPERTISE / TU QUOQUE\n\nDismissing an argument by demanding inappropriate credentials from the speaker. Policy analysis does not require medical credentials — it requires policy expertise, economic knowledge, or logical reasoning. Also related to tu quoque ('you too') — deflecting criticism by questioning the critic's qualifications.\n\nOn LSAT: The identity or qualifications of the speaker do not determine the validity of an argument.",
+          "tip": "Arguments are valid or invalid independently of who makes them. Credentials ≠ logical authority."
+        }
+      ]
+    },
+    {
+      "id": "lsat_vocab",
+      "title": "Key LSAT Vocabulary",
+      "description": "25 essential terms every LSAT test-taker must master",
+      "cards": [
+        {
+          "id": "vocab_01",
+          "front": "Sufficient Condition",
+          "back": "A condition that GUARANTEES the outcome. If A is sufficient for B, then whenever A is true, B must be true.\n\nSymbol: A → B ('If A, then B')\n\nExample: 'Being a square is sufficient for being a rectangle.' Whenever something is a square, it is always a rectangle.\n\nKey: Sufficient conditions can be met without being the only way to get the result.",
+          "tip": "Sufficient = guarantees. Think: 'enough to ensure.'"
+        },
+        {
+          "id": "vocab_02",
+          "front": "Necessary Condition",
+          "back": "A condition that must be present for the outcome to occur, but alone doesn't guarantee it.\n\nIf B requires A (A is necessary for B): B → A (to have B, you must have A)\n\nExample: 'Oxygen is necessary for fire.' You can't have fire without oxygen — but having oxygen doesn't mean there's a fire.\n\nKey: Necessary conditions are required but may not be sufficient.",
+          "tip": "Necessary = required. Think: 'can't happen without it.'"
+        },
+        {
+          "id": "vocab_03",
+          "front": "Contrapositive",
+          "back": "The logically equivalent form of a conditional statement, formed by negating AND flipping both terms.\n\nOriginal: A → B\nContrapositive: ¬B → ¬A\n\nExample: 'If it's raining, the ground is wet.' (Rain → Wet)\nContrapositive: 'If the ground is not wet, it's not raining.' (¬Wet → ¬Rain)\n\nKey: The contrapositive is always logically equivalent to the original. Use it to make inferences.",
+          "tip": "Flip and negate both. This is one of the most important logical tools on the LSAT."
+        },
+        {
+          "id": "vocab_04",
+          "front": "Premise",
+          "back": "A statement offered as evidence or support for a conclusion. Premises are the building blocks of an argument — they are assumed to be true for the purposes of evaluating the argument.\n\nSignal words: because, since, given that, as, for, after all, as evidenced by\n\nKey: On the LSAT, you generally accept premises as true. Your job is to evaluate whether they support the conclusion.",
+          "tip": "Premises support the conclusion. The conclusion is what the premises are trying to prove."
+        },
+        {
+          "id": "vocab_05",
+          "front": "Conclusion",
+          "back": "The statement an argument is trying to establish or prove. Everything else in the argument is offered as support for the conclusion.\n\nSignal words: therefore, thus, hence, so, consequently, it follows that, this shows that, as a result\n\nKey: The conclusion is not always at the end of the argument. It can appear at the beginning or middle.",
+          "tip": "Find the statement that all other statements are 'pointing to.' That's the conclusion."
+        },
+        {
+          "id": "vocab_06",
+          "front": "Assumption",
+          "back": "An unstated premise that the argument relies on — something the argument takes for granted without stating explicitly.\n\nAssumptions bridge the gap between premises and conclusion. Every argument has assumptions. Identifying them is the key to many LSAT question types.\n\nTypes:\n- Necessary assumption: required for the argument to hold\n- Sufficient assumption: makes the conclusion logically guaranteed",
+          "tip": "Assumptions are unstated. If it's explicitly stated in the argument, it's a premise, not an assumption."
+        },
+        {
+          "id": "vocab_07",
+          "front": "Inference",
+          "back": "A conclusion drawn from evidence — what 'follows' from the stated information. On the LSAT, an inference must be supported by what is explicitly stated.\n\nKey distinction: A valid inference MUST follow from the information given. It's not just consistent — it's required.\n\nCommon mistake: Confusing 'could be true' with 'must be true.' LSAT inferences must be true.",
+          "tip": "If you can imagine the world where the statements are true but the inference is false, it's not a valid LSAT inference."
+        },
+        {
+          "id": "vocab_08",
+          "front": "Argument",
+          "back": "On the LSAT: a set of statements in which one or more premises are offered as support for a conclusion. Not every passage is an argument — some are just explanations or descriptions.\n\nAn argument requires:\n1. A conclusion (a claim being made)\n2. At least one premise (evidence/reasoning for the claim)\n\nKey: Identify the structure before answering any question about an argument.",
+          "tip": "Not every passage has an argument. If there's no claim being supported, it's just a description."
+        },
+        {
+          "id": "vocab_09",
+          "front": "Valid vs. Sound Argument",
+          "back": "VALID: The conclusion follows logically from the premises — IF the premises are true, the conclusion MUST be true. Validity is about logical form, not truth.\n\nSOUND: Valid AND all premises are actually true.\n\nKey for LSAT: You can evaluate an argument's validity (its logical form) without knowing whether its premises are true. You assume premises are true and ask: does the conclusion follow?",
+          "tip": "Valid = logically structured. Sound = valid + true premises. LSAT tests validity."
+        },
+        {
+          "id": "vocab_10",
+          "front": "Deductive vs. Inductive Reasoning",
+          "back": "DEDUCTIVE: The conclusion follows necessarily from the premises if they are true. The premises guarantee the conclusion. Valid deductive arguments are airtight.\n\nINDUCTIVE: The premises make the conclusion probable but not certain. Evidence supports but doesn't guarantee the conclusion. Most LSAT arguments are inductive — and most flaws involve treating inductive reasoning as if it were deductive.",
+          "tip": "Most LSAT LR arguments are inductive (probable, not certain). The gap between premises and conclusion is usually the flaw."
+        },
+        {
+          "id": "vocab_11",
+          "front": "Scope",
+          "back": "The range or extent of what an argument addresses. An answer choice that goes 'outside the scope' of an argument introduces a concept not discussed or implied in the stimulus.\n\nOn LSAT: Many wrong answer choices are outside the scope — they may be true statements in the real world, but they have no connection to what the argument is discussing.\n\nTest: 'Is this idea present in the stimulus, or is it being introduced for the first time?'",
+          "tip": "Out-of-scope answers are real-world facts that don't connect to the specific argument at hand."
+        },
+        {
+          "id": "vocab_12",
+          "front": "Conditional Statement",
+          "back": "A statement of the form 'If [antecedent], then [consequent]' — often written A → B.\n\nValid inferences:\n- Modus ponens: A → B; A is true; therefore B is true.\n- Modus tollens (contrapositive): A → B; B is false; therefore A is false.\n\nInvalid inferences:\n- Affirming the consequent: A → B; B is true; therefore A is true. (WRONG)\n- Denying the antecedent: A → B; A is false; therefore B is false. (WRONG)",
+          "tip": "Only two valid moves: confirm the antecedent (get the consequent) or deny the consequent (deny the antecedent)."
+        },
+        {
+          "id": "vocab_13",
+          "front": "Causal Claim",
+          "back": "A claim that one thing directly brings about another. On the LSAT, causal claims are often the source of flawed reasoning.\n\nCommon causal errors:\n1. Correlation ≠ causation\n2. Reverse causation (B caused A, not A caused B)\n3. Common cause (C caused both A and B)\n4. Coincidence\n\nStrengtheners for causal arguments: rule out alternative causes, show the effect doesn't occur without the cause.",
+          "tip": "To strengthen a causal argument: eliminate alternatives. To weaken: provide an alternative cause."
+        },
+        {
+          "id": "vocab_14",
+          "front": "Principle",
+          "back": "A general rule, standard, or moral/practical guideline that can be applied to multiple specific cases.\n\nExample: 'Public officials should be held to a higher standard of transparency than private citizens.'\n\nOn LSAT: Principle questions ask either (1) which situation best illustrates the given principle, or (2) which principle, if valid, most helps justify the given argument. Principles are always general — they apply beyond just one case.",
+          "tip": "A principle must be general (not specific to one case) and normative (prescribing what should be done)."
+        },
+        {
+          "id": "vocab_15",
+          "front": "Paradox / Discrepancy",
+          "back": "A situation in which two facts, findings, or statements seem to contradict each other or produce a surprising result.\n\nResolve/Paradox questions: Find the answer that explains how both statements can be true simultaneously.\n\nKey: The answer must address BOTH sides of the apparent contradiction. An answer that explains only one side does not resolve the paradox.",
+          "tip": "Good resolution: makes both facts unsurprising. Bad resolution: explains one and ignores the other."
+        },
+        {
+          "id": "vocab_16",
+          "front": "Analogy",
+          "back": "A comparison between two situations based on their structural or relational similarity. Arguments from analogy claim that because two things are similar in some respects, they are similar in another relevant respect.\n\nAnalogies can be strengthened (show relevant similarity) or weakened (show relevant difference).\n\nParallel Reasoning questions test whether you can identify structural analogies between arguments.",
+          "tip": "Analogies live or die on whether the compared cases are similar in the RELEVANT ways."
+        },
+        {
+          "id": "vocab_17",
+          "front": "Point at Issue",
+          "back": "The specific claim about which two speakers explicitly disagree. For a claim to be the 'point at issue,' both speakers must have clearly expressed opposing positions on it.\n\nYes/No Test: (1) Would Speaker A answer YES to the correct answer? (2) Would Speaker B answer NO? Both conditions must be met.\n\nWrong answers: only one speaker addresses it, or both speakers actually agree.",
+          "tip": "Apply the Yes/No test to every answer choice. Both speakers must have a clear, opposite position."
+        },
+        {
+          "id": "vocab_18",
+          "front": "Relative vs. Absolute Claims",
+          "back": "RELATIVE: A comparison between two things (faster, more effective, fewer, most common).\nABSOLUTE: A claim about the actual quantity or rate (X% of cases, 50,000 per year).\n\nOn LSAT: Many wrong answers confuse relative and absolute claims. A decrease in the RATE of something is not the same as a decrease in the TOTAL NUMBER if the population is growing.\n\nExample: 'Car accidents per mile driven decreased' ≠ 'Fewer total car accidents occurred.'",
+          "tip": "Watch for switches between rates/proportions and raw numbers — a very common LSAT trap."
+        },
+        {
+          "id": "vocab_19",
+          "front": "Negation Test",
+          "back": "The technique used to identify Necessary Assumptions:\n\n1. Negate (reverse) the answer choice.\n2. Ask: 'If this negated statement were true, does the argument fall apart?'\n3. If yes → this IS a necessary assumption (correct answer).\n4. If no → the argument still works fine, so this is NOT a necessary assumption.\n\nKey: Only necessary assumptions will cause the argument to fail when negated. Sufficient assumptions won't always fail the negation test.",
+          "tip": "Negate. Does the argument break? If yes = necessary assumption. If no = move on."
+        },
+        {
+          "id": "vocab_20",
+          "front": "Strengthen vs. Sufficient Assumption",
+          "back": "STRENGTHEN: Makes the conclusion MORE likely to be true. The conclusion doesn't have to follow — just becomes more plausible.\n\nSUFFICIENT ASSUMPTION: When added to the premises, makes the conclusion LOGICALLY GUARANTEED. The gap is completely bridged.\n\nStrengtheners can be weak ('slightly supports'). Sufficient Assumptions must be powerful enough to make the conclusion follow necessarily.\n\nThis distinction matters because SA correct answers are often stronger and more specific.",
+          "tip": "Strengthen = more plausible. Sufficient Assumption = logically certain. SA is the stronger relationship."
+        },
+        {
+          "id": "vocab_21",
+          "front": "Sub-conclusion",
+          "back": "An intermediate conclusion that is both supported by some premises AND used as support for the main conclusion. Sub-conclusions are tricky because they look like conclusions but are also being used as premises.\n\nExample: 'Exercise improves mood. [premise] Therefore, people who exercise are happier. [sub-conclusion] So, employers should provide gym access. [main conclusion]'\n\nOn LSAT: Identifying sub-conclusions is critical for Main Conclusion and Method of Reasoning questions.",
+          "tip": "A sub-conclusion is supported by premises and supports the main conclusion. It plays both roles."
+        },
+        {
+          "id": "vocab_22",
+          "front": "Descriptive vs. Normative (Prescriptive) Claims",
+          "back": "DESCRIPTIVE: Describes how things ARE. ('70% of voters support this policy.')\nNORMATIVE: Prescribes how things SHOULD BE. ('Governments should follow public preferences.')\n\nOn LSAT: Arguments often try to move from descriptive premises to normative conclusions — this usually requires a normative assumption as a bridge. You cannot logically derive a 'should' from an 'is' without an additional premise.\n\nHume's Is-Ought problem: One of the most common implicit flaws in LSAT ethical arguments.",
+          "tip": "Watch for arguments that jump from 'X is the case' to 'X should continue' — that jump needs a normative assumption."
+        },
+        {
+          "id": "vocab_23",
+          "front": "Alternative Explanation",
+          "back": "A competing explanation for an observed phenomenon, offered as a counterargument or as a weakener. When an argument concludes that X caused Y, an alternative explanation would be: 'But Z could have caused Y instead.'\n\nOn LSAT:\n- Alternative explanations WEAKEN causal arguments\n- Ruling out alternative explanations STRENGTHENS causal arguments\n- Resolve/Paradox correct answers often provide an alternative explanation for why both facts are true",
+          "tip": "For causal arguments: alternative explanations weaken, ruling them out strengthens."
+        },
+        {
+          "id": "vocab_24",
+          "front": "Stimulus",
+          "back": "The passage of text at the beginning of a Logical Reasoning question — the argument, set of facts, or scenario that you analyze before answering the question.\n\nComponents of a stimulus may include:\n- Background facts\n- One or more premises\n- A conclusion\n- Evidence\n- An objection (in dialogue format)\n\nNot all stimuli contain arguments. Some are just descriptions or sets of facts.",
+          "tip": "Before reading the question, identify: Is there an argument? If so, what's the conclusion?"
+        },
+        {
+          "id": "vocab_25",
+          "front": "Quantifiers",
+          "back": "Words that specify how many or how much. Critical for precise logical reasoning.\n\nUniversal: All, every, each, any, no, none, never, always\nExistential: Some, many, most, few, several, sometimes, often, at least one\n\nKey LSAT traps:\n- 'Most' means more than half — not 'almost all'\n- 'Some' means at least one — possibly all\n- 'All A are B' does NOT mean 'All B are A'\n- 'No A are B' means 'No B are A' (this one IS reversible)",
+          "tip": "Quantifiers are precise on the LSAT. 'Some' ≠ 'most' ≠ 'all'. Never swap them."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "passage_sets": [
+    {
+      "id": "rc_set_001",
+      "type": "single",
+      "passage_title": "The Doctrine of Indigenous Title in Common Law",
+      "topic": "indigenous_rights_law",
+      "passage_text": "The recognition of indigenous land rights within common law systems represents one of the more remarkable developments in twentieth-century jurisprudence. For most of the history of English-derived law, courts proceeded on the assumption that colonized lands were either legally empty prior to European arrival or that any pre-existing legal claims were extinguished upon formal annexation. This doctrine, sometimes called the doctrine of terra nullius — literally, 'nobody's land' — was formally repudiated by the High Court of Australia in its landmark 1992 Mabo decision, which held that indigenous Australians had possessed a form of native title that survived colonization wherever it had not been specifically extinguished by government action.\n\nThe Mabo decision's theoretical foundation rested on the principle that the common law, as a living body of doctrine, should recognize and adapt to the facts of indigenous occupation that preceded European settlement. The court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction — the fiction that Australia was truly empty when colonists arrived. Subsequent decisions in Canada, New Zealand, and the United States developed parallel doctrines, though with significant variation in how indigenous title is defined, what must be proven to establish it, and what rights flow from its recognition.\n\nCritical to all these doctrines is the question of continuity. Indigenous groups claiming traditional land rights typically must demonstrate continuous occupation or use of the claimed territory since the time of colonization. Courts have interpreted this requirement with varying degrees of strictness: some have required physical, uninterrupted presence; others have accepted evidence of seasonal use, spiritual connection, or the maintenance of traditional governance structures over the land. The flexibility of the continuity requirement has been both a strength — allowing recognition of the diverse ways in which indigenous communities maintain connections to land — and a source of legal uncertainty.\n\nA separate and increasingly important question concerns the relationship between indigenous title and modern property rights. When land subject to unextinguished indigenous title has been transferred to private owners in the centuries since colonization, courts have faced difficult questions about reconciling competing claims. Some jurisdictions have prioritized the property rights of current owners, holding that even unextinguished indigenous title cannot override valid grants of private title. Others have recognized indigenous title as capable of burdening privately held land, creating a form of co-existing rights that may entitle indigenous groups to consultation, compensation, or shared management of the land's resources. The debate between these approaches remains one of the most actively contested areas of property law in common law jurisdictions.",
+      "questions": [
+        {
+          "id": "rc_001_q1",
+          "section_type": "RC",
+          "question_type": "main_point",
+          "difficulty": "medium",
+          "passage_id": "rc_set_001",
+          "question_stem": "Which one of the following most accurately states the main point of the passage?",
+          "choices": {
+            "A": "The doctrine of terra nullius was repudiated in Australia's Mabo decision and has since been abandoned by all common law jurisdictions.",
+            "B": "Indigenous land rights have been increasingly recognized within common law systems, but significant questions about the scope and implications of those rights remain contested.",
+            "C": "The continuity requirement in indigenous title doctrine has been interpreted too strictly by courts in most common law jurisdictions.",
+            "D": "Indigenous land rights can only be effectively protected through statutory legislation rather than through common law doctrines developed by courts.",
+            "E": "The conflict between indigenous title and private property rights represents the most significant challenge facing common law legal systems today."
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B accurately captures the passage's main arc: it traces the development of indigenous title recognition in common law, describes the theoretical foundations, and notes the contested questions that remain — including the continuity requirement and the conflict with private property rights.",
+            "A": "A overstates the passage's claims. The passage does not say terra nullius has been abandoned by all common law jurisdictions, and it acknowledges significant variation across systems.",
+            "C": "C mischaracterizes the passage's treatment of continuity. The passage presents the continuity requirement neutrally, noting both its flexibility as a strength and as a source of uncertainty — not criticizing it as too strict.",
+            "D": "D introduces a statutory vs. common law distinction that the passage does not address.",
+            "E": "E overstates the passage's final claim. The passage presents the property rights conflict as 'one of the most actively contested areas' — not 'the most significant challenge' for common law generally."
+          },
+          "tags": ["main_point", "indigenous_rights", "common_law"]
+        },
+        {
+          "id": "rc_001_q2",
+          "section_type": "RC",
+          "question_type": "detail",
+          "difficulty": "easy",
+          "passage_id": "rc_set_001",
+          "question_stem": "According to the passage, the doctrine of terra nullius held that",
+          "choices": {
+            "A": "indigenous title to land survives colonization unless it has been specifically extinguished by government action",
+            "B": "common law systems should recognize and adapt to the historical facts of indigenous occupation",
+            "C": "colonized lands were either legally empty or any pre-existing claims were extinguished upon annexation",
+            "D": "indigenous groups must demonstrate continuous occupation of claimed territory to establish legal rights",
+            "E": "private property rights always take precedence over any claims of indigenous title arising from prior occupation"
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C is directly stated in the first paragraph: 'courts proceeded on the assumption that colonized lands were either legally empty prior to European arrival or that any pre-existing legal claims were extinguished upon formal annexation.'",
+            "A": "A describes the Mabo decision's holding, which was the repudiation of terra nullius — not the doctrine itself.",
+            "B": "B describes the theoretical principle underlying the Mabo court's reasoning.",
+            "D": "D describes the continuity requirement discussed in the third paragraph.",
+            "E": "E describes one of the approaches some jurisdictions have taken to reconciling indigenous title with private property, discussed in the fourth paragraph."
+          },
+          "tags": ["detail", "terra_nullius", "legal_doctrine"]
+        },
+        {
+          "id": "rc_001_q3",
+          "section_type": "RC",
+          "question_type": "inference",
+          "difficulty": "hard",
+          "passage_id": "rc_set_001",
+          "question_stem": "The passage most strongly implies which one of the following about the continuity requirement in indigenous title doctrine?",
+          "choices": {
+            "A": "The continuity requirement has been interpreted so broadly in some jurisdictions that groups with only minimal historical connections to land have been able to establish indigenous title.",
+            "B": "Courts that have required physical, uninterrupted presence as evidence of continuity have generally reached more defensible conclusions than courts that have accepted other forms of evidence.",
+            "C": "The range of evidence that courts have accepted as satisfying the continuity requirement reflects genuine uncertainty about what kinds of connections between people and land should be legally significant.",
+            "D": "The continuity requirement was introduced specifically to prevent indigenous groups from claiming rights to land they had voluntarily abandoned prior to colonization.",
+            "E": "Indigenous groups that have maintained traditional governance structures over land are more likely to succeed in claiming indigenous title than those who have relied solely on spiritual connection."
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C is supported by the passage's description of the 'varying degrees of strictness' with which courts have interpreted continuity, and the passage's conclusion that this variation has produced 'legal uncertainty.' The inference that this reflects genuine uncertainty about what connections matter legally is well-grounded.",
+            "A": "A goes beyond what the passage supports. The passage mentions flexible interpretation as a strength, but does not suggest that minimal connections have been sufficient.",
+            "B": "B introduces a normative judgment about which approach is 'more defensible' that the passage does not make. The passage presents both approaches neutrally.",
+            "D": "D attributes a specific purpose to the continuity requirement that the passage never mentions.",
+            "E": "E compares the relative likelihood of success under different types of evidence, a comparison the passage does not draw."
+          },
+          "tags": ["inference", "continuity_requirement", "legal_uncertainty"]
+        },
+        {
+          "id": "rc_001_q4",
+          "section_type": "RC",
+          "question_type": "function",
+          "difficulty": "medium",
+          "passage_id": "rc_set_001",
+          "question_stem": "The author's primary purpose in mentioning the doctrine of terra nullius in the first paragraph is to",
+          "choices": {
+            "A": "argue that the historical treatment of indigenous peoples by colonial courts was morally indefensible",
+            "B": "provide the legal background against which the recognition of indigenous title represents a departure",
+            "C": "demonstrate that the common law has always contained within it the principles necessary to recognize indigenous rights",
+            "D": "explain why courts in Australia were the first to develop a doctrine of indigenous title",
+            "E": "contrast the legal status of indigenous groups in common law jurisdictions with their status under international law"
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B is correct. The passage introduces terra nullius to establish the historical legal baseline — what courts assumed for most of common law history — so that the Mabo decision and subsequent developments can be understood as a significant departure from that baseline.",
+            "A": "A attributes a moral judgment to the author that the passage does not make. The passage describes terra nullius in legal rather than moral terms.",
+            "C": "C mischaracterizes the passage's argument. The passage does not claim that common law always contained principles favorable to indigenous rights; it describes the change as a development.",
+            "D": "D attributes an explanatory purpose about Australia's priority that the passage does not address. The passage doesn't claim Australia was first because of terra nullius.",
+            "E": "E introduces international law as a point of contrast, which the passage does not develop in this context."
+          },
+          "tags": ["function", "historical_background", "passage_structure"]
+        },
+        {
+          "id": "rc_001_q5",
+          "section_type": "RC",
+          "question_type": "authors_attitude",
+          "difficulty": "medium",
+          "passage_id": "rc_set_001",
+          "question_stem": "The author's attitude toward the development of indigenous title doctrine in common law systems is best described as",
+          "choices": {
+            "A": "strongly supportive, arguing that common law systems have an obligation to recognize all pre-existing indigenous land rights",
+            "B": "analytically descriptive, presenting the development and contested questions without taking a clear normative position",
+            "C": "cautiously skeptical, suggesting that judicially developed doctrines are unlikely to adequately protect indigenous rights",
+            "D": "mildly critical, noting that the flexibility of the continuity requirement has caused more harm than good",
+            "E": "enthusiastically celebratory, treating the Mabo decision and its successors as unambiguous achievements of justice"
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B is correct. The passage traces the development of indigenous title doctrine, explains its theoretical foundations, describes the continuity requirement with both its strengths and weaknesses, and presents competing approaches to the property rights conflict — all without expressing a clear normative preference for any outcome.",
+            "A": "A overstates the author's position. The author describes the developments without advocating for any particular scope of indigenous rights.",
+            "C": "C attributes skepticism about judicial development that the passage does not express.",
+            "D": "D mischaracterizes the passage's treatment of continuity flexibility. The passage calls it both a strength and a source of uncertainty — not primarily harmful.",
+            "E": "E overstates the author's tone. The description of Mabo is analytical, not celebratory."
+          },
+          "tags": ["authors_attitude", "tone", "legal_scholarship"]
+        },
+        {
+          "id": "rc_001_q6",
+          "section_type": "RC",
+          "question_type": "inference",
+          "difficulty": "hard",
+          "passage_id": "rc_set_001",
+          "question_stem": "Based on the passage, which one of the following can most reasonably be inferred about the Mabo decision?",
+          "choices": {
+            "A": "The Mabo decision established that indigenous title in Australia cannot be extinguished by any subsequent government action.",
+            "B": "Prior to the Mabo decision, courts in Australia had occasionally recognized indigenous land rights on an ad hoc basis.",
+            "C": "The Mabo decision's reasoning rested on the claim that denying indigenous title would require the law to maintain a fiction inconsistent with historical facts.",
+            "D": "The Mabo decision was subsequently overturned by legislation that restored the doctrine of terra nullius in Australian law.",
+            "E": "The Mabo court's recognition of native title was premised on a finding that the Australian government had never formally extinguished such title."
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C is directly supported. The passage states: 'the court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction — the fiction that Australia was truly empty when colonists arrived.'",
+            "A": "A contradicts the passage. The Mabo decision held that native title survived colonization 'wherever it had not been specifically extinguished by government action' — meaning it can be extinguished by government action.",
+            "B": "B introduces a claim about pre-Mabo history that the passage does not support. The passage describes the general assumption (terra nullius) without mentioning ad hoc exceptions.",
+            "D": "D contradicts the passage's framing of Mabo as a landmark development that subsequent decisions built upon.",
+            "E": "E mischaracterizes the holding. The decision recognized title where it had not been extinguished — not because extinguishment had never occurred in Australia."
+          },
+          "tags": ["inference", "mabo_decision", "australian_law"]
+        }
+      ]
+    },
+    {
+      "id": "rc_set_002",
+      "type": "single",
+      "passage_title": "Complexity Theory and the Limits of Prediction",
+      "topic": "science_complexity",
+      "passage_text": "Among the more humbling discoveries of twentieth-century science is the recognition that many natural systems are fundamentally unpredictable — not merely because our measuring instruments are imprecise, but because the systems themselves amplify tiny initial differences into dramatically different outcomes. This sensitivity to initial conditions, identified most famously in meteorological models, has been popularized as the 'butterfly effect': the idea that a butterfly flapping its wings in Brazil might, through a long chain of atmospheric interactions, influence whether a tornado forms in Texas weeks later.\n\nThe mathematical study of such systems, known as chaos theory, emerged from the work of meteorologist Edward Lorenz in the 1960s. Lorenz discovered that the equations governing weather patterns, when iterated forward in time, produced wildly divergent results from starting conditions that differed by as little as one part in a thousand. This was not a problem of computational error but of the equations themselves: small differences grow exponentially rather than linearly, rendering long-range prediction mathematically impossible, not merely practically difficult.\n\nCritical to understanding chaos theory is the distinction between determinism and predictability. Chaotic systems are deterministic in the strict sense: given perfect knowledge of a system's state at one moment, its future behavior is in principle fully determined by the laws governing it. The unpredictability arises not from any randomness in the system but from our inability to measure initial conditions with sufficient precision. Because tiny errors in measurement grow exponentially, even the most powerful conceivable computer could not predict the behavior of a chaotic system beyond a certain time horizon.\n\nChaotics theory has been fruitfully extended to biology, economics, and social systems, though with important caveats. Biological and social systems are not simply chaotic but typically occupy a regime that complexity theorists describe as the 'edge of chaos' — a state of dynamic tension between order and disorder. Such systems exhibit sufficient regularity to sustain organization and sufficient sensitivity to perturbation to allow adaptation and novelty. The immune system, for example, operates in precisely this regime: stable enough to mount reliable defenses against familiar pathogens, but sensitive enough to generate novel responses to previously unencountered threats. The appeal of complexity theory lies in its suggestion that this edge-of-chaos behavior is not accidental but reflects a kind of self-organization toward the conditions most conducive to complex, adaptive behavior.",
+      "questions": [
+        {
+          "id": "rc_002_q1",
+          "section_type": "RC",
+          "question_type": "main_point",
+          "difficulty": "medium",
+          "passage_id": "rc_set_002",
+          "question_stem": "The passage is primarily concerned with",
+          "choices": {
+            "A": "arguing that long-range weather prediction will become possible once computing power is sufficiently advanced",
+            "B": "tracing the historical development of chaos theory from Lorenz's meteorological work through its applications in biology and social systems",
+            "C": "explaining the nature of chaotic and complex systems, including the key distinction between determinism and predictability",
+            "D": "contending that the edge-of-chaos concept represents a more useful framework for understanding natural systems than chaos theory alone",
+            "E": "demonstrating that biological systems are fundamentally different from physical systems in their resistance to mathematical modeling"
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C captures the passage's primary concern: it explains what chaotic systems are, where chaos theory came from, introduces the crucial distinction between determinism and predictability, and extends the discussion to edge-of-chaos systems in biology and social contexts.",
+            "A": "A contradicts the passage, which argues that long-range prediction is mathematically impossible, not merely a matter of computing power.",
+            "B": "B describes part of the passage but overemphasizes historical tracing as the primary purpose.",
+            "D": "D overstates the passage's argument. The passage presents edge-of-chaos as an extension of chaos theory, not as a replacement framework.",
+            "E": "E introduces a contrast the passage does not draw. The passage applies similar concepts to both physical and biological systems."
+          },
+          "tags": ["main_point", "complexity_theory", "chaos_theory"]
+        },
+        {
+          "id": "rc_002_q2",
+          "section_type": "RC",
+          "question_type": "detail",
+          "difficulty": "easy",
+          "passage_id": "rc_set_002",
+          "question_stem": "According to the passage, Lorenz's discovery about weather equations showed that",
+          "choices": {
+            "A": "weather patterns are random rather than governed by deterministic laws",
+            "B": "the equations governing weather, when calculated forward in time, produced wildly divergent results from starting conditions differing by a very small amount",
+            "C": "computational errors in meteorological models made accurate weather forecasting practically difficult",
+            "D": "the butterfly effect makes it impossible to track how any specific atmospheric event influences weather patterns",
+            "E": "long-range weather prediction would require computers far more powerful than any that existed in the twentieth century"
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B is directly stated in the second paragraph: 'Lorenz discovered that the equations governing weather patterns, when iterated forward in time, produced wildly divergent results from starting conditions that differed by as little as one part in a thousand.'",
+            "A": "A contradicts the passage. The passage explicitly states that chaotic systems are deterministic, not random.",
+            "C": "C contradicts the passage, which states 'This was not a problem of computational error but of the equations themselves.'",
+            "D": "D partially reflects the butterfly effect concept but conflates the technical finding with the popularization of it.",
+            "E": "E introduces a claim about computing power that the passage does not make. The passage says the unpredictability is mathematical, not a matter of computational limits."
+          },
+          "tags": ["detail", "lorenz", "weather_equations"]
+        },
+        {
+          "id": "rc_002_q3",
+          "section_type": "RC",
+          "question_type": "function",
+          "difficulty": "medium",
+          "passage_id": "rc_set_002",
+          "question_stem": "The author discusses the immune system in the final paragraph primarily in order to",
+          "choices": {
+            "A": "provide a biological counterexample to the claim that all complex systems operate at the edge of chaos",
+            "B": "illustrate how a biological system can exhibit both sufficient stability and sufficient sensitivity to function adaptively",
+            "C": "argue that immunology has benefited more from complexity theory than any other branch of biology",
+            "D": "demonstrate that the immune system's behavior can be precisely predicted using complexity-theoretic models",
+            "E": "contrast the immune system's self-organization with the disordered behavior of chaotic physical systems"
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B is correct. The author introduces the immune system as an example of a biological system that exemplifies edge-of-chaos behavior — stable enough for reliable defenses but sensitive enough for novel responses. This illustrates what it means to operate at the edge of chaos.",
+            "A": "A mischaracterizes the function. The immune system is presented as an example of edge-of-chaos behavior, not a counterexample.",
+            "C": "C introduces a comparative claim about fields of biology that the passage does not make.",
+            "D": "D contradicts the passage's argument that chaotic and complex systems resist precise prediction.",
+            "E": "E introduces a contrast that the passage does not draw. The passage does not contrast the immune system with physical systems specifically."
+          },
+          "tags": ["function", "immune_system", "edge_of_chaos"]
+        },
+        {
+          "id": "rc_002_q4",
+          "section_type": "RC",
+          "question_type": "inference",
+          "difficulty": "hard",
+          "passage_id": "rc_set_002",
+          "question_stem": "The passage most strongly supports which one of the following statements?",
+          "choices": {
+            "A": "A chaotic system whose initial conditions could be measured with perfect precision could in principle have its behavior predicted indefinitely far into the future.",
+            "B": "Complex adaptive systems, unlike purely chaotic systems, are governed by laws that permit their behavior to be predicted over long time horizons.",
+            "C": "The edge-of-chaos concept implies that biological systems that are too orderly are less capable of adapting to novel threats than those with some degree of disorder.",
+            "D": "Lorenz's discovery implies that meteorological prediction will always be subject to some error, no matter how good our instruments become.",
+            "E": "Self-organization in complex systems toward the edge of chaos is driven by natural selection pressures that favor adaptive behavior."
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C is supported. The passage states that edge-of-chaos systems are 'stable enough to sustain organization and sensitive enough to perturbation to allow adaptation and novelty,' and that the immune system is 'sensitive enough to generate novel responses to previously unencountered threats.' A system that is too orderly — insufficient sensitivity — would lack this adaptive capacity.",
+            "A": "A is supported by the passage's claim that chaotic systems are deterministic and that unpredictability arises from measurement precision. This is a valid inference from the third paragraph.",
+            "B": "B is not supported. The passage does not claim complex adaptive systems are predictable over long time horizons; they are presented as an extension of chaos theory, not as an exception to its unpredictability.",
+            "D": "D is supported by the passage's argument that the unpredictability is mathematical, not technological. However, C is a stronger inference about a specific practical implication the passage develops explicitly.",
+            "E": "E introduces natural selection as a mechanism that the passage does not discuss. The passage presents self-organization as a property of complex systems without attributing it to evolutionary processes."
+          },
+          "tags": ["inference", "edge_of_chaos", "adaptive_systems"]
+        }
+      ]
+    },
+    {
+      "id": "rc_set_003",
+      "type": "comparative",
+      "passage_title": "The Function of Spectator Sports",
+      "topic": "aesthetics_sport",
+      "passage_text_a": "In all games, particularly in athletic contests, the central importance of display and representation serves as a reminder of the ancient connections between play, ritual, and drama. The players not only compete; they enact a familiar ceremony that reaffirms common values. Ceremony requires witnesses: enthusiastic spectators conversant with the rules of the performance and its underlying meaning. Far from destroying the value of sports, as some cultural critics have argued, the attendance of spectators is often necessary to a sporting event.\n\nThe sports public remains more discriminating in its judgments than the audience for most contemporary art forms. In sports, excellence is relatively uncontroversial as a standard: the public for sports consists largely of people who played the sport in childhood and thus acquired a direct, participatory sense of what genuine excellence involves. By contrast, constant experimentation in the contemporary arts has created significant confusion about standards, such that the only surviving measure of excellence for many observers is novelty or shock value.",
+      "passage_text_b": "Hans Gumbrecht argues persuasively that many great moments in sport are beautiful in the full aesthetic sense of the word. Most contemporary academic analyses of sport as a cultural phenomenon tend to be socially patronizing — dismissive of sports fans as having fallen for a modern version of the old bread-and-circus treatment. Such critics find it difficult to admit that the fascination with sports can have respectable roots in the realm of aesthetic appeal.\n\nGumbrecht grounds his argument in Kant's account of the beautiful. The central paradox Kant identifies is that although something does not need to have a purpose in order to be beautiful, whatever we find beautiful looks as if it had a purpose. A well-executed double play in baseball or a perfectly timed tackle in football has no function outside the sport itself. And yet such actions give a distinct impression of purposiveness — they appear both carefully calibrated and perfectly natural. It is precisely this combination that constitutes, in Kant's terms, the beautiful.",
+      "questions": [
+        {
+          "id": "rc_003_q1",
+          "section_type": "RC",
+          "question_type": "comparative",
+          "difficulty": "medium",
+          "passage_id": "rc_set_003",
+          "question_stem": "Both passages are primarily concerned with",
+          "choices": {
+            "A": "defending the view that watching sports can be a valuable and legitimate experience",
+            "B": "arguing that sports audiences are more sophisticated than audiences for the arts",
+            "C": "demonstrating that sports have a ritualistic function similar to that of traditional religious ceremonies",
+            "D": "challenging the claim that professional sports are primarily entertainment rather than aesthetic experiences",
+            "E": "applying philosophical frameworks to explain the appeal of athletic competition to spectators"
+          },
+          "correct_answer": "A",
+          "explanation": {
+            "correct": "A captures the shared purpose of both passages. Passage A defends the value of sports spectatorship against critics who dismiss it. Passage B defends the aesthetic legitimacy of watching sports against academics who are dismissive of sports fans. Both argue that spectator sports have genuine value.",
+            "B": "B describes a claim specific to Passage A, which makes this comparison with arts audiences. Passage B does not develop this comparison.",
+            "C": "C describes a claim about ritual from Passage A only. Passage B does not discuss ritual functions.",
+            "D": "D overstates both passages. Neither specifically addresses the 'entertainment vs. aesthetic experience' framing in those terms.",
+            "E": "E describes Passage B's use of Kant but not Passage A, which does not apply philosophical frameworks to explain appeal."
+          },
+          "tags": ["comparative", "both_passages", "spectator_sports"]
+        },
+        {
+          "id": "rc_003_q2",
+          "section_type": "RC",
+          "question_type": "comparative",
+          "difficulty": "hard",
+          "passage_id": "rc_set_003",
+          "question_stem": "The author of Passage A would most likely respond to the claim in Passage B that critics are 'dismissive of sports fans' by",
+          "choices": {
+            "A": "arguing that some critics are right to be dismissive because many sports fans lack genuine aesthetic sophistication",
+            "B": "agreeing that such dismissiveness is unjustified, because sports spectatorship requires real knowledge and discriminating judgment",
+            "C": "suggesting that the dismissiveness of academic critics is less significant than the dismissiveness of arts critics toward sports",
+            "D": "pointing out that the dismissiveness Passage B describes is less common among critics who have themselves played sports",
+            "E": "contending that the philosophical approach Passage B takes is superior to the cultural approach critics typically employ"
+          },
+          "correct_answer": "B",
+          "explanation": {
+            "correct": "B is correct. Passage A argues that sports spectatorship requires knowledgeable audiences who have played the sport and can make discriminating judgments. This position directly supports the view that critics who dismiss sports fans are unjustified — because those fans possess exactly the kind of knowledge and discriminating capacity that makes their appreciation legitimate.",
+            "A": "A contradicts Passage A's position. Passage A argues sports fans are more discriminating than arts audiences, not that they lack aesthetic sophistication.",
+            "C": "C introduces a comparative claim about different types of critics that Passage A does not develop.",
+            "D": "D introduces a specific claim about former athletes among critics that Passage A does not address.",
+            "E": "E involves a meta-claim about methodological approaches that Passage A does not address."
+          },
+          "tags": ["comparative", "author_response", "cross_passage_inference"]
+        },
+        {
+          "id": "rc_003_q3",
+          "section_type": "RC",
+          "question_type": "comparative",
+          "difficulty": "medium",
+          "passage_id": "rc_set_003",
+          "question_stem": "Which one of the following is discussed in Passage A but not in Passage B?",
+          "choices": {
+            "A": "the application of a philosophical concept to explain the beauty of athletic performance",
+            "B": "the role of spectators as necessary participants in athletic events",
+            "C": "academic dismissiveness toward sports fans",
+            "D": "the contrast between standards in sports and standards in the arts",
+            "E": "the comparison of sports to ritualistic or ceremonial activities"
+          },
+          "correct_answer": "D",
+          "explanation": {
+            "correct": "D is discussed only in Passage A, which explicitly contrasts sports — where 'excellence is relatively uncontroversial as a standard' — with contemporary art, where experimentation has created confusion about standards. Passage B does not develop this contrast.",
+            "A": "A describes content from Passage B specifically — the application of Kant's framework. Passage A does not apply philosophical frameworks.",
+            "B": "B describes content from Passage A — 'the attendance of spectators is often necessary to a sporting event.' But it is also implicitly addressed in Passage B through the concept of witnessing beautiful athletic moments.",
+            "C": "C describes content from Passage B — Gumbrecht's critique of patronizing academic analysis. Passage A does not mention academic dismissiveness.",
+            "E": "E describes content from Passage A — the connections between play, ritual, and drama. Passage B does not address ritual functions."
+          },
+          "tags": ["comparative", "passage_differences", "content_mapping"]
+        },
+        {
+          "id": "rc_003_q4",
+          "section_type": "RC",
+          "question_type": "inference",
+          "difficulty": "medium",
+          "passage_id": "rc_set_003",
+          "question_stem": "It can be inferred that both authors would agree with which one of the following statements?",
+          "choices": {
+            "A": "Sports audiences are more knowledgeable about their subject than audiences for most art forms.",
+            "B": "The philosophical frameworks developed to analyze art can be fruitfully applied to athletic performance.",
+            "C": "Viewing sports can provide a form of experience that has genuine and underappreciated value.",
+            "D": "The dismissiveness of cultural critics toward sports reflects a misunderstanding of what sports involve.",
+            "E": "The ritualistic dimension of sports is what distinguishes genuinely excellent athletic performance from mere competition."
+          },
+          "correct_answer": "C",
+          "explanation": {
+            "correct": "C is the claim both authors clearly share. Passage A argues for the value of sports spectatorship by pointing to knowledgeable audiences and high standards. Passage B argues for the aesthetic legitimacy of watching sports and criticizes those who undervalue it. Both hold that spectator sports have genuine, underappreciated value.",
+            "A": "A is a claim Passage A makes explicitly, but Passage B does not develop this comparison. We cannot confirm both authors agree.",
+            "B": "B describes Passage B's approach (applying Kantian aesthetics), but Passage A does not use philosophical frameworks.",
+            "D": "D describes Passage B's stance toward academic critics but is not specifically stated by Passage A.",
+            "E": "E attributes a specific claim about ritual and excellence that only Passage A develops."
+          },
+          "tags": ["comparative", "shared_views", "inference"]
+        }
+      ]
+    }
+  ]
+}
