@@ -5,7 +5,7 @@
       "type": "single",
       "passage_title": "The Doctrine of Indigenous Title in Common Law",
       "topic": "indigenous_rights_law",
-      "passage_text": "The recognition of indigenous land rights within common law systems represents one of the more remarkable developments in twentieth-century jurisprudence. For most of the history of English-derived law, courts proceeded on the assumption that colonized lands were either legally empty prior to European arrival or that any pre-existing legal claims were extinguished upon formal annexation. This doctrine, sometimes called the doctrine of terra nullius — literally, 'nobody's land' — was formally repudiated by the High Court of Australia in its landmark 1992 Mabo decision, which held that indigenous Australians had possessed a form of native title that survived colonization wherever it had not been specifically extinguished by government action.\n\nThe Mabo decision's theoretical foundation rested on the principle that the common law, as a living body of doctrine, should recognize and adapt to the facts of indigenous occupation that preceded European settlement. The court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction — the fiction that Australia was truly empty when colonists arrived. Subsequent decisions in Canada, New Zealand, and the United States developed parallel doctrines, though with significant variation in how indigenous title is defined, what must be proven to establish it, and what rights flow from its recognition.\n\nCritical to all these doctrines is the question of continuity. Indigenous groups claiming traditional land rights typically must demonstrate continuous occupation or use of the claimed territory since the time of colonization. Courts have interpreted this requirement with varying degrees of strictness: some have required physical, uninterrupted presence; others have accepted evidence of seasonal use, spiritual connection, or the maintenance of traditional governance structures over the land. The flexibility of the continuity requirement has been both a strength — allowing recognition of the diverse ways in which indigenous communities maintain connections to land — and a source of legal uncertainty.\n\nA separate and increasingly important question concerns the relationship between indigenous title and modern property rights. When land subject to unextinguished indigenous title has been transferred to private owners in the centuries since colonization, courts have faced difficult questions about reconciling competing claims. Some jurisdictions have prioritized the property rights of current owners, holding that even unextinguished indigenous title cannot override valid grants of private title. Others have recognized indigenous title as capable of burdening privately held land, creating a form of co-existing rights that may entitle indigenous groups to consultation, compensation, or shared management of the land's resources. The debate between these approaches remains one of the most actively contested areas of property law in common law jurisdictions.",
+      "passage_text": "The recognition of indigenous land rights within common law systems represents one of the more remarkable developments in twentieth-century jurisprudence. For most of the history of English-derived law, courts proceeded on the assumption that colonized lands were either legally empty prior to European arrival or that any pre-existing legal claims were extinguished upon formal annexation. This doctrine, sometimes called the doctrine of terra nullius \u2014 literally, 'nobody's land' \u2014 was formally repudiated by the High Court of Australia in its landmark 1992 Mabo decision, which held that indigenous Australians had possessed a form of native title that survived colonization wherever it had not been specifically extinguished by government action.\n\nThe Mabo decision's theoretical foundation rested on the principle that the common law, as a living body of doctrine, should recognize and adapt to the facts of indigenous occupation that preceded European settlement. The court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction \u2014 the fiction that Australia was truly empty when colonists arrived. Subsequent decisions in Canada, New Zealand, and the United States developed parallel doctrines, though with significant variation in how indigenous title is defined, what must be proven to establish it, and what rights flow from its recognition.\n\nCritical to all these doctrines is the question of continuity. Indigenous groups claiming traditional land rights typically must demonstrate continuous occupation or use of the claimed territory since the time of colonization. Courts have interpreted this requirement with varying degrees of strictness: some have required physical, uninterrupted presence; others have accepted evidence of seasonal use, spiritual connection, or the maintenance of traditional governance structures over the land. The flexibility of the continuity requirement has been both a strength \u2014 allowing recognition of the diverse ways in which indigenous communities maintain connections to land \u2014 and a source of legal uncertainty.\n\nA separate and increasingly important question concerns the relationship between indigenous title and modern property rights. When land subject to unextinguished indigenous title has been transferred to private owners in the centuries since colonization, courts have faced difficult questions about reconciling competing claims. Some jurisdictions have prioritized the property rights of current owners, holding that even unextinguished indigenous title cannot override valid grants of private title. Others have recognized indigenous title as capable of burdening privately held land, creating a form of co-existing rights that may entitle indigenous groups to consultation, compensation, or shared management of the land's resources. The debate between these approaches remains one of the most actively contested areas of property law in common law jurisdictions.",
       "questions": [
         {
           "id": "rc_001_q1",
@@ -23,13 +23,17 @@
           },
           "correct_answer": "B",
           "explanation": {
-            "correct": "B accurately captures the passage's main arc: it traces the development of indigenous title recognition in common law, describes the theoretical foundations, and notes the contested questions that remain — including the continuity requirement and the conflict with private property rights.",
+            "correct": "B accurately captures the passage's main arc: it traces the development of indigenous title recognition in common law, describes the theoretical foundations, and notes the contested questions that remain \u2014 including the continuity requirement and the conflict with private property rights.",
             "A": "A overstates the passage's claims. The passage does not say terra nullius has been abandoned by all common law jurisdictions, and it acknowledges significant variation across systems.",
-            "C": "C mischaracterizes the passage's treatment of continuity. The passage presents the continuity requirement neutrally, noting both its flexibility as a strength and as a source of uncertainty — not criticizing it as too strict.",
+            "C": "C mischaracterizes the passage's treatment of continuity. The passage presents the continuity requirement neutrally, noting both its flexibility as a strength and as a source of uncertainty \u2014 not criticizing it as too strict.",
             "D": "D introduces a statutory vs. common law distinction that the passage does not address.",
-            "E": "E overstates the passage's final claim. The passage presents the property rights conflict as 'one of the most actively contested areas' — not 'the most significant challenge' for common law generally."
+            "E": "E overstates the passage's final claim. The passage presents the property rights conflict as 'one of the most actively contested areas' \u2014 not 'the most significant challenge' for common law generally."
           },
-          "tags": ["main_point", "indigenous_rights", "common_law"]
+          "tags": [
+            "main_point",
+            "indigenous_rights",
+            "common_law"
+          ]
         },
         {
           "id": "rc_001_q2",
@@ -48,12 +52,16 @@
           "correct_answer": "C",
           "explanation": {
             "correct": "C is directly stated in the first paragraph: 'courts proceeded on the assumption that colonized lands were either legally empty prior to European arrival or that any pre-existing legal claims were extinguished upon formal annexation.'",
-            "A": "A describes the Mabo decision's holding, which was the repudiation of terra nullius — not the doctrine itself.",
+            "A": "A describes the Mabo decision's holding, which was the repudiation of terra nullius \u2014 not the doctrine itself.",
             "B": "B describes the theoretical principle underlying the Mabo court's reasoning.",
             "D": "D describes the continuity requirement discussed in the third paragraph.",
             "E": "E describes one of the approaches some jurisdictions have taken to reconciling indigenous title with private property, discussed in the fourth paragraph."
           },
-          "tags": ["detail", "terra_nullius", "legal_doctrine"]
+          "tags": [
+            "detail",
+            "terra_nullius",
+            "legal_doctrine"
+          ]
         },
         {
           "id": "rc_001_q3",
@@ -77,7 +85,11 @@
             "D": "D attributes a specific purpose to the continuity requirement that the passage never mentions.",
             "E": "E compares the relative likelihood of success under different types of evidence, a comparison the passage does not draw."
           },
-          "tags": ["inference", "continuity_requirement", "legal_uncertainty"]
+          "tags": [
+            "inference",
+            "continuity_requirement",
+            "legal_uncertainty"
+          ]
         },
         {
           "id": "rc_001_q4",
@@ -95,13 +107,17 @@
           },
           "correct_answer": "B",
           "explanation": {
-            "correct": "B is correct. The passage introduces terra nullius to establish the historical legal baseline — what courts assumed for most of common law history — so that the Mabo decision and subsequent developments can be understood as a significant departure from that baseline.",
+            "correct": "B is correct. The passage introduces terra nullius to establish the historical legal baseline \u2014 what courts assumed for most of common law history \u2014 so that the Mabo decision and subsequent developments can be understood as a significant departure from that baseline.",
             "A": "A attributes a moral judgment to the author that the passage does not make. The passage describes terra nullius in legal rather than moral terms.",
             "C": "C mischaracterizes the passage's argument. The passage does not claim that common law always contained principles favorable to indigenous rights; it describes the change as a development.",
             "D": "D attributes an explanatory purpose about Australia's priority that the passage does not address. The passage doesn't claim Australia was first because of terra nullius.",
             "E": "E introduces international law as a point of contrast, which the passage does not develop in this context."
           },
-          "tags": ["function", "historical_background", "passage_structure"]
+          "tags": [
+            "function",
+            "historical_background",
+            "passage_structure"
+          ]
         },
         {
           "id": "rc_001_q5",
@@ -119,13 +135,17 @@
           },
           "correct_answer": "B",
           "explanation": {
-            "correct": "B is correct. The passage traces the development of indigenous title doctrine, explains its theoretical foundations, describes the continuity requirement with both its strengths and weaknesses, and presents competing approaches to the property rights conflict — all without expressing a clear normative preference for any outcome.",
+            "correct": "B is correct. The passage traces the development of indigenous title doctrine, explains its theoretical foundations, describes the continuity requirement with both its strengths and weaknesses, and presents competing approaches to the property rights conflict \u2014 all without expressing a clear normative preference for any outcome.",
             "A": "A overstates the author's position. The author describes the developments without advocating for any particular scope of indigenous rights.",
             "C": "C attributes skepticism about judicial development that the passage does not express.",
-            "D": "D mischaracterizes the passage's treatment of continuity flexibility. The passage calls it both a strength and a source of uncertainty — not primarily harmful.",
+            "D": "D mischaracterizes the passage's treatment of continuity flexibility. The passage calls it both a strength and a source of uncertainty \u2014 not primarily harmful.",
             "E": "E overstates the author's tone. The description of Mabo is analytical, not celebratory."
           },
-          "tags": ["authors_attitude", "tone", "legal_scholarship"]
+          "tags": [
+            "authors_attitude",
+            "tone",
+            "legal_scholarship"
+          ]
         },
         {
           "id": "rc_001_q6",
@@ -143,13 +163,17 @@
           },
           "correct_answer": "C",
           "explanation": {
-            "correct": "C is directly supported. The passage states: 'the court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction — the fiction that Australia was truly empty when colonists arrived.'",
-            "A": "A contradicts the passage. The Mabo decision held that native title survived colonization 'wherever it had not been specifically extinguished by government action' — meaning it can be extinguished by government action.",
+            "correct": "C is directly supported. The passage states: 'the court held that to continue denying such recognition would place the law in a position of perpetuating a historical fiction \u2014 the fiction that Australia was truly empty when colonists arrived.'",
+            "A": "A contradicts the passage. The Mabo decision held that native title survived colonization 'wherever it had not been specifically extinguished by government action' \u2014 meaning it can be extinguished by government action.",
             "B": "B introduces a claim about pre-Mabo history that the passage does not support. The passage describes the general assumption (terra nullius) without mentioning ad hoc exceptions.",
             "D": "D contradicts the passage's framing of Mabo as a landmark development that subsequent decisions built upon.",
-            "E": "E mischaracterizes the holding. The decision recognized title where it had not been extinguished — not because extinguishment had never occurred in Australia."
+            "E": "E mischaracterizes the holding. The decision recognized title where it had not been extinguished \u2014 not because extinguishment had never occurred in Australia."
           },
-          "tags": ["inference", "mabo_decision", "australian_law"]
+          "tags": [
+            "inference",
+            "mabo_decision",
+            "australian_law"
+          ]
         }
       ]
     },
@@ -158,7 +182,7 @@
       "type": "single",
       "passage_title": "Complexity Theory and the Limits of Prediction",
       "topic": "science_complexity",
-      "passage_text": "Among the more humbling discoveries of twentieth-century science is the recognition that many natural systems are fundamentally unpredictable — not merely because our measuring instruments are imprecise, but because the systems themselves amplify tiny initial differences into dramatically different outcomes. This sensitivity to initial conditions, identified most famously in meteorological models, has been popularized as the 'butterfly effect': the idea that a butterfly flapping its wings in Brazil might, through a long chain of atmospheric interactions, influence whether a tornado forms in Texas weeks later.\n\nThe mathematical study of such systems, known as chaos theory, emerged from the work of meteorologist Edward Lorenz in the 1960s. Lorenz discovered that the equations governing weather patterns, when iterated forward in time, produced wildly divergent results from starting conditions that differed by as little as one part in a thousand. This was not a problem of computational error but of the equations themselves: small differences grow exponentially rather than linearly, rendering long-range prediction mathematically impossible, not merely practically difficult.\n\nCritical to understanding chaos theory is the distinction between determinism and predictability. Chaotic systems are deterministic in the strict sense: given perfect knowledge of a system's state at one moment, its future behavior is in principle fully determined by the laws governing it. The unpredictability arises not from any randomness in the system but from our inability to measure initial conditions with sufficient precision. Because tiny errors in measurement grow exponentially, even the most powerful conceivable computer could not predict the behavior of a chaotic system beyond a certain time horizon.\n\nChaotics theory has been fruitfully extended to biology, economics, and social systems, though with important caveats. Biological and social systems are not simply chaotic but typically occupy a regime that complexity theorists describe as the 'edge of chaos' — a state of dynamic tension between order and disorder. Such systems exhibit sufficient regularity to sustain organization and sufficient sensitivity to perturbation to allow adaptation and novelty. The immune system, for example, operates in precisely this regime: stable enough to mount reliable defenses against familiar pathogens, but sensitive enough to generate novel responses to previously unencountered threats. The appeal of complexity theory lies in its suggestion that this edge-of-chaos behavior is not accidental but reflects a kind of self-organization toward the conditions most conducive to complex, adaptive behavior.",
+      "passage_text": "Among the more humbling discoveries of twentieth-century science is the recognition that many natural systems are fundamentally unpredictable \u2014 not merely because our measuring instruments are imprecise, but because the systems themselves amplify tiny initial differences into dramatically different outcomes. This sensitivity to initial conditions, identified most famously in meteorological models, has been popularized as the 'butterfly effect': the idea that a butterfly flapping its wings in Brazil might, through a long chain of atmospheric interactions, influence whether a tornado forms in Texas weeks later.\n\nThe mathematical study of such systems, known as chaos theory, emerged from the work of meteorologist Edward Lorenz in the 1960s. Lorenz discovered that the equations governing weather patterns, when iterated forward in time, produced wildly divergent results from starting conditions that differed by as little as one part in a thousand. This was not a problem of computational error but of the equations themselves: small differences grow exponentially rather than linearly, rendering long-range prediction mathematically impossible, not merely practically difficult.\n\nCritical to understanding chaos theory is the distinction between determinism and predictability. Chaotic systems are deterministic in the strict sense: given perfect knowledge of a system's state at one moment, its future behavior is in principle fully determined by the laws governing it. The unpredictability arises not from any randomness in the system but from our inability to measure initial conditions with sufficient precision. Because tiny errors in measurement grow exponentially, even the most powerful conceivable computer could not predict the behavior of a chaotic system beyond a certain time horizon.\n\nChaotics theory has been fruitfully extended to biology, economics, and social systems, though with important caveats. Biological and social systems are not simply chaotic but typically occupy a regime that complexity theorists describe as the 'edge of chaos' \u2014 a state of dynamic tension between order and disorder. Such systems exhibit sufficient regularity to sustain organization and sufficient sensitivity to perturbation to allow adaptation and novelty. The immune system, for example, operates in precisely this regime: stable enough to mount reliable defenses against familiar pathogens, but sensitive enough to generate novel responses to previously unencountered threats. The appeal of complexity theory lies in its suggestion that this edge-of-chaos behavior is not accidental but reflects a kind of self-organization toward the conditions most conducive to complex, adaptive behavior.",
       "questions": [
         {
           "id": "rc_002_q1",
@@ -182,7 +206,11 @@
             "D": "D overstates the passage's argument. The passage presents edge-of-chaos as an extension of chaos theory, not as a replacement framework.",
             "E": "E introduces a contrast the passage does not draw. The passage applies similar concepts to both physical and biological systems."
           },
-          "tags": ["main_point", "complexity_theory", "chaos_theory"]
+          "tags": [
+            "main_point",
+            "complexity_theory",
+            "chaos_theory"
+          ]
         },
         {
           "id": "rc_002_q2",
@@ -206,7 +234,11 @@
             "D": "D partially reflects the butterfly effect concept but conflates the technical finding with the popularization of it.",
             "E": "E introduces a claim about computing power that the passage does not make. The passage says the unpredictability is mathematical, not a matter of computational limits."
           },
-          "tags": ["detail", "lorenz", "weather_equations"]
+          "tags": [
+            "detail",
+            "lorenz",
+            "weather_equations"
+          ]
         },
         {
           "id": "rc_002_q3",
@@ -224,13 +256,17 @@
           },
           "correct_answer": "B",
           "explanation": {
-            "correct": "B is correct. The author introduces the immune system as an example of a biological system that exemplifies edge-of-chaos behavior — stable enough for reliable defenses but sensitive enough for novel responses. This illustrates what it means to operate at the edge of chaos.",
+            "correct": "B is correct. The author introduces the immune system as an example of a biological system that exemplifies edge-of-chaos behavior \u2014 stable enough for reliable defenses but sensitive enough for novel responses. This illustrates what it means to operate at the edge of chaos.",
             "A": "A mischaracterizes the function. The immune system is presented as an example of edge-of-chaos behavior, not a counterexample.",
             "C": "C introduces a comparative claim about fields of biology that the passage does not make.",
             "D": "D contradicts the passage's argument that chaotic and complex systems resist precise prediction.",
             "E": "E introduces a contrast that the passage does not draw. The passage does not contrast the immune system with physical systems specifically."
           },
-          "tags": ["function", "immune_system", "edge_of_chaos"]
+          "tags": [
+            "function",
+            "immune_system",
+            "edge_of_chaos"
+          ]
         },
         {
           "id": "rc_002_q4",
@@ -248,13 +284,17 @@
           },
           "correct_answer": "C",
           "explanation": {
-            "correct": "C is supported. The passage states that edge-of-chaos systems are 'stable enough to sustain organization and sensitive enough to perturbation to allow adaptation and novelty,' and that the immune system is 'sensitive enough to generate novel responses to previously unencountered threats.' A system that is too orderly — insufficient sensitivity — would lack this adaptive capacity.",
+            "correct": "C is supported. The passage states that edge-of-chaos systems are 'stable enough to sustain organization and sensitive enough to perturbation to allow adaptation and novelty,' and that the immune system is 'sensitive enough to generate novel responses to previously unencountered threats.' A system that is too orderly \u2014 insufficient sensitivity \u2014 would lack this adaptive capacity.",
             "A": "A is supported by the passage's claim that chaotic systems are deterministic and that unpredictability arises from measurement precision. This is a valid inference from the third paragraph.",
             "B": "B is not supported. The passage does not claim complex adaptive systems are predictable over long time horizons; they are presented as an extension of chaos theory, not as an exception to its unpredictability.",
             "D": "D is supported by the passage's argument that the unpredictability is mathematical, not technological. However, C is a stronger inference about a specific practical implication the passage develops explicitly.",
             "E": "E introduces natural selection as a mechanism that the passage does not discuss. The passage presents self-organization as a property of complex systems without attributing it to evolutionary processes."
           },
-          "tags": ["inference", "edge_of_chaos", "adaptive_systems"]
+          "tags": [
+            "inference",
+            "edge_of_chaos",
+            "adaptive_systems"
+          ]
         }
       ]
     },
@@ -264,7 +304,7 @@
       "passage_title": "The Function of Spectator Sports",
       "topic": "aesthetics_sport",
       "passage_text_a": "In all games, particularly in athletic contests, the central importance of display and representation serves as a reminder of the ancient connections between play, ritual, and drama. The players not only compete; they enact a familiar ceremony that reaffirms common values. Ceremony requires witnesses: enthusiastic spectators conversant with the rules of the performance and its underlying meaning. Far from destroying the value of sports, as some cultural critics have argued, the attendance of spectators is often necessary to a sporting event.\n\nThe sports public remains more discriminating in its judgments than the audience for most contemporary art forms. In sports, excellence is relatively uncontroversial as a standard: the public for sports consists largely of people who played the sport in childhood and thus acquired a direct, participatory sense of what genuine excellence involves. By contrast, constant experimentation in the contemporary arts has created significant confusion about standards, such that the only surviving measure of excellence for many observers is novelty or shock value.",
-      "passage_text_b": "Hans Gumbrecht argues persuasively that many great moments in sport are beautiful in the full aesthetic sense of the word. Most contemporary academic analyses of sport as a cultural phenomenon tend to be socially patronizing — dismissive of sports fans as having fallen for a modern version of the old bread-and-circus treatment. Such critics find it difficult to admit that the fascination with sports can have respectable roots in the realm of aesthetic appeal.\n\nGumbrecht grounds his argument in Kant's account of the beautiful. The central paradox Kant identifies is that although something does not need to have a purpose in order to be beautiful, whatever we find beautiful looks as if it had a purpose. A well-executed double play in baseball or a perfectly timed tackle in football has no function outside the sport itself. And yet such actions give a distinct impression of purposiveness — they appear both carefully calibrated and perfectly natural. It is precisely this combination that constitutes, in Kant's terms, the beautiful.",
+      "passage_text_b": "Hans Gumbrecht argues persuasively that many great moments in sport are beautiful in the full aesthetic sense of the word. Most contemporary academic analyses of sport as a cultural phenomenon tend to be socially patronizing \u2014 dismissive of sports fans as having fallen for a modern version of the old bread-and-circus treatment. Such critics find it difficult to admit that the fascination with sports can have respectable roots in the realm of aesthetic appeal.\n\nGumbrecht grounds his argument in Kant's account of the beautiful. The central paradox Kant identifies is that although something does not need to have a purpose in order to be beautiful, whatever we find beautiful looks as if it had a purpose. A well-executed double play in baseball or a perfectly timed tackle in football has no function outside the sport itself. And yet such actions give a distinct impression of purposiveness \u2014 they appear both carefully calibrated and perfectly natural. It is precisely this combination that constitutes, in Kant's terms, the beautiful.",
       "questions": [
         {
           "id": "rc_003_q1",
@@ -288,7 +328,11 @@
             "D": "D overstates both passages. Neither specifically addresses the 'entertainment vs. aesthetic experience' framing in those terms.",
             "E": "E describes Passage B's use of Kant but not Passage A, which does not apply philosophical frameworks to explain appeal."
           },
-          "tags": ["comparative", "both_passages", "spectator_sports"]
+          "tags": [
+            "comparative",
+            "both_passages",
+            "spectator_sports"
+          ]
         },
         {
           "id": "rc_003_q2",
@@ -306,13 +350,17 @@
           },
           "correct_answer": "B",
           "explanation": {
-            "correct": "B is correct. Passage A argues that sports spectatorship requires knowledgeable audiences who have played the sport and can make discriminating judgments. This position directly supports the view that critics who dismiss sports fans are unjustified — because those fans possess exactly the kind of knowledge and discriminating capacity that makes their appreciation legitimate.",
+            "correct": "B is correct. Passage A argues that sports spectatorship requires knowledgeable audiences who have played the sport and can make discriminating judgments. This position directly supports the view that critics who dismiss sports fans are unjustified \u2014 because those fans possess exactly the kind of knowledge and discriminating capacity that makes their appreciation legitimate.",
             "A": "A contradicts Passage A's position. Passage A argues sports fans are more discriminating than arts audiences, not that they lack aesthetic sophistication.",
             "C": "C introduces a comparative claim about different types of critics that Passage A does not develop.",
             "D": "D introduces a specific claim about former athletes among critics that Passage A does not address.",
             "E": "E involves a meta-claim about methodological approaches that Passage A does not address."
           },
-          "tags": ["comparative", "author_response", "cross_passage_inference"]
+          "tags": [
+            "comparative",
+            "author_response",
+            "cross_passage_inference"
+          ]
         },
         {
           "id": "rc_003_q3",
@@ -330,13 +378,17 @@
           },
           "correct_answer": "D",
           "explanation": {
-            "correct": "D is discussed only in Passage A, which explicitly contrasts sports — where 'excellence is relatively uncontroversial as a standard' — with contemporary art, where experimentation has created confusion about standards. Passage B does not develop this contrast.",
-            "A": "A describes content from Passage B specifically — the application of Kant's framework. Passage A does not apply philosophical frameworks.",
-            "B": "B describes content from Passage A — 'the attendance of spectators is often necessary to a sporting event.' But it is also implicitly addressed in Passage B through the concept of witnessing beautiful athletic moments.",
-            "C": "C describes content from Passage B — Gumbrecht's critique of patronizing academic analysis. Passage A does not mention academic dismissiveness.",
-            "E": "E describes content from Passage A — the connections between play, ritual, and drama. Passage B does not address ritual functions."
+            "correct": "D is discussed only in Passage A, which explicitly contrasts sports \u2014 where 'excellence is relatively uncontroversial as a standard' \u2014 with contemporary art, where experimentation has created confusion about standards. Passage B does not develop this contrast.",
+            "A": "A describes content from Passage B specifically \u2014 the application of Kant's framework. Passage A does not apply philosophical frameworks.",
+            "B": "B describes content from Passage A \u2014 'the attendance of spectators is often necessary to a sporting event.' But it is also implicitly addressed in Passage B through the concept of witnessing beautiful athletic moments.",
+            "C": "C describes content from Passage B \u2014 Gumbrecht's critique of patronizing academic analysis. Passage A does not mention academic dismissiveness.",
+            "E": "E describes content from Passage A \u2014 the connections between play, ritual, and drama. Passage B does not address ritual functions."
           },
-          "tags": ["comparative", "passage_differences", "content_mapping"]
+          "tags": [
+            "comparative",
+            "passage_differences",
+            "content_mapping"
+          ]
         },
         {
           "id": "rc_003_q4",
@@ -360,7 +412,448 @@
             "D": "D describes Passage B's stance toward academic critics but is not specifically stated by Passage A.",
             "E": "E attributes a specific claim about ritual and excellence that only Passage A develops."
           },
-          "tags": ["comparative", "shared_views", "inference"]
+          "tags": [
+            "comparative",
+            "shared_views",
+            "inference"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rc_set_004",
+      "type": "single",
+      "passage_title": "The Nondelegation Doctrine and the Administrative State",
+      "topic": "law",
+      "passage_text": "The nondelegation doctrine holds that Congress may not transfer its core legislative powers to executive agencies without providing an intelligible principle to guide the agency's exercise of that authority. Rooted in Article I of the Constitution, which vests all legislative power in Congress, the doctrine was invoked by the Supreme Court only twice in its modern history \u2014 both times in 1935 \u2014 to strike down New Deal legislation as unconstitutionally vague delegations of authority. For the following eighty years, the Court permitted broad delegations, accepting minimal guidance as sufficient. Critics of this permissive approach argue that it has enabled the rise of an administrative state that operates with legislative scope but without democratic accountability.\n\nThe practical significance of this doctrinal retreat is difficult to overstate. Federal agencies now issue thousands of rules annually, many of which carry the force of law and affect more Americans more directly than most congressional statutes. Proponents of a revived nondelegation doctrine argue that forcing Congress to make major policy choices itself \u2014 rather than delegating that authority to agencies \u2014 would restore democratic legitimacy to the regulatory process. When an elected legislature decides, voters can hold specific members accountable; when an agency decides, accountability diffuses across bureaucratic layers.\n\nOpponents of revival counter that this vision misunderstands the modern regulatory environment. Congress cannot realistically make every technical determination required by complex regulatory regimes \u2014 in telecommunications, pharmaceuticals, environmental science, and financial markets. The intelligible principle requirement, they argue, should be understood as a flexible standard that adjusts to the complexity of the subject matter rather than a rigid demand for specificity. On this view, a mandate to regulate in the 'public interest' or to set 'reasonable' standards provides sufficient legislative direction when the alternative is legislative paralysis.\n\nA third position holds that the Court need not revive the nondelegation doctrine in its strong historical form to address the underlying concerns. Instead, courts could apply more demanding versions of existing doctrines \u2014 such as the major questions doctrine, which requires clear congressional authorization before an agency may resolve a question of vast economic or political significance. This approach targets the most consequential delegations while leaving routine agency rulemaking undisturbed. Advocates argue it threads the needle between democratic accountability and administrative competence.\n\nThe debate ultimately reflects a deeper tension in American constitutional design: the Constitution was written for a government of enumerated and separated powers, but the regulatory demands of an industrialized and technologically complex society have required institutional adaptations that strain the original architecture. Whether those adaptations can be reconciled with constitutional structure, or whether they require explicit constitutional revision, remains one of the central unresolved questions of American public law.",
+      "questions": [
+        {
+          "id": "rc_set_004_q1",
+          "question_type": "main_point",
+          "question_text": "Which of the following most accurately expresses the main point of the passage?",
+          "choices": {
+            "A": "The Supreme Court's two 1935 decisions striking down New Deal legislation under the nondelegation doctrine represent the high-water mark of judicial restraint on executive authority.",
+            "B": "The tension between constitutional structure and the practical demands of modern governance has produced an ongoing, unresolved debate about the proper limits of congressional delegation to federal agencies.",
+            "C": "The nondelegation doctrine should be revived in its strong historical form to restore democratic accountability to a regulatory state that has grown beyond constitutional bounds.",
+            "D": "The major questions doctrine provides a workable compromise between reviving the nondelegation doctrine and accepting unlimited delegation to executive agencies.",
+            "E": "Federal agencies have assumed legislative functions that the Constitution assigns to Congress, rendering most modern administrative regulation constitutionally suspect."
+          },
+          "correct_answer": "B",
+          "explanation": "B captures the passage's structure: it presents multiple competing positions on delegation without endorsing any, and concludes by framing the issue as a deep unresolved tension in constitutional design. A, C, D, and E each overstate a position the passage presents as merely one view among several."
+        },
+        {
+          "id": "rc_set_004_q2",
+          "question_type": "detail",
+          "question_text": "According to the passage, the Supreme Court invoked the nondelegation doctrine to strike down legislation",
+          "choices": {
+            "A": "throughout the New Deal era to limit executive power",
+            "B": "on two occasions, both in 1935",
+            "C": "whenever Congress failed to provide any guidance to an executive agency",
+            "D": "in response to the growth of federal agencies in the post-World War II period",
+            "E": "only in cases involving environmental and financial regulation"
+          },
+          "correct_answer": "B",
+          "explanation": "The passage explicitly states: 'the doctrine was invoked by the Supreme Court only twice in its modern history \u2014 both times in 1935.' A, D, and E are contradicted by or inconsistent with this claim. C misstates the doctrine's trigger."
+        },
+        {
+          "id": "rc_set_004_q3",
+          "question_type": "inference",
+          "question_text": "The author's description of opponents of nondelegation revival most strongly suggests that they believe which of the following?",
+          "choices": {
+            "A": "Democratic accountability is not an important value in regulatory governance.",
+            "B": "Federal agencies are inherently more trustworthy than elected legislatures on technical policy questions.",
+            "C": "The complexity of modern regulatory subject matter justifies a more flexible interpretation of constitutional delegation requirements.",
+            "D": "The intelligible principle requirement should be eliminated from constitutional doctrine entirely.",
+            "E": "Congressional authority over major policy questions should be transferred permanently to expert agencies."
+          },
+          "correct_answer": "C",
+          "explanation": "The passage says opponents argue the intelligible principle requirement 'should be understood as a flexible standard that adjusts to the complexity of the subject matter.' This directly supports C. A is too strong \u2014 opponents don't dismiss accountability, they argue flexibility is necessary. B, D, and E are not stated or implied."
+        },
+        {
+          "id": "rc_set_004_q4",
+          "question_type": "structure",
+          "question_text": "The passage's discussion of the major questions doctrine in the fourth paragraph primarily serves to",
+          "choices": {
+            "A": "argue that the major questions doctrine is the constitutionally correct resolution to the nondelegation debate",
+            "B": "introduce a middle-ground position that attempts to address accountability concerns without fully reviving the historical nondelegation doctrine",
+            "C": "demonstrate that the Supreme Court has already resolved the tension between delegation and democratic accountability",
+            "D": "provide an example of how existing doctrines have failed to restrain executive overreach",
+            "E": "criticize advocates of the nondelegation doctrine for overlooking available alternatives"
+          },
+          "correct_answer": "B",
+          "explanation": "The fourth paragraph presents the major questions doctrine as 'a third position' that 'threads the needle' between strong nondelegation and unchecked delegation. The passage doesn't advocate for it (ruling out A) or say the Court has resolved the issue (ruling out C)."
+        },
+        {
+          "id": "rc_set_004_q5",
+          "question_type": "author_purpose",
+          "question_text": "The primary purpose of the passage is to",
+          "choices": {
+            "A": "advocate for a specific judicial approach to the nondelegation problem",
+            "B": "trace the historical origins of the administrative state to a constitutional error",
+            "C": "survey competing positions on the constitutional limits of legislative delegation to executive agencies",
+            "D": "explain why the 1935 nondelegation decisions were incorrectly decided",
+            "E": "argue that constitutional revision is necessary to accommodate the modern regulatory state"
+          },
+          "correct_answer": "C",
+          "explanation": "The passage presents the doctrine's history and then surveys three distinct positions on how delegation should be treated \u2014 without endorsing any. C accurately captures this neutral, multi-perspective structure. A, B, D, and E each attribute advocacy or a particular thesis that the author doesn't express."
+        },
+        {
+          "id": "rc_set_004_q6",
+          "question_type": "vocab_in_context",
+          "question_text": "As used in the third paragraph, the word 'flexible' most nearly means",
+          "choices": {
+            "A": "susceptible to political influence",
+            "B": "capable of being waived by Congress",
+            "C": "adjustable based on circumstances rather than applied uniformly",
+            "D": "dependent on the preferences of individual agencies",
+            "E": "inconsistently applied across different regulatory domains"
+          },
+          "correct_answer": "C",
+          "explanation": "In context, 'flexible' describes a standard that 'adjusts to the complexity of the subject matter' \u2014 meaning it is applied differently based on circumstances. C captures this. A and D introduce political and discretionary elements not present. B and E mischaracterize the proposed flexibility."
+        }
+      ]
+    },
+    {
+      "id": "rc_set_005",
+      "type": "single",
+      "passage_title": "Prospect Theory and the Limits of Rational Choice",
+      "topic": "social_science",
+      "passage_text": "For much of the twentieth century, economists modeled human decision-making under uncertainty using expected utility theory, which assumes that rational agents evaluate outcomes by multiplying the value of each possible outcome by its probability. A rational agent, on this model, should prefer a certain gain of fifty dollars to a fifty percent chance of gaining one hundred dollars, since these have equivalent expected values, and the agent should make consistent choices across structurally identical decisions regardless of how those decisions are framed.\n\nThe empirical work of psychologists Daniel Kahneman and Amos Tversky, beginning in the 1970s, exposed systematic and predictable deviations from this model. Their prospect theory, first published in 1979, proposed an alternative account of decision-making under risk that incorporated several psychological realities the standard model ignored. First, people evaluate outcomes relative to a reference point \u2014 typically the status quo \u2014 rather than in terms of absolute levels of wealth or welfare. A gain of one hundred dollars feels meaningful to someone who starts with nothing but barely registers to a billionaire. Second, and more consequentially, losses loom larger than gains: the psychological impact of losing fifty dollars exceeds the satisfaction of gaining fifty dollars by a ratio Kahneman and Tversky estimated at approximately two to one. This asymmetry \u2014 which they called loss aversion \u2014 produces behavior that expected utility theory cannot accommodate.\n\nProspect theory also introduced the probability weighting function, which describes how people systematically distort probabilities in their minds. Small probabilities tend to be overweighted: people pay more than actuarial value for lottery tickets and insurance against remote catastrophes. Large probabilities, near certainty, tend to be underweighted: people prefer a certain gain to a slightly better expected value with some risk, even when the rational choice is to accept the risk. These distortions interact with loss aversion to produce the fourfold pattern of risk attitudes that Kahneman and Tversky documented \u2014 risk-averse for likely gains, risk-seeking for likely losses, risk-seeking for unlikely gains, and risk-averse for unlikely losses.\n\nThe policy implications of prospect theory are substantial. If people systematically overweight losses relative to gains, policy interventions framed as preventing losses will be more effective than equivalent interventions framed as producing gains, even when the material outcomes are identical. Public health campaigns warning of the costs of inaction routinely outperform campaigns emphasizing the benefits of action in experimental settings. Similarly, automatic enrollment with opt-out provisions for retirement savings plans exploits loss aversion \u2014 framing the default as something you would lose by opting out rather than something you must gain by opting in.\n\nCritics of behavioral economics argue that while prospect theory accurately describes laboratory behavior, its predictions are less reliable in markets where sophisticated agents, competitive pressures, and learning over time can discipline irrational tendencies. They also caution that paternalistic policies designed around documented cognitive biases may undermine individual autonomy even when they improve average outcomes. These critiques have not diminished the influence of behavioral economics, which has become one of the most productive fields of applied social science research in the twenty-first century.",
+      "questions": [
+        {
+          "id": "rc_set_005_q1",
+          "question_type": "main_point",
+          "question_text": "The passage is primarily concerned with",
+          "choices": {
+            "A": "explaining why expected utility theory remains the dominant model of decision-making despite its known limitations",
+            "B": "describing how Kahneman and Tversky's prospect theory departed from standard economic models and examining its implications",
+            "C": "arguing that behavioral economics should replace rational choice theory in all economic modeling",
+            "D": "evaluating the policy applications of loss aversion in public health and retirement planning",
+            "E": "demonstrating that human beings are fundamentally irrational and incapable of consistent decision-making"
+          },
+          "correct_answer": "B",
+          "explanation": "The passage describes expected utility theory, explains how prospect theory departed from it, and surveys the theory's implications and critics. B accurately captures this full arc. A mischaracterizes the passage's stance (it doesn't defend expected utility theory). C, D, and E each overstate or narrow the focus."
+        },
+        {
+          "id": "rc_set_005_q2",
+          "question_type": "detail",
+          "question_text": "According to the passage, loss aversion refers to",
+          "choices": {
+            "A": "the tendency to avoid any decision that involves a possibility of loss",
+            "B": "the psychological impact of a loss being greater than the satisfaction derived from an equivalent gain",
+            "C": "the preference for certain outcomes over probabilistically equivalent uncertain outcomes",
+            "D": "the tendency to overweight small probabilities of catastrophic loss",
+            "E": "the inclination to frame outcomes in terms of losses rather than gains when making decisions"
+          },
+          "correct_answer": "B",
+          "explanation": "The passage defines loss aversion as 'the psychological impact of losing fifty dollars exceeds the satisfaction of gaining fifty dollars by a ratio... of approximately two to one.' B captures this asymmetry precisely. A confuses loss aversion with total risk aversion. C describes the certainty effect. D describes probability weighting for small probabilities."
+        },
+        {
+          "id": "rc_set_005_q3",
+          "question_type": "inference",
+          "question_text": "Based on the passage, which of the following would prospect theory predict about a person deciding whether to accept a gamble that offers a 90 percent chance of winning $100 and a 10 percent chance of losing $10?",
+          "choices": {
+            "A": "The person would definitely accept the gamble, since its expected value is strongly positive.",
+            "B": "The person would likely reject the gamble because the 10 percent chance of loss is overweighted relative to its actual probability.",
+            "C": "The person would likely accept the gamble because large probabilities of gains are underweighted, making the $100 gain feel less certain than it is.",
+            "D": "The person's decision cannot be predicted by prospect theory because the gamble involves both gain and loss.",
+            "E": "The person would be risk-averse with respect to the likely gain and would prefer a certain smaller amount, suggesting rejection."
+          },
+          "correct_answer": "E",
+          "explanation": "The passage states people are 'risk-averse for likely gains' \u2014 preferring a certain gain to a slightly better expected value with some risk. A 90% chance of $100 is a likely gain. Prospect theory predicts risk aversion, meaning the person would prefer a certain smaller amount. E captures this. A describes expected utility logic, not prospect theory. B misapplies the small-probability overweighting (10% loss here vs. the gain). C has the direction of underweighting wrong for this context."
+        },
+        {
+          "id": "rc_set_005_q4",
+          "question_type": "strengthen_weaken",
+          "question_text": "Which of the following, if true, would most strengthen the critics' position described in the final paragraph?",
+          "choices": {
+            "A": "Laboratory studies of prospect theory have been replicated successfully across many cultures and age groups.",
+            "B": "Professional traders who experience financial losses routinely make subsequent decisions consistent with loss aversion predictions.",
+            "C": "Experienced investors in competitive markets show significantly less loss aversion than novices, and this gap grows with years of experience.",
+            "D": "Retirement savings plans with automatic enrollment have substantially higher participation rates than opt-in plans.",
+            "E": "Public health campaigns framed as loss prevention are more effective at changing behavior than gain-framed campaigns in experimental settings."
+          },
+          "correct_answer": "C",
+          "explanation": "Critics argue that market competition, sophisticated agents, and learning over time can discipline irrational tendencies. C directly supports this: experienced investors show less loss aversion, and the effect grows with experience \u2014 consistent with markets disciplining away the bias. A and B support prospect theory. D and E support behavioral policy applications."
+        },
+        {
+          "id": "rc_set_005_q5",
+          "question_type": "structure",
+          "question_text": "The author mentions automatic enrollment in retirement savings plans primarily to",
+          "choices": {
+            "A": "argue that behavioral economics justifies paternalistic government intervention",
+            "B": "illustrate how an understanding of loss aversion has been applied in practical policy design",
+            "C": "provide evidence that loss aversion is a real and measurable psychological phenomenon",
+            "D": "contrast effective retirement policy with ineffective public health messaging",
+            "E": "demonstrate that behavioral economics has resolved the tension between autonomy and improved outcomes"
+          },
+          "correct_answer": "B",
+          "explanation": "The retirement savings example appears in the passage's discussion of policy implications of loss aversion. It illustrates, concretely, how knowledge of the bias has been operationalized in policy design (default enrollment with opt-out). B captures this function. A goes further than the passage (the author presents the paternalism critique neutrally). C, D, and E mischaracterize the example's role."
+        }
+      ]
+    },
+    {
+      "id": "rc_set_006",
+      "type": "single",
+      "passage_title": "Lichen and the Boundaries of Biological Individuality",
+      "topic": "science",
+      "passage_text": "The category of the individual organism is one biology has long taken for granted. A dog is one individual; a fern is another. But the study of lichens \u2014 composite organisms formed from the symbiotic association of fungi and photosynthetic partners, typically algae or cyanobacteria \u2014 has persistently challenged this assumption, and recent genomic research has deepened the challenge considerably.\n\nFor most of the history of biology, lichens were classified as a single species, understood as a partnership between one fungal species and one photosynthetic partner. The fungal component, called the mycobiont, provides structural support and access to minerals from rock or bark surfaces; the photosynthetic partner, the photobiont, converts sunlight to energy that both partners use. This division of metabolic labor produces an organism capable of surviving in environments \u2014 Arctic tundra, volcanic rock faces, Antarctic glaciers \u2014 that neither partner could tolerate alone. The classification of lichens as a species-level unit was pragmatically convenient, if philosophically uneasy.\n\nIn 2016, a team of researchers studying the macrolichen genus Bryoria overturned the longstanding two-partner model. Using genomic sequencing, they discovered that a third partner \u2014 basidiomycete yeast \u2014 was consistently present in cortical tissue across multiple continents and had been overlooked by classical morphological methods. Subsequent studies confirmed that many lichens host not one but multiple fungal species, along with complex bacterial communities, challenging the foundational description of lichens as dual organisms.\n\nThese findings have renewed philosophical debates about biological individuality. If a lichen is understood not as a two-partner symbiosis but as a multi-species consortium with a shared metabolic identity, then the traditional boundaries of 'the organism' become difficult to draw. Some philosophers of biology have proposed abandoning organism-level individuality as a fundamental biological category in favor of concepts like 'holobionts' \u2014 ecological units defined by stable, heritable symbiotic associations rather than by genetic homogeneity. On this view, the relevant biological individual is not the genetically uniform entity but the functional and ecological unit, however compositionally complex.\n\nOpponents of this proposal argue that dissolving the organism concept risks losing explanatory precision. The concept of an individual organism does important work in evolutionary biology \u2014 natural selection, fitness, and reproduction are all typically defined relative to individuals. If the boundaries of the individual are made fluid or contextual, these central concepts of evolutionary theory become correspondingly less tractable. Critics maintain that the lichen's compositional complexity is better accommodated by enriching the concept of symbiosis than by abandoning organism-level individuality.\n\nThe debate is not merely taxonomic. How biologists draw the boundaries of biological individuals has consequences for how they model evolution, disease, and ecology. The human gut microbiome, for instance, contains trillions of microbial cells whose collective metabolism affects immune function, neurological health, and drug efficacy. If humans are more accurately described as holobionts than as individuals, the implications for medical research methodology \u2014 which typically treats the human body as the unit of intervention \u2014 could be profound.",
+      "questions": [
+        {
+          "id": "rc_set_006_q1",
+          "question_type": "main_point",
+          "question_text": "The central concern of the passage is",
+          "choices": {
+            "A": "to explain why the two-partner model of lichen biology was accepted for so long despite its inadequacy",
+            "B": "to describe recent discoveries about lichen composition and their implications for the concept of biological individuality",
+            "C": "to advocate for adopting the holobiont concept as the primary unit of biological analysis",
+            "D": "to demonstrate that genomic sequencing has made classical morphological classification methods obsolete",
+            "E": "to resolve the philosophical debate about whether lichens should be classified as single or multiple organisms"
+          },
+          "correct_answer": "B",
+          "explanation": "The passage describes the discovery of a third partner in lichens and then explores how this challenges the organism concept, presenting multiple philosophical positions without resolving the debate. B accurately captures this scope. C attributes advocacy the passage doesn't express. A, D, and E each focus on a subset of the passage's concerns."
+        },
+        {
+          "id": "rc_set_006_q2",
+          "question_type": "detail",
+          "question_text": "According to the passage, the 2016 Bryoria study was significant because it",
+          "choices": {
+            "A": "confirmed that lichens could survive in extreme environments neither fungal nor photosynthetic partners could tolerate alone",
+            "B": "established that basidiomycete yeast was the primary metabolic contributor to lichen function",
+            "C": "used genomic sequencing to reveal a previously undetected third partner in lichen associations",
+            "D": "demonstrated that the concept of biological individuality is incompatible with symbiotic organisms",
+            "E": "overturned the classification of Bryoria as a lichen species by showing it was actually multiple organisms"
+          },
+          "correct_answer": "C",
+          "explanation": "The passage says researchers 'discovered that a third partner \u2014 basidiomycete yeast \u2014 was consistently present in cortical tissue across multiple continents and had been overlooked by classical morphological methods.' C accurately represents this finding. A describes a previously known property of lichens. B overstates the yeast's role. D and E go beyond what the study is said to have demonstrated."
+        },
+        {
+          "id": "rc_set_006_q3",
+          "question_type": "inference",
+          "question_text": "The passage most strongly suggests that proponents of the holobiont concept would agree with which of the following?",
+          "choices": {
+            "A": "Natural selection cannot operate on entities that are not genetically homogeneous.",
+            "B": "The relevant unit of biological organization should be defined by functional and ecological relationships rather than genetic identity.",
+            "C": "The distinction between host organism and symbiotic partner is scientifically arbitrary and should be abandoned.",
+            "D": "Lichens are not properly classified as organisms under any reasonable definition of that term.",
+            "E": "Evolutionary biology requires a new mathematical framework to accommodate multi-species entities."
+          },
+          "correct_answer": "B",
+          "explanation": "The passage defines holobiont advocates as proposing 'ecological units defined by stable, heritable symbiotic associations rather than by genetic homogeneity.' B directly restates this: function and ecology over genetics. A is a concern raised by critics, not holobiont proponents. C, D, and E go beyond what the passage attributes to these proponents."
+        },
+        {
+          "id": "rc_set_006_q4",
+          "question_type": "strengthen_weaken",
+          "question_text": "Which of the following, if true, would most weaken the position of those who oppose the holobiont concept?",
+          "choices": {
+            "A": "Evolutionary models that treat microbial communities as the unit of selection have successfully predicted antibiotic resistance patterns.",
+            "B": "The basidiomycete yeast discovered in Bryoria lichens is also found living independently outside lichen associations.",
+            "C": "Most of the classical morphological features used to classify lichens remain valid predictors of genetic identity.",
+            "D": "Natural selection has been shown to operate on genetically homogeneous populations more efficiently than on mixed consortia.",
+            "E": "The gut microbiome varies significantly between individuals, making it an unreliable unit for medical intervention."
+          },
+          "correct_answer": "A",
+          "explanation": "Critics argue that dissolving the organism concept makes evolutionary concepts like fitness and natural selection less tractable. A directly challenges this: if models treating communities as the unit of selection successfully predict real outcomes, the critics' concern about explanatory precision is undermined. B, C, D, and E don't address the critics' core concern about evolutionary tractability."
+        },
+        {
+          "id": "rc_set_006_q5",
+          "question_type": "author_purpose",
+          "question_text": "The author mentions the human gut microbiome in the final paragraph primarily in order to",
+          "choices": {
+            "A": "argue that humans should be reclassified as holobionts for medical purposes",
+            "B": "provide evidence that the holobiont concept has already been accepted in medical research",
+            "C": "illustrate that the philosophical debate about biological individuality has potential practical consequences beyond lichen biology",
+            "D": "demonstrate that the challenges posed by lichen research have direct analogues in human medicine",
+            "E": "suggest that the boundaries between the individual organism and its microbial community are clearer in humans than in lichens"
+          },
+          "correct_answer": "C",
+          "explanation": "The final paragraph extends the lichen debate to human health, explicitly noting that 'how biologists draw the boundaries of biological individuals has consequences for how they model evolution, disease, and ecology.' C accurately captures the paragraph's function: expanding the stakes of the philosophical debate. A goes further than the passage. B is incorrect \u2014 the passage says the implications 'could be profound,' not that holobiont thinking has been adopted. D is similar to C but less precise about the purpose."
+        },
+        {
+          "id": "rc_set_006_q6",
+          "question_type": "vocab_in_context",
+          "question_text": "As used in the fourth paragraph, the word 'tractable' most nearly means",
+          "choices": {
+            "A": "mathematically precise",
+            "B": "easily taught to students",
+            "C": "capable of being handled or worked with effectively",
+            "D": "consistent with empirical evidence",
+            "E": "applicable across different biological domains"
+          },
+          "correct_answer": "C",
+          "explanation": "In context, critics argue that fluid boundaries make evolutionary concepts 'less tractable' \u2014 meaning harder to work with or apply rigorously. C captures this meaning: capable of being effectively used or managed. A, B, D, and E each miss the core sense of the word in this scientific-philosophical context."
+        }
+      ]
+    },
+    {
+      "id": "rc_set_007",
+      "type": "single",
+      "passage_title": "Rhythm, Counterpoint, and the Tonal System in Western Music",
+      "topic": "humanities",
+      "passage_text": "Western tonal music \u2014 the system that governed European and European-derived musical composition from roughly 1600 to 1900 \u2014 rests on a small set of structuring principles whose interactions generate enormous variety. The two most fundamental are the tonal hierarchy and voice-leading conventions. The tonal hierarchy organizes pitches around a central tone, the tonic, to which all other pitches are understood to be related in a graduated spectrum of tension and resolution. A chord built on the fifth scale degree \u2014 the dominant \u2014 creates strong harmonic tension that the listener experiences as demanding resolution back to the tonic. This expectation and its fulfillment, or strategic denial, constitutes the primary dynamic of tonal composition.\n\nVoice-leading conventions govern how individual melodic lines \u2014 voices \u2014 move through time. In counterpoint, the discipline that specifies these rules most rigorously, multiple independent voices must each maintain melodic logic while simultaneously forming harmonically acceptable vertical combinations at each rhythmic moment. Contrary motion \u2014 voices moving in opposite directions \u2014 is preferred over parallel motion because it preserves each voice's independence. Certain intervals between simultaneous voices, particularly parallel perfect fifths and octaves, were prohibited in strict counterpoint because they cause voices to fuse perceptually, destroying the independence that counterpoint values.\n\nRhythm interacts with harmony to create musical syntax. In tonal music, the metrical hierarchy \u2014 the organization of beats into strong and weak positions \u2014 creates expectations about where harmonic changes should occur. Composers manipulate these expectations deliberately: a chord arriving on an unexpected beat creates accent and energy; resolution that arrives one beat late after the expected moment creates a suspension, one of the most expressive devices in the tonal vocabulary. The interplay between metrical expectation and harmonic arrival gives tonal music much of its sense of directed motion.\n\nThe development of functional harmony in the seventeenth century introduced a fourth element: the circle of fifths, which describes the relationships among all twelve major and minor keys. Keys adjacent on the circle share six of their seven pitches and are experienced as closely related; keys at opposite ends of the circle share few pitches and sound maximally remote. Tonal composers used these relationships to structure large-scale harmonic journeys \u2014 departing from the home key, moving through related and then remote territory, and returning home transformed. This macrostructure gave multi-movement and extended single-movement works their sense of large-scale narrative shape.\n\nThe dissolution of the tonal system in the late nineteenth and early twentieth centuries was not a sudden rupture but an accumulated overextension. Composers such as Wagner and later Debussy stretched the system's capacity for sustaining tension without resolution, exploring chromatic harmonies that blurred the distinction between tonic and non-tonic. By the time Schoenberg and his circle abandoned tonality entirely in the early 1900s, the tonal system had been tested to the point where its structural expectations could no longer be reliably activated. The twelve-tone method that emerged from this crisis sought to construct a new form of large-scale organization from different premises, dispensing with hierarchical pitch relationships altogether.",
+      "questions": [
+        {
+          "id": "rc_set_007_q1",
+          "question_type": "main_point",
+          "question_text": "Which of the following most accurately states the main point of the passage?",
+          "choices": {
+            "A": "The tonal system in Western music was a historically contingent set of conventions that ultimately collapsed under its own internal contradictions.",
+            "B": "Western tonal music is structured by a set of interacting principles \u2014 tonal hierarchy, voice-leading, rhythmic syntax, and key relationships \u2014 that together create its characteristic expressiveness and large-scale form.",
+            "C": "Counterpoint is the most important discipline in Western music because it codifies the rules that govern how voices interact harmonically.",
+            "D": "The circle of fifths is the organizational framework that gave tonal composers the ability to create large-scale narrative structure in extended compositions.",
+            "E": "The abandonment of tonality in the early twentieth century was the inevitable result of composers' attempts to maximize expressive tension."
+          },
+          "correct_answer": "B",
+          "explanation": "The passage systematically describes four principles \u2014 tonal hierarchy, voice-leading, rhythmic syntax, and key relationships \u2014 and how they interact to produce the tonal system's expressive and formal properties. B captures this comprehensively. A focuses only on dissolution. C, D, and E each single out one element as primary, which misrepresents the passage's multi-factor account."
+        },
+        {
+          "id": "rc_set_007_q2",
+          "question_type": "detail",
+          "question_text": "According to the passage, parallel perfect fifths and octaves were prohibited in strict counterpoint because they",
+          "choices": {
+            "A": "create harmonic tension that cannot be resolved within the tonal system",
+            "B": "violate the principle of contrary motion by moving voices in the same direction",
+            "C": "cause voices to fuse perceptually, undermining the independence of individual voices",
+            "D": "produce vertical combinations that are incompatible with the tonal hierarchy",
+            "E": "conflict with the metrical hierarchy by creating unexpected accents"
+          },
+          "correct_answer": "C",
+          "explanation": "The passage directly states that parallel fifths and octaves 'cause voices to fuse perceptually, destroying the independence that counterpoint values.' C accurately reflects this. B is related but the passage identifies perceptual fusion, not directional motion, as the reason for the prohibition."
+        },
+        {
+          "id": "rc_set_007_q3",
+          "question_type": "inference",
+          "question_text": "Based on information in the passage, which of the following pairs of musical keys would be experienced by listeners as most closely related?",
+          "choices": {
+            "A": "Two keys that share no pitches",
+            "B": "Two keys that are positioned at opposite ends of the circle of fifths",
+            "C": "Two keys that share six of their seven pitches",
+            "D": "Two keys in which the tonic of one serves as the dominant of the other",
+            "E": "Two keys that use identical rhythmic and metrical conventions"
+          },
+          "correct_answer": "C",
+          "explanation": "The passage states that keys adjacent on the circle of fifths 'share six of their seven pitches and are experienced as closely related.' C directly paraphrases this. B describes keys that 'sound maximally remote.' D might describe adjacent keys incidentally, but C is the most direct paraphrase of the passage's criteria."
+        },
+        {
+          "id": "rc_set_007_q4",
+          "question_type": "structure",
+          "question_text": "The author discusses the suspension device in the third paragraph primarily to",
+          "choices": {
+            "A": "argue that rhythmic syntax is the most expressive element of the tonal system",
+            "B": "provide an example of how composers deliberately manipulate rhythmic and harmonic expectations for expressive effect",
+            "C": "illustrate the prohibition against certain vertical combinations in counterpoint",
+            "D": "demonstrate how the circle of fifths creates large-scale narrative structure",
+            "E": "explain why tonal music requires the listener to have prior knowledge of its conventions"
+          },
+          "correct_answer": "B",
+          "explanation": "The suspension is introduced as an example of composers 'deliberately' manipulating metrical expectations \u2014 specifically, resolution arriving one beat later than expected. This illustrates the broader point about how rhythmic-harmonic interplay creates directed motion. B correctly identifies this illustrative function. A overstates the claim about rhythm's primacy. C, D, and E don't match the paragraph's context."
+        },
+        {
+          "id": "rc_set_007_q5",
+          "question_type": "inference",
+          "question_text": "The passage most strongly suggests that the author would agree with which of the following statements about the dissolution of the tonal system?",
+          "choices": {
+            "A": "It was the result of a deliberate aesthetic decision by Schoenberg to break with European musical tradition.",
+            "B": "It reflected a sudden and radical break with the principles that had governed music for three centuries.",
+            "C": "It was the result of an incremental process in which the system's structural expectations were eroded over time.",
+            "D": "It was an inevitable consequence of the discovery of the circle of fifths and its structural implications.",
+            "E": "It was caused primarily by the influence of non-European musical traditions on Western composers."
+          },
+          "correct_answer": "C",
+          "explanation": "The passage explicitly says dissolution was 'not a sudden rupture but an accumulated overextension' \u2014 composers stretched the system gradually until its expectations 'could no longer be reliably activated.' C accurately represents this gradualist account. B is directly contradicted by the passage. A focuses on Schoenberg alone and mischaracterizes the process. D and E are not supported."
+        }
+      ]
+    },
+    {
+      "id": "rc_set_008",
+      "type": "comparative",
+      "passage_title": "Wilderness and the Human Presence: Two Views",
+      "topic": "environmental_humanities",
+      "passage_text": "PASSAGE A\n\nThe American concept of wilderness has always been, at its core, a cultural artifact rather than a description of ecological reality. The landscapes that European settlers and their descendants designated as wilderness were not uninhabited terra nullius but home to Indigenous peoples who had actively managed, burned, hunted, and cultivated them for thousands of years. What Europeans encountered and named wilderness was, in many cases, a human-modified landscape whose order was simply unfamiliar. The Wilderness Act of 1964, which defined wilderness as land 'where the earth and its community of life are untrammeled by man, where man himself is a visitor who does not remain,' embedded this misperception in law.\n\nThis definition has had real consequences. Federal wilderness designations have historically excluded Indigenous communities from lands their ancestors tended, treating traditional ecological management as incompatible with wilderness status. The irony is that many of the ecological qualities that make these areas valuable \u2014 biodiversity, habitat structure, fire resilience \u2014 were actively maintained by Indigenous land stewardship over centuries. Wilderness preservation, when premised on the myth of pre-human pristine nature, can thus undermine the very ecological conditions it seeks to protect.\n\nPASSAGE B\n\nCritics of the wilderness concept rightly observe that the Wilderness Act's language reflects a flawed ideal of untouched nature. But the critique should not be mistaken for a case against wilderness protection itself. Whatever the historical inaccuracies embedded in the concept, legally designated wilderness areas have provided genuine ecological benefits: they shelter biodiversity, limit habitat fragmentation, and provide refugia for species unable to persist in managed landscapes.\n\nThe question is not whether wilderness protection works \u2014 the evidence that it does is substantial \u2014 but whether the concept must be updated to better reflect the actual history of these landscapes and the legitimate interests of Indigenous communities. A revised conception of wilderness might acknowledge human presence and stewardship as compatible with wild character rather than antithetical to it. Several recent wilderness designations have included explicit recognition of traditional Indigenous land uses, and these provide a model for reconciling protection with justice. The goal should be not to abandon wilderness but to expand its definition.",
+      "questions": [
+        {
+          "id": "rc_set_008_q1",
+          "question_type": "main_point",
+          "question_text": "Which of the following best describes the relationship between Passage A and Passage B?",
+          "choices": {
+            "A": "Passage A argues that wilderness protection causes ecological harm; Passage B disagrees and defends wilderness designations as ecologically sound.",
+            "B": "Passage A argues that wilderness is a culturally constructed concept with harmful legal consequences; Passage B agrees with the critique but argues for reforming rather than abandoning wilderness protection.",
+            "C": "Passage A provides a historical account of how wilderness areas were formed; Passage B evaluates the ecological consequences of the Wilderness Act.",
+            "D": "Both passages agree that the Wilderness Act's definition of wilderness should be repealed and replaced with a new legal framework.",
+            "E": "Passage A argues that Indigenous land management is superior to federal wilderness protection; Passage B argues that both approaches have merit."
+          },
+          "correct_answer": "B",
+          "explanation": "Passage A argues the wilderness concept is a cultural artifact that has had harmful consequences for Indigenous communities. Passage B agrees ('rightly observes') with the critique but argues the answer is reform, not abandonment. B captures this agreement-with-divergence structure. A mischaracterizes Passage A's claim (it critiques the concept, not wilderness protection's ecology). C, D, and E all misrepresent one or both passages."
+        },
+        {
+          "id": "rc_set_008_q2",
+          "question_type": "detail",
+          "question_text": "Both passages agree that the Wilderness Act of 1964",
+          "choices": {
+            "A": "has been effective at protecting biodiversity and limiting habitat fragmentation",
+            "B": "should be repealed and replaced with a more ecologically sound framework",
+            "C": "reflects a flawed or inaccurate understanding of the lands it was designed to protect",
+            "D": "was written without knowledge of Indigenous land management practices",
+            "E": "has been applied consistently with its original intent by federal land managers"
+          },
+          "correct_answer": "C",
+          "explanation": "Passage A argues the Act embedded the 'misperception' of pre-human pristine wilderness in law. Passage B concedes the Act's language 'reflects a flawed ideal of untouched nature.' Both agree the Act was based on a mistaken view of these lands. A is from Passage B only. B is the conclusion neither passage reaches. D and E are not stated in either passage."
+        },
+        {
+          "id": "rc_set_008_q3",
+          "question_type": "inference",
+          "question_text": "The author of Passage A would most likely respond to the final sentence of Passage B ('The goal should be not to abandon wilderness but to expand its definition') by",
+          "choices": {
+            "A": "agreeing enthusiastically, since Passage A's argument implies the same conclusion",
+            "B": "expressing concern that expanding the definition would be insufficient without also restoring Indigenous land management authority",
+            "C": "arguing that definitional expansion is impossible given the Wilderness Act's statutory language",
+            "D": "contending that the argument misunderstands the ecological function of wilderness designations",
+            "E": "disputing the factual claim that recent wilderness designations have incorporated Indigenous land uses"
+          },
+          "correct_answer": "B",
+          "explanation": "Passage A emphasizes that wilderness designation has 'historically excluded Indigenous communities from lands their ancestors tended' and that traditional stewardship maintained ecological values. The logical extension of this argument is that definitional expansion alone \u2014 without restoring actual management authority \u2014 addresses the symptom (labeling) but not the cause (exclusion). B captures this likely response. A is too enthusiastic \u2014 Passage A doesn't endorse expansion. C, D, and E don't follow from Passage A's argument."
+        },
+        {
+          "id": "rc_set_008_q4",
+          "question_type": "structure",
+          "question_text": "Passage B uses the phrase 'whatever the historical inaccuracies embedded in the concept' primarily to",
+          "choices": {
+            "A": "minimize the importance of the critique offered in Passage A",
+            "B": "acknowledge the validity of the historical critique while shifting focus to the ecological merits of wilderness protection",
+            "C": "argue that historical accuracy is irrelevant to evaluating environmental policy",
+            "D": "concede that the Wilderness Act should be repealed due to its historical flaws",
+            "E": "suggest that ecological evidence should always take precedence over historical and cultural arguments"
+          },
+          "correct_answer": "B",
+          "explanation": "The phrase functions as a concessive move \u2014 the author of Passage B grants the historical critique without dwelling on it and then pivots to the ecological case for wilderness. B captures this rhetorical function. A is incorrect \u2014 the phrase concedes the critique rather than minimizing it. C, D, and E overstate or mischaracterize the passage's position."
+        },
+        {
+          "id": "rc_set_008_q5",
+          "question_type": "inference",
+          "question_text": "Both passages would most likely agree with which of the following statements?",
+          "choices": {
+            "A": "The ecological benefits of wilderness designations have been exaggerated by conservation advocates.",
+            "B": "Indigenous land management practices are ecologically superior to all other approaches to land stewardship.",
+            "C": "The current legal definition of wilderness does not adequately account for the history of human habitation and management of these landscapes.",
+            "D": "Wilderness protection and Indigenous sovereignty are fundamentally incompatible goals.",
+            "E": "Federal wilderness designations should be eliminated in favor of Indigenous-managed lands."
+          },
+          "correct_answer": "C",
+          "explanation": "Both passages agree the wilderness concept (and the Act's definition) misrepresents the actual history of these lands as human-influenced rather than pristine. Passage A states this directly; Passage B concedes it. C accurately captures this shared view. A is not stated in either passage. B is implied by Passage A but not explicitly stated by either. D is Passage A's implicit critique but Passage B explicitly rejects this as the conclusion. E is not the conclusion of either passage."
+        },
+        {
+          "id": "rc_set_008_q6",
+          "question_type": "author_purpose",
+          "question_text": "The primary purpose of Passage A is to",
+          "choices": {
+            "A": "propose a specific legislative alternative to the Wilderness Act of 1964",
+            "B": "argue that wilderness designation in the United States has harmed both Indigenous communities and ecological outcomes by relying on a false premise",
+            "C": "provide a historical account of how Indigenous peoples managed the lands that were later designated as wilderness",
+            "D": "demonstrate that the ecological benefits of wilderness designations are minimal",
+            "E": "call for the repeal of the Wilderness Act and the return of federal lands to Indigenous stewardship"
+          },
+          "correct_answer": "B",
+          "explanation": "Passage A argues that the concept of wilderness rests on a historical misperception (pristine, pre-human nature), that this misperception was embedded in the Wilderness Act, and that it has harmed Indigenous communities and may undermine ecological goals by excluding the stewardship that maintained ecological value. B captures both dimensions of the argument. A and E go beyond what Passage A proposes. C and D focus on elements that appear in the passage but don't capture the full purpose."
         }
       ]
     }
