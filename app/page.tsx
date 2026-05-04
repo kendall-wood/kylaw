@@ -58,7 +58,14 @@ export default function HomePage() {
         <div style={{ position: "absolute", top: -100, right: -80, width: 500, height: 500, background: "radial-gradient(circle, rgba(27,79,216,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
 
         <div style={{ position: "relative", maxWidth: 680 }}>
-          <div className="fade-in" style={{
+          <div className="fade-in" style={{ marginBottom: 32 }}>
+            <span style={{
+              fontFamily: "var(--font-serif)", fontSize: 32, fontWeight: 400,
+              color: "var(--color-accent)", letterSpacing: "-0.01em",
+            }}>KyLaw</span>
+          </div>
+
+          <div className="fade-in delay-1" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             background: "var(--color-accent-light)", border: "1px solid rgba(27,79,216,0.18)",
             borderRadius: 100, padding: "5px 14px 5px 10px", marginBottom: 28,
