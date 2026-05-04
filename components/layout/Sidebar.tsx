@@ -1,252 +1,283 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import {
+  Home, FileText, BookOpen, BarChart2,
+  Layers, Zap, Shuffle, ChevronDown, LogIn, UserPlus,
+} from "lucide-react";
 
 const NAV = [
-  { href: "/", label: "Home", icon: "○", exact: true },
-  { href: "/test", label: "Practice", icon: "◻" },
+  { href: "/", label: "Home", icon: Home, exact: true },
+  { href: "/test", label: "Practice", icon: FileText },
   {
-    href: "/study", label: "Study", icon: "◈",
+    href: "/study", label: "Study", icon: BookOpen,
     children: [
-      { href: "/study/flashcards", label: "Flashcards" },
-      { href: "/study/drills", label: "Drills" },
-      { href: "/study/matching", label: "Matching" },
+      { href: "/study/flashcards", label: "Flashcards", icon: Layers },
+      { href: "/study/drills", label: "Drills", icon: Zap },
+      { href: "/study/matching", label: "Matching", icon: Shuffle },
     ],
   },
-  { href: "/dashboard", label: "Dashboard", icon: "◇" },
+  { href: "/dashboard", label: "Dashboard", icon: BarChart2 },
 ];
+
+const ICON_SIZE = 18;
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const [collapsed, setCollapsed] = useState(false);
-  const [studyOpen, setStudyOpen] = useState(pathname.startsWith("/study"));
+  const router = useRouter();
+  const [locked, setLocked] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [studyOpen, setStudyOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const open = locked || hovered;
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("kylaw_sidebar_collapsed");
-    if (saved === "true") setCollapsed(true);
-  }, []);
+    const savedLocked = localStorage.getItem("kylaw_sidebar_locked") === "true";
+    setLocked(savedLocked);
+    // auto-open study submenu if on study page
+    if (pathname.startsWith("/study")) setStudyOpen(true);
+  }, [pathname]);
 
   useEffect(() => {
     if (!mounted) return;
-    localStorage.setItem("kylaw_sidebar_collapsed", String(collapsed));
+    localStorage.setItem("kylaw_sidebar_locked", String(locked));
     document.documentElement.style.setProperty(
-      "--sidebar-current-width",
-      collapsed ? "60px" : "224px"
+      "--sidebar-current-width", locked ? "224px" : "60px"
     );
-  }, [collapsed, mounted]);
+  }, [locked, mounted]);
 
   useEffect(() => {
     document.documentElement.style.setProperty(
-      "--sidebar-current-width",
-      collapsed ? "60px" : "224px"
+      "--sidebar-current-width", "60px"
     );
   }, []);
 
-  const isActive = (href: string, exact?: boolean) =>
-    exact ? pathname === href : pathname.startsWith(href);
+  const handleMouseEnter = () => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    setHovered(true);
+  };
 
-  const W = collapsed ? "60px" : "224px";
+  const handleMouseLeave = () => {
+    hoverTimer.current = setTimeout(() => setHovered(false), 120);
+  };
+
+  const isActive = (href: string, exact?: boolean) =>
+    exact ? pathname === href : pathname === href || pathname.startsWith(href + "/");
+
+  const W = open ? "224px" : "60px";
 
   return (
-    <aside className={collapsed ? "sidebar-collapsed" : ""} style={{
-      position: "fixed",
-      top: 0, left: 0, bottom: 0,
-      width: W,
-      background: "#fff",
-      borderRight: "1px solid var(--color-border)",
-      display: "flex",
-      flexDirection: "column",
-      zIndex: 50,
-      fontFamily: "var(--font-sans)",
-      transition: "width 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
-      overflow: "hidden",
-    }}>
-
-      {/* Brand + toggle */}
+    <aside
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        position: "fixed",
+        top: 0, left: 0, bottom: 0,
+        width: W,
+        background: "#fff",
+        borderRight: "1px solid #EAEEF4",
+        display: "flex",
+        flexDirection: "column",
+        zIndex: 50,
+        fontFamily: "var(--font-sans)",
+        transition: "width 0.22s cubic-bezier(0.4,0,0.2,1)",
+        overflow: "hidden",
+        boxShadow: open ? "4px 0 24px rgba(0,0,0,0.05)" : "none",
+      }}
+    >
+      {/* Brand */}
       <div style={{
-        padding: collapsed ? "20px 0" : "24px 20px 16px",
+        height: "60px",
         display: "flex",
         alignItems: "center",
-        justifyContent: collapsed ? "center" : "space-between",
-        minHeight: "64px",
-        borderBottom: "1px solid var(--color-border)",
+        justifyContent: open ? "space-between" : "center",
+        padding: open ? "0 16px 0 18px" : "0",
+        borderBottom: "1px solid #EAEEF4",
+        flexShrink: 0,
       }}>
-        {!collapsed && (
-          <Link href="/" style={{ textDecoration: "none" }}>
-            <div>
-              <span style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "22px",
-                fontWeight: "400",
-                color: "var(--color-accent)",
-                letterSpacing: "-0.01em",
-                display: "block",
-                lineHeight: 1,
-              }}>KyLaw</span>
-              <span style={{ fontSize: "10px", color: "var(--color-text-muted)", letterSpacing: "0.12em", textTransform: "uppercase" }}>
-                LSAT 2026
-              </span>
-            </div>
+        {open && (
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "baseline", gap: "6px" }}>
+            <span style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "20px",
+              fontWeight: "400",
+              color: "#1B4FD8",
+              letterSpacing: "-0.01em",
+              whiteSpace: "nowrap",
+            }}>KyLaw</span>
+            <span style={{ fontSize: "10px", color: "#9BA8BB", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              LSAT
+            </span>
           </Link>
         )}
-        <button
-          onClick={() => setCollapsed((c) => !c)}
-          title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-          style={{
-            background: "var(--color-surface)",
-            border: "1px solid var(--color-border)",
-            borderRadius: "8px",
-            width: "28px",
-            height: "28px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            color: "var(--color-text-muted)",
-            fontSize: "12px",
-            flexShrink: 0,
-            transition: "background var(--t), color var(--t)",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--color-accent-light)";
-            (e.currentTarget as HTMLElement).style.color = "var(--color-accent)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
-            (e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)";
-          }}
-        >
-          {collapsed ? "›" : "‹"}
-        </button>
+        {!open && (
+          <span style={{ fontFamily: "var(--font-serif)", fontSize: "16px", color: "#1B4FD8" }}>K</span>
+        )}
+        {open && (
+          <button
+            onClick={() => setLocked((l) => !l)}
+            title={locked ? "Auto-hide" : "Keep open"}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "#9BA8BB",
+              padding: "4px",
+              borderRadius: "6px",
+              display: "flex",
+              alignItems: "center",
+              transition: "color 0.15s, background 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#1B4FD8";
+              (e.currentTarget as HTMLElement).style.background = "#EBF0FF";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#9BA8BB";
+              (e.currentTarget as HTMLElement).style.background = "none";
+            }}
+          >
+            {locked
+              ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            }
+          </button>
+        )}
       </div>
 
-      {/* Nav */}
-      <nav style={{ flex: 1, padding: "12px 8px", display: "flex", flexDirection: "column", gap: "2px", overflowY: "auto", overflowX: "hidden" }}>
+      {/* Nav items */}
+      <nav style={{ flex: 1, padding: "10px 8px", overflowY: "auto", overflowX: "hidden" }}>
         {NAV.map((item) => {
           const active = isActive(item.href, item.exact);
-          const childActive = item.children?.some((c) => pathname.startsWith(c.href));
-          const highlighted = (active && !item.children) || childActive;
+          const childActive = item.children?.some((c) => isActive(c.href));
+          const highlighted = active && !item.children || childActive;
+          const Icon = item.icon;
 
           return (
-            <div key={item.href}>
-              {/* Main item */}
+            <div key={item.href} style={{ marginBottom: "2px" }}>
               <div
-                className="sidebar-tooltip"
-                data-tip={item.label}
+                title={!open ? item.label : undefined}
                 onClick={() => {
                   if (item.children) {
-                    if (!collapsed) setStudyOpen((o) => !o);
+                    if (!open) {
+                      setLocked(true);
+                      setStudyOpen(true);
+                    } else {
+                      setStudyOpen((o) => !o);
+                    }
+                  } else {
+                    router.push(item.href);
                   }
                 }}
-                style={{ position: "relative" }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  padding: open ? "9px 12px" : "9px 0",
+                  justifyContent: open ? "flex-start" : "center",
+                  borderRadius: "8px",
+                  background: highlighted ? "#EBF0FF" : "transparent",
+                  color: highlighted ? "#1B4FD8" : "#64748B",
+                  cursor: "pointer",
+                  transition: "background 0.15s, color 0.15s, box-shadow 0.15s",
+                  userSelect: "none",
+                }}
+                onMouseEnter={(e) => {
+                  if (!highlighted) {
+                    (e.currentTarget as HTMLElement).style.background = "#F5F7FA";
+                    (e.currentTarget as HTMLElement).style.color = "#1E293B";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 0 transparent";
+                  } else {
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(27,79,216,0.12)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!highlighted) {
+                    (e.currentTarget as HTMLElement).style.background = "transparent";
+                    (e.currentTarget as HTMLElement).style.color = "#64748B";
+                  }
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 0 transparent";
+                }}
               >
-                <Link
-                  href={item.children ? "#" : item.href}
-                  onClick={item.children ? (e) => e.preventDefault() : undefined}
-                  style={{ textDecoration: "none" }}
-                >
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    padding: collapsed ? "10px 0" : "9px 12px",
-                    justifyContent: collapsed ? "center" : "flex-start",
-                    borderRadius: "9px",
-                    background: highlighted
-                      ? "var(--color-accent-light)"
-                      : "transparent",
-                    color: highlighted ? "var(--color-accent)" : "var(--color-text-secondary)",
-                    cursor: "pointer",
-                    transition: "background var(--t), color var(--t), box-shadow var(--t)",
-                    position: "relative",
-                    boxShadow: highlighted ? "inset 3px 0 0 var(--color-accent)" : "none",
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!highlighted) {
-                      (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
-                      (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!highlighted) {
-                      (e.currentTarget as HTMLElement).style.background = "transparent";
-                      (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
-                    }
-                  }}
-                  >
-                    <span style={{ fontSize: "15px", flexShrink: 0, width: "20px", textAlign: "center" }}>
-                      {item.icon}
+                <Icon size={ICON_SIZE} strokeWidth={highlighted ? 2 : 1.6} style={{ flexShrink: 0 }} />
+                {open && (
+                  <>
+                    <span style={{
+                      fontSize: "14px",
+                      fontWeight: highlighted ? "600" : "400",
+                      flex: 1,
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                    }}>
+                      {item.label}
                     </span>
-                    {!collapsed && (
-                      <>
-                        <span style={{
-                          fontSize: "14px",
-                          fontWeight: highlighted ? "600" : "400",
-                          flex: 1,
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          transition: "opacity 0.15s",
-                        }}>
-                          {item.label}
-                        </span>
-                        {item.children && (
-                          <span style={{
-                            fontSize: "9px",
-                            opacity: 0.5,
-                            transform: studyOpen ? "rotate(90deg)" : "none",
-                            transition: "transform 0.2s",
-                            display: "inline-block",
-                          }}>▶</span>
-                        )}
-                      </>
+                    {item.children && (
+                      <ChevronDown
+                        size={14}
+                        style={{
+                          opacity: 0.4,
+                          transform: studyOpen ? "rotate(180deg)" : "none",
+                          transition: "transform 0.2s",
+                          flexShrink: 0,
+                        }}
+                      />
                     )}
-                  </div>
-                </Link>
+                  </>
+                )}
               </div>
 
-              {/* Children (only when expanded) */}
-              {item.children && !collapsed && studyOpen && (
+              {/* Children */}
+              {item.children && open && studyOpen && (
                 <div style={{
-                  marginLeft: "30px",
+                  marginLeft: "18px",
+                  paddingLeft: "12px",
+                  borderLeft: "1px solid #EAEEF4",
                   marginTop: "2px",
+                  marginBottom: "4px",
                   display: "flex",
                   flexDirection: "column",
                   gap: "1px",
-                  borderLeft: "1px solid var(--color-border)",
-                  paddingLeft: "10px",
                 }}>
                   {item.children.map((child) => {
-                    const ca = pathname.startsWith(child.href);
+                    const ca = isActive(child.href);
+                    const CIcon = child.icon;
                     return (
                       <Link key={child.href} href={child.href} style={{ textDecoration: "none" }}>
                         <div style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
                           padding: "7px 10px",
                           borderRadius: "7px",
                           fontSize: "13px",
                           fontWeight: ca ? "600" : "400",
-                          color: ca ? "var(--color-accent)" : "var(--color-text-muted)",
-                          background: ca ? "var(--color-accent-light)" : "transparent",
-                          transition: "background var(--t), color var(--t)",
+                          color: ca ? "#1B4FD8" : "#64748B",
+                          background: ca ? "#EBF0FF" : "transparent",
                           cursor: "pointer",
-                          whiteSpace: "nowrap",
+                          transition: "background 0.15s, color 0.15s, box-shadow 0.15s",
                         }}
                         onMouseEnter={(e) => {
                           if (!ca) {
-                            (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
-                            (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+                            (e.currentTarget as HTMLElement).style.background = "#F5F7FA";
+                            (e.currentTarget as HTMLElement).style.color = "#1E293B";
+                          } else {
+                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(27,79,216,0.12)";
                           }
                         }}
                         onMouseLeave={(e) => {
                           if (!ca) {
                             (e.currentTarget as HTMLElement).style.background = "transparent";
-                            (e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)";
+                            (e.currentTarget as HTMLElement).style.color = "#64748B";
                           }
+                          (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 0 transparent";
                         }}
                         >
-                          {child.label}
+                          <CIcon size={14} strokeWidth={ca ? 2 : 1.6} />
+                          <span>{child.label}</span>
                         </div>
                       </Link>
                     );
@@ -260,60 +291,75 @@ export default function Sidebar() {
 
       {/* Auth */}
       <div style={{
-        padding: collapsed ? "12px 8px" : "12px 8px 20px",
-        borderTop: "1px solid var(--color-border)",
+        padding: "10px 8px 16px",
+        borderTop: "1px solid #EAEEF4",
         display: "flex",
         flexDirection: "column",
-        gap: "6px",
+        gap: "4px",
       }}>
-        {collapsed ? (
-          <div className="sidebar-tooltip" data-tip="Sign in" style={{ display: "flex", justifyContent: "center" }}>
-            <Link href="/auth/login" style={{ textDecoration: "none" }}>
-              <div style={{
-                width: "36px", height: "36px", borderRadius: "8px",
-                background: "var(--color-surface)", border: "1px solid var(--color-border)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "13px", cursor: "pointer", color: "var(--color-text-secondary)",
-                transition: "background var(--t)",
-              }}>→</div>
-            </Link>
-          </div>
-        ) : (
+        {open ? (
           <>
             <Link href="/auth/login" style={{ textDecoration: "none" }}>
               <div style={{
-                padding: "8px 12px", borderRadius: "8px", fontSize: "13px",
-                color: "var(--color-text-secondary)", cursor: "pointer",
-                transition: "background var(--t)",
+                display: "flex", alignItems: "center", gap: "10px",
+                padding: "9px 12px", borderRadius: "8px",
+                fontSize: "14px", color: "#64748B", cursor: "pointer",
+                transition: "background 0.15s, color 0.15s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--color-surface)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#F5F7FA"; (e.currentTarget as HTMLElement).style.color = "#1E293B"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#64748B"; }}
               >
-                Sign in
+                <LogIn size={ICON_SIZE} strokeWidth={1.6} />
+                <span>Sign in</span>
               </div>
             </Link>
             <Link href="/auth/signup" style={{ textDecoration: "none" }}>
               <div style={{
-                padding: "9px 12px", borderRadius: "8px", fontSize: "13px",
-                fontWeight: "600", color: "#fff",
-                background: "linear-gradient(135deg, #1B4FD8, #4F46E5)",
-                textAlign: "center", cursor: "pointer",
-                transition: "opacity var(--t), box-shadow var(--t)",
-                boxShadow: "0 2px 8px rgba(27,79,216,0.25)",
+                display: "flex", alignItems: "center", gap: "10px",
+                padding: "9px 12px", borderRadius: "8px",
+                fontSize: "14px", fontWeight: "600", color: "#fff",
+                background: "#1B4FD8", cursor: "pointer",
+                transition: "background 0.15s, box-shadow 0.15s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.opacity = "0.9";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(27,79,216,0.35)";
+                (e.currentTarget as HTMLElement).style.background = "#1740C0";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(27,79,216,0.2)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.opacity = "1";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(27,79,216,0.25)";
+                (e.currentTarget as HTMLElement).style.background = "#1B4FD8";
+                (e.currentTarget as HTMLElement).style.boxShadow = "none";
               }}
               >
-                Sign up free
+                <UserPlus size={ICON_SIZE} strokeWidth={1.6} />
+                <span>Sign up</span>
               </div>
             </Link>
           </>
+        ) : (
+          <div
+            title="Sign in"
+            style={{ display: "flex", justifyContent: "center", padding: "6px 0" }}
+          >
+            <Link href="/auth/login" style={{ textDecoration: "none" }}>
+              <div style={{
+                width: "36px", height: "36px", borderRadius: "8px",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#64748B", cursor: "pointer",
+                transition: "background 0.15s, box-shadow 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "#F5F7FA";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 3px rgba(27,79,216,0.1)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "transparent";
+                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              }}
+              >
+                <LogIn size={16} strokeWidth={1.6} />
+              </div>
+            </Link>
+          </div>
         )}
       </div>
     </aside>
