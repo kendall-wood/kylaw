@@ -5,70 +5,62 @@ import Link from "next/link";
 import { useTestSessionStore } from "@/lib/store/testSessionStore";
 import type { Section } from "@/lib/store/testSessionStore";
 import { Clock, FileText, BookOpen, Zap, Shuffle, ChevronRight, ArrowRight, Info } from "lucide-react";
+import lrData from "@/lib/data/questions_lr.json";
+import rcData from "@/lib/data/rc_passages.json";
 
-async function loadSections(mode: "full_test" | "section" | "question_bank", sectionType?: string) {
-  const files = [
-    "/lib/data/lr_flaw_mbt.json",
-    "/lib/data/lr_strengthen_na.json",
-    "/lib/data/lr_weaken_sa.json",
-    "/lib/data/lr_method_mc.json",
-    "/lib/data/lr_principle_rp.json",
-    "/lib/data/lr_parallel_pai.json",
-  ];
-
-  const allLR: Section["questions"] = [];
-  for (const f of files) {
-    try {
-      const res = await fetch(f);
-      if (!res.ok) continue;
-      const data = await res.json();
-      allLR.push(...(data.questions ?? []));
-    } catch {}
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
+  return a;
+}
 
-  let rcQuestions: Section["questions"] = [];
-  try {
-    const res = await fetch("/lib/data/rc_passages.json");
-    if (res.ok) {
-      const data = await res.json();
-      const sets = data.passage_sets ?? [];
-      for (const set of sets) {
-        const qs = (set.questions ?? []).map((q: Section["questions"][0]) => ({
-          ...q,
-          passage_id: set.id,
-          passage_title: set.passage_title,
-          passage_text: set.passage_text ?? set.passage_text_a,
-          passage_text_b: set.passage_text_b,
-          passage_type: set.type,
-        }));
-        rcQuestions.push(...qs);
-      }
+function buildRCQuestions(): Section["questions"] {
+  const out: Section["questions"] = [];
+  for (const set of (rcData as any).passage_sets ?? []) {
+    for (const q of set.questions ?? []) {
+      out.push({
+        ...q,
+        passage_id: set.id,
+        passage_title: set.passage_title,
+        passage_text: set.passage_text ?? set.passage_text_a ?? "",
+        passage_text_b: set.passage_text_b,
+        passage_type: set.type,
+      });
     }
-  } catch {}
+  }
+  return out;
+}
 
-  const shuffle = <T,>(arr: T[]) => [...arr].sort(() => Math.random() - 0.5);
+function loadSections(mode: "full_test" | "section" | "question_bank", sectionType?: string): Section[] {
+  const allLR = shuffle((lrData as any).questions as Section["questions"]);
+  const allRC = shuffle(buildRCQuestions());
 
   if (mode === "full_test") {
-    const lr1 = shuffle(allLR.filter(q => q.section_type === "LR")).slice(0, 25);
-    const lr2 = shuffle(allLR.filter(q => q.section_type === "LR")).slice(25, 50);
-    const rc = shuffle(rcQuestions).slice(0, 27);
-    const exp = shuffle(allLR.filter(q => q.section_type === "LR")).slice(50, 75);
+    // 2026 format: LR I (25q) · LR II (25q) · break · RC (all available) · Experimental LR (25q)
+    const lr1 = allLR.slice(0, 25);
+    const lr2 = allLR.slice(25, 50);
+    const rc  = allRC; // use all available RC passages
+    const exp = allLR.slice(50, 75);
     return [
-      { id: "lr1", type: "LR" as const, questions: lr1, scored: true },
-      { id: "lr2", type: "LR" as const, questions: lr2, scored: true },
-      { id: "rc", type: "RC" as const, questions: rc, scored: true },
-      { id: "exp", type: "experimental" as const, questions: exp, scored: false },
+      { id: "lr1", type: "LR",           questions: lr1, scored: true  },
+      { id: "lr2", type: "LR",           questions: lr2, scored: true  },
+      { id: "rc",  type: "RC",           questions: rc,  scored: true  },
+      { id: "exp", type: "experimental", questions: exp, scored: false },
     ] as Section[];
   }
 
   if (mode === "section") {
     if (sectionType === "RC") {
-      return [{ id: "rc", type: "RC" as const, questions: shuffle(rcQuestions).slice(0, 27), scored: true }] as Section[];
+      return [{ id: "rc", type: "RC", questions: allRC, scored: true }] as Section[];
     }
-    return [{ id: "lr", type: "LR" as const, questions: shuffle(allLR.filter(q => q.section_type === "LR")).slice(0, 25), scored: true }] as Section[];
+    return [{ id: "lr", type: "LR", questions: allLR.slice(0, 25), scored: true }] as Section[];
   }
 
-  return [{ id: "bank", type: "LR" as const, questions: shuffle(allLR), scored: false }] as Section[];
+  // question_bank — all LR, unscored, no timer
+  return [{ id: "bank", type: "LR", questions: allLR, scored: false }] as Section[];
 }
 
 const STUDY_TOOLS = [
@@ -84,10 +76,9 @@ export default function TestPage() {
   const [studyMode, setStudyMode] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
-  async function handleStart(mode: "full_test" | "section" | "question_bank", sectionType?: string) {
-    const key = mode + (sectionType ?? "");
-    setLoading(key);
-    const sections = await loadSections(mode, sectionType);
+  function handleStart(mode: "full_test" | "section" | "question_bank", sectionType?: string) {
+    setLoading(mode + (sectionType ?? ""));
+    const sections = loadSections(mode, sectionType);
     startSession(mode, sections, studyMode);
     router.push("/test/session");
   }
