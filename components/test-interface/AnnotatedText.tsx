@@ -63,7 +63,7 @@ export default function AnnotatedText({ text, annotations, onAnnotate, fontSize 
       ref={containerRef}
       onMouseUp={handleMouseUp}
       style={{
-        fontFamily: "var(--font-serif-body)",
+        fontFamily: "var(--font-serif)",
         fontSize,
         lineHeight: lineSpacing,
         color: "var(--color-text-primary)",

@@ -101,7 +101,7 @@ export default function AnswerChoices({ question, reviewMode = false }: Props) {
               style={{
                 padding: "13px 12px",
                 flex: 1,
-                fontFamily: "var(--font-serif-body)",
+                fontFamily: "var(--font-serif)",
                 fontSize: "15px",
                 lineHeight: "1.55",
                 color: "var(--color-text-primary)",

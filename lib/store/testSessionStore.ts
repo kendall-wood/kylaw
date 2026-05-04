@@ -108,7 +108,7 @@ export const useTestSessionStore = create<TestSessionState>((set, get) => ({
       flags: {},
       annotations: {},
       timeRemaining: 35 * 60,
-      timerRunning: true,
+      timerRunning: mode !== "question_bank",
       sessionStartedAt: new Date(),
       status: "active",
       studyMode,
