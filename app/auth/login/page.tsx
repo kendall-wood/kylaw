@@ -47,9 +47,9 @@ export default function LoginPage() {
       }}>
         <div style={{ textAlign: "center", marginBottom: "36px" }}>
           <Link href="/" style={{ textDecoration: "none" }}>
-            <span style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "700", color: "var(--color-accent)" }}>KyLaw</span>
+            <span style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "400", color: "var(--color-accent)" }}>KyLaw</span>
           </Link>
-          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "700", marginTop: "16px", marginBottom: "6px" }}>
+          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "400", marginTop: "16px", marginBottom: "6px" }}>
             Welcome back
           </h1>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)" }}>Sign in to track your progress</p>

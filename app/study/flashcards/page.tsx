@@ -85,7 +85,7 @@ export default function FlashcardsPage() {
       <div style={{ minHeight: "100vh", background: "var(--color-surface)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)", padding: "24px" }}>
         <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid var(--color-border)", padding: "48px 40px", maxWidth: "480px", width: "100%", textAlign: "center" }}>
           <div style={{ fontSize: "48px", marginBottom: "16px" }}>🎉</div>
-          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "700", marginBottom: "8px" }}>Deck complete!</h2>
+          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "400", marginBottom: "8px" }}>Deck complete!</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "32px" }}>
             <strong style={{ color: "var(--color-correct)" }}>{known.size} got it</strong> &nbsp;·&nbsp;
             <strong style={{ color: "var(--color-timer-warning)" }}>{review.size} to review</strong>
@@ -163,7 +163,7 @@ export default function FlashcardsPage() {
                 <p style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", fontWeight: "700", color: accentColor, marginBottom: "16px" }}>
                   {activeDeck.title}
                 </p>
-                <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "700", color: "var(--color-text-primary)", lineHeight: "1.35" }}>
+                <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "400", color: "var(--color-text-primary)", lineHeight: "1.35" }}>
                   {card.front}
                 </p>
                 <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "20px" }}>tap to flip</p>
@@ -253,7 +253,7 @@ export default function FlashcardsPage() {
           <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.12em", fontWeight: "700", color: "var(--color-accent)", marginBottom: "8px" }}>
             Flashcards
           </p>
-          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "700", marginBottom: "10px" }}>
+          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "400", marginBottom: "10px" }}>
             Choose a deck
           </h1>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)" }}>Tap a card to flip it. Mark what you know and what needs review.</p>

@@ -102,7 +102,7 @@ export default function DashboardPage() {
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "36px" }}>
           <div>
-            <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "700", marginBottom: "6px" }}>Dashboard</h1>
+            <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "400", marginBottom: "6px" }}>Dashboard</h1>
             <p style={{ fontSize: "15px", color: "var(--color-text-secondary)" }}>Your practice history and performance trends</p>
           </div>
           <div style={{ display: "flex", gap: "12px" }}>
@@ -135,7 +135,7 @@ export default function DashboardPage() {
         {!hasData ? (
           <div style={{ background: "#fff", borderRadius: "14px", border: "1px solid var(--color-border)", padding: "64px 40px", textAlign: "center" }}>
             <p style={{ fontSize: "40px", marginBottom: "16px" }}>📈</p>
-            <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "24px", fontWeight: "700", marginBottom: "10px" }}>No practice data yet</h2>
+            <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "24px", fontWeight: "400", marginBottom: "10px" }}>No practice data yet</h2>
             <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "28px", maxWidth: "380px", margin: "0 auto 28px" }}>
               Complete a test or drill session to see your score trends, accuracy by question type, and study recommendations.
             </p>
@@ -163,7 +163,7 @@ export default function DashboardPage() {
               ].map(({ label, value }) => (
                 <div key={label} style={{ background: "#fff", borderRadius: "12px", border: "1px solid var(--color-border)", padding: "24px 28px", textAlign: "center" }}>
                   <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: "700", color: "var(--color-text-muted)", marginBottom: "8px" }}>{label}</p>
-                  <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "44px", fontWeight: "700", color: value ? getScoreColor(value) : "var(--color-border)", lineHeight: 1 }}>
+                  <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "44px", fontWeight: "400", color: value ? getScoreColor(value) : "var(--color-border)", lineHeight: 1 }}>
                     {value ?? "—"}
                   </p>
                 </div>

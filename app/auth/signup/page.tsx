@@ -43,7 +43,7 @@ export default function SignupPage() {
       <div style={{ minHeight: "100vh", background: "var(--color-surface)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)", padding: "24px" }}>
         <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid var(--color-border)", padding: "48px 40px", maxWidth: "420px", width: "100%", textAlign: "center" }}>
           <div style={{ fontSize: "48px", marginBottom: "16px" }}>✉️</div>
-          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "700", marginBottom: "10px" }}>Check your email</h2>
+          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "400", marginBottom: "10px" }}>Check your email</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: "1.6", marginBottom: "28px" }}>
             We sent a confirmation link to <strong>{email}</strong>. Click it to activate your account.
           </p>
@@ -84,9 +84,9 @@ export default function SignupPage() {
       }}>
         <div style={{ textAlign: "center", marginBottom: "36px" }}>
           <Link href="/" style={{ textDecoration: "none" }}>
-            <span style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "700", color: "var(--color-accent)" }}>KyLaw</span>
+            <span style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "400", color: "var(--color-accent)" }}>KyLaw</span>
           </Link>
-          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "700", marginTop: "16px", marginBottom: "6px" }}>
+          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "26px", fontWeight: "400", marginTop: "16px", marginBottom: "6px" }}>
             Create your account
           </h1>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)" }}>Track scores, flashcard progress, and weak areas</p>

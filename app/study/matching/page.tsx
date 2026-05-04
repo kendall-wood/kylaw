@@ -139,7 +139,7 @@ export default function MatchingPage() {
       <div style={{ minHeight: "100vh", background: "var(--color-surface)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)" }}>
         <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid var(--color-border)", padding: "48px 40px", maxWidth: "420px", width: "100%", textAlign: "center" }}>
           <div style={{ fontSize: "48px", marginBottom: "16px" }}>🏁</div>
-          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "700", marginBottom: "16px" }}>All matched!</h2>
+          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "400", marginBottom: "16px" }}>All matched!</h2>
           <div style={{ display: "flex", gap: "24px", justifyContent: "center", marginBottom: "32px" }}>
             <div>
               <p style={{ fontSize: "28px", fontWeight: "700", color: "var(--color-accent)" }}>{mm}:{String(ss).padStart(2,"0")}</p>
@@ -168,7 +168,7 @@ export default function MatchingPage() {
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px" }}>
           <div>
-            <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "700", marginBottom: "4px" }}>Matching</h1>
+            <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "400", marginBottom: "4px" }}>Matching</h1>
             <p style={{ fontSize: "13px", color: "var(--color-text-muted)" }}>Match each question type to its definition</p>
           </div>
           <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>

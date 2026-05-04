@@ -41,7 +41,7 @@ export default function StudyPage() {
           <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.12em", fontWeight: "700", color: "var(--color-accent)", marginBottom: "10px" }}>
             Study Tools
           </p>
-          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "42px", fontWeight: "700", color: "var(--color-text-primary)", lineHeight: "1.15", marginBottom: "14px" }}>
+          <h1 style={{ fontFamily: "var(--font-serif-display)", fontSize: "42px", fontWeight: "400", color: "var(--color-text-primary)", lineHeight: "1.15", marginBottom: "14px" }}>
             Build your skills
           </h1>
           <p style={{ fontSize: "16px", color: "var(--color-text-secondary)", maxWidth: "480px", lineHeight: "1.6" }}>
@@ -83,7 +83,7 @@ export default function StudyPage() {
                     {tool.badge}
                   </span>
                 </div>
-                <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "700", color: "var(--color-text-primary)", marginBottom: "8px" }}>
+                <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "22px", fontWeight: "400", color: "var(--color-text-primary)", marginBottom: "8px" }}>
                   {tool.title}
                 </h2>
                 <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: "1.55" }}>

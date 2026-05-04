@@ -1,299 +1,254 @@
+"use client";
 import Link from "next/link";
-import GlobalNav from "@/components/layout/GlobalNav";
+
+const features = [
+  {
+    title: "Test Simulator",
+    desc: "Full 4-section test or single-section practice. Exact LawHub interface: split-screen layout, annotation tools, 35-minute timer, flagging, and answer elimination.",
+    href: "/test",
+    tag: "4 sections",
+  },
+  {
+    title: "Question Bank",
+    desc: "165+ original LR questions across all 12 question types. Filter by type and difficulty. Instant explanations with every answer.",
+    href: "/study/drills",
+    tag: "165 questions",
+  },
+  {
+    title: "Flashcards",
+    desc: "Master all 12 LR question types, 7 RC types, 20 logical fallacies, and 25 key LSAT terms through active recall with 3D flip cards.",
+    href: "/study/flashcards",
+    tag: "64 cards",
+  },
+  {
+    title: "Score Dashboard",
+    desc: "Track your score trend. See accuracy by question type. Identify weak areas and drill them directly from your results.",
+    href: "/dashboard",
+    tag: "Auto-tracked",
+  },
+];
+
+const formatRows = [
+  { section: "Section 1", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
+  { section: "Section 2", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
+  { section: "Break", type: "10-Minute Break", q: "—", t: "10 min", isBreak: true },
+  { section: "Section 3", type: "Reading Comprehension", q: "26–28", t: "35 min", scored: true },
+  { section: "Section 4", type: "Experimental", q: "22–28", t: "35 min", scored: false },
+];
 
 export default function HomePage() {
   return (
     <div style={{ fontFamily: "var(--font-sans)" }}>
-      <GlobalNav />
 
       {/* Hero */}
-      <section
-        style={{ borderBottom: "1px solid var(--color-border)" }}
-        className="py-24 px-6 text-center"
-      >
-        <div className="max-w-3xl mx-auto">
-          <p
-            style={{
-              color: "var(--color-accent)",
-              fontSize: "13px",
-              fontWeight: "600",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "16px",
-            }}
+      <section style={{
+        padding: "80px 56px 72px",
+        borderBottom: "1px solid var(--color-border)",
+        maxWidth: "840px",
+      }}>
+        <p className="fade-up" style={{
+          fontSize: "11px",
+          fontWeight: "700",
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+          color: "var(--color-accent)",
+          marginBottom: "24px",
+        }}>
+          2026 LSAT Prep Platform
+        </p>
+
+        <h1 className="fade-up fade-up-1 serif" style={{
+          fontSize: "clamp(38px, 5vw, 62px)",
+          lineHeight: "1.08",
+          color: "var(--color-text-primary)",
+          marginBottom: "28px",
+          maxWidth: "680px",
+        }}>
+          The LSAT, exactly as it appears on test day.
+        </h1>
+
+        <p className="fade-up fade-up-2" style={{
+          fontSize: "17px",
+          lineHeight: "1.7",
+          color: "var(--color-text-secondary)",
+          maxWidth: "520px",
+          marginBottom: "44px",
+        }}>
+          KyLaw replicates the 2026 LawHub interface with the real tools, the real timer,
+          and the real format — so test day feels familiar.
+        </p>
+
+        <div className="fade-up fade-up-3" style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+          <Link href="/test" style={{
+            background: "var(--color-accent)",
+            color: "#fff",
+            padding: "13px 30px",
+            borderRadius: "8px",
+            fontWeight: "600",
+            fontSize: "15px",
+            textDecoration: "none",
+            transition: "background 0.15s, box-shadow 0.15s",
+            boxShadow: "0 2px 8px rgba(27,79,216,0.2)",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "var(--color-accent-hover)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(27,79,216,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.background = "var(--color-accent)";
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(27,79,216,0.2)";
+          }}
           >
-            2026 LSAT Prep Platform
-          </p>
-          <h1
-            style={{
-              fontFamily: "var(--font-serif-display)",
-              fontSize: "clamp(36px, 5vw, 60px)",
-              color: "var(--color-text-primary)",
-              lineHeight: "1.1",
-              marginBottom: "24px",
-            }}
+            Start practicing free →
+          </Link>
+          <Link href="/study" style={{
+            color: "var(--color-text-secondary)",
+            fontSize: "15px",
+            textDecoration: "none",
+            padding: "13px 20px",
+            borderRadius: "8px",
+            transition: "color 0.15s, background 0.15s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+            (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+            (e.currentTarget as HTMLElement).style.background = "transparent";
+          }}
           >
-            The LSAT, exactly as it appears on test day.
-          </h1>
-          <p
-            style={{
-              color: "var(--color-text-secondary)",
-              fontSize: "18px",
-              lineHeight: "1.6",
-              marginBottom: "40px",
-              maxWidth: "600px",
-              margin: "0 auto 40px",
-            }}
-          >
-            KyLaw replicates the 2026 LawHub interface with pixel-level accuracy.
-            Practice with the real tools, the real timer, and the real format —
-            so test day feels familiar.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              href="/test"
-              style={{
-                background: "var(--color-accent)",
-                color: "#fff",
-                padding: "14px 32px",
-                borderRadius: "8px",
-                fontWeight: "600",
-                fontSize: "16px",
-                textDecoration: "none",
-              }}
-            >
-              Start Practicing Free
+            Explore study tools
+          </Link>
+        </div>
+
+        <p className="fade-up fade-up-4" style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "20px" }}>
+          No account required to start
+        </p>
+      </section>
+
+      {/* Features */}
+      <section style={{ padding: "72px 56px", borderBottom: "1px solid var(--color-border)" }}>
+        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "14px" }}>
+          What's included
+        </p>
+        <h2 className="serif" style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "48px" }}>
+          Everything you need to score higher
+        </h2>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "var(--color-border)", border: "1px solid var(--color-border)", borderRadius: "12px", overflow: "hidden" }}>
+          {features.map((f, i) => (
+            <Link key={f.title} href={f.href} style={{ textDecoration: "none" }}>
+              <div
+                className="card-hover"
+                style={{
+                  background: "#fff",
+                  padding: "32px 36px",
+                  borderRadius: 0,
+                  height: "100%",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
+                  <h3 className="serif" style={{ fontSize: "20px", color: "var(--color-text-primary)" }}>
+                    {f.title}
+                  </h3>
+                  <span style={{
+                    fontSize: "11px",
+                    fontWeight: "700",
+                    color: "var(--color-accent)",
+                    background: "var(--color-accent-light)",
+                    padding: "3px 10px",
+                    borderRadius: "100px",
+                    whiteSpace: "nowrap",
+                    marginLeft: "12px",
+                  }}>
+                    {f.tag}
+                  </span>
+                </div>
+                <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: "1.65" }}>
+                  {f.desc}
+                </p>
+              </div>
             </Link>
-            <Link
-              href="/study"
-              style={{
-                background: "var(--color-surface)",
-                color: "var(--color-text-primary)",
-                padding: "14px 32px",
-                borderRadius: "8px",
-                fontWeight: "500",
-                fontSize: "16px",
-                textDecoration: "none",
-                border: "1px solid var(--color-border)",
-              }}
-            >
-              Explore Study Tools
-            </Link>
-          </div>
-          <p
-            style={{
-              color: "var(--color-text-muted)",
-              fontSize: "13px",
-              marginTop: "20px",
-            }}
-          >
-            No account required to start
-          </p>
+          ))}
         </div>
       </section>
 
-      {/* 2026 Format Table */}
-      <section
-        style={{ borderBottom: "1px solid var(--color-border)" }}
-        className="py-20 px-6"
-      >
-        <div className="max-w-4xl mx-auto">
-          <h2
-            style={{
-              fontFamily: "var(--font-serif-display)",
-              fontSize: "32px",
-              marginBottom: "8px",
-              textAlign: "center",
-            }}
-          >
-            The 2026 LSAT Format
-          </h2>
-          <p
-            style={{
-              color: "var(--color-text-muted)",
-              textAlign: "center",
-              marginBottom: "40px",
-              fontSize: "14px",
-            }}
-          >
-            Updated for August 2024+ — Logic Games removed, second LR section added
-          </p>
-          <div
-            style={{
-              border: "1px solid var(--color-border)",
-              borderRadius: "10px",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "120px 1fr 80px 70px 90px",
-                background: "var(--color-surface)",
-                borderBottom: "1px solid var(--color-border)",
-              }}
-            >
-              {["Section", "Type", "Questions", "Time", "Scored"].map((h) => (
-                <div
-                  key={h}
-                  style={{
-                    padding: "10px 16px",
-                    fontSize: "12px",
-                    fontWeight: "600",
-                    color: "var(--color-text-muted)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {h}
-                </div>
-              ))}
-            </div>
-            {[
-              { section: "Section 1", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
-              { section: "Section 2", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
-              { section: "— Break —", type: "10-Minute Break", q: "—", t: "10 min", break: true },
-              { section: "Section 3", type: "Reading Comprehension", q: "26–28", t: "35 min", scored: true },
-              { section: "Section 4", type: "Experimental (LR or RC)", q: "22–28", t: "35 min", scored: false },
-            ].map((row, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "120px 1fr 80px 70px 90px",
-                  borderBottom: i < 4 ? "1px solid var(--color-border)" : "none",
-                  background: row.break ? "var(--color-surface)" : "var(--color-bg)",
-                }}
-              >
-                <div style={{ padding: "13px 16px", fontSize: "13px", color: "var(--color-text-muted)" }}>{row.section}</div>
-                <div style={{ padding: "13px 16px", fontSize: "14px", fontWeight: "500" }}>{row.type}</div>
-                <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center" }}>{row.q}</div>
-                <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center" }}>{row.t}</div>
-                <div style={{ padding: "13px 16px", fontSize: "13px", textAlign: "center" }}>
-                  {row.break ? "—" : row.scored
-                    ? <span style={{ color: "var(--color-correct)", fontWeight: "500" }}>Scored</span>
-                    : <span style={{ color: "var(--color-text-muted)" }}>Unscored</span>
-                  }
-                </div>
+      {/* Format table */}
+      <section style={{ padding: "72px 56px", borderBottom: "1px solid var(--color-border)" }}>
+        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "14px" }}>
+          Test structure
+        </p>
+        <h2 className="serif" style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "8px" }}>
+          The 2026 LSAT format
+        </h2>
+        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "36px" }}>
+          Updated for August 2024+ — Logic Games removed, second LR section added
+        </p>
+
+        <div style={{ border: "1px solid var(--color-border)", borderRadius: "10px", overflow: "hidden", maxWidth: "680px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "130px 1fr 80px 80px 90px", background: "var(--color-surface)", borderBottom: "1px solid var(--color-border)" }}>
+            {["Section", "Type", "Questions", "Time", "Scored"].map((h) => (
+              <div key={h} style={{ padding: "10px 16px", fontSize: "11px", fontWeight: "700", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                {h}
               </div>
             ))}
           </div>
-          <p style={{ color: "var(--color-text-muted)", fontSize: "13px", marginTop: "16px", textAlign: "center" }}>
-            Plus: LSAT Argumentative Writing (50 min, administered separately, unscored)
-          </p>
-        </div>
-      </section>
-
-      {/* Feature Cards */}
-      <section style={{ borderBottom: "1px solid var(--color-border)" }} className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2
-            style={{
-              fontFamily: "var(--font-serif-display)",
-              fontSize: "32px",
-              textAlign: "center",
-              marginBottom: "48px",
-            }}
-          >
-            Everything you need to score higher
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: "⚖️",
-                title: "Test Simulator",
-                desc: "Full 4-section test or single-section practice. Exact LawHub interface: split-screen layout, annotation tools, 35-minute timer, flagging, and answer elimination.",
-                href: "/test",
-              },
-              {
-                icon: "📚",
-                title: "Question Bank",
-                desc: "1,200+ original LR questions across all 12 question types. Filter by type, difficulty, and section. Instant explanations or batch review mode.",
-                href: "/test",
-              },
-              {
-                icon: "🃏",
-                title: "Flashcards & Study Tools",
-                desc: "Master all 12 LR question types, 7 RC types, 20 logical fallacies, and 25 key LSAT vocabulary terms through active recall, matching, and fill-in-blank.",
-                href: "/study",
-              },
-              {
-                icon: "📊",
-                title: "Progress Dashboard",
-                desc: "Track your score trend over time. Accuracy by question type. Spaced-repetition review queue for your weakest areas. Works without an account.",
-                href: "/dashboard",
-              },
-            ].map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                style={{
-                  display: "block",
-                  border: "1px solid var(--color-border)",
-                  borderRadius: "10px",
-                  padding: "28px",
-                  textDecoration: "none",
-                }}
-              >
-                <div style={{ fontSize: "28px", marginBottom: "12px" }}>{card.icon}</div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-serif-display)",
-                    fontSize: "20px",
-                    color: "var(--color-text-primary)",
-                    marginBottom: "8px",
-                  }}
-                >
-                  {card.title}
-                </h3>
-                <p style={{ color: "var(--color-text-secondary)", fontSize: "14px", lineHeight: "1.6" }}>
-                  {card.desc}
-                </p>
-              </Link>
-            ))}
-          </div>
+          {formatRows.map((row, i) => (
+            <div key={i} style={{
+              display: "grid",
+              gridTemplateColumns: "130px 1fr 80px 80px 90px",
+              borderBottom: i < formatRows.length - 1 ? "1px solid var(--color-border)" : "none",
+              background: row.isBreak ? "var(--color-surface)" : "#fff",
+            }}>
+              <div style={{ padding: "13px 16px", fontSize: "13px", color: "var(--color-text-muted)" }}>{row.section}</div>
+              <div style={{ padding: "13px 16px", fontSize: "14px", color: row.isBreak ? "var(--color-text-muted)" : "var(--color-text-primary)" }}>{row.type}</div>
+              <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.q}</div>
+              <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.t}</div>
+              <div style={{ padding: "13px 16px", fontSize: "13px", textAlign: "center" }}>
+                {row.isBreak ? <span style={{ color: "var(--color-text-muted)" }}>—</span>
+                  : row.scored
+                    ? <span style={{ color: "var(--color-correct)", fontWeight: "500" }}>Scored</span>
+                    : <span style={{ color: "var(--color-text-muted)" }}>Unscored</span>}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "32px", marginBottom: "16px" }}>
-            Ready to start?
-          </h2>
-          <p style={{ color: "var(--color-text-secondary)", marginBottom: "32px", fontSize: "16px" }}>
-            No account required. Begin practicing immediately.
-          </p>
-          <Link
-            href="/test"
-            style={{
-              background: "var(--color-accent)",
-              color: "#fff",
-              padding: "14px 36px",
-              borderRadius: "8px",
-              fontWeight: "600",
-              fontSize: "16px",
-              textDecoration: "none",
-            }}
-          >
-            Begin Free Practice
-          </Link>
-        </div>
+      <section style={{ padding: "72px 56px" }}>
+        <h2 className="serif" style={{ fontSize: "36px", color: "var(--color-text-primary)", marginBottom: "16px" }}>
+          Ready to start?
+        </h2>
+        <p style={{ color: "var(--color-text-secondary)", marginBottom: "32px", fontSize: "16px" }}>
+          No account required. Begin practicing immediately.
+        </p>
+        <Link href="/test" style={{
+          display: "inline-block",
+          background: "var(--color-accent)",
+          color: "#fff",
+          padding: "13px 30px",
+          borderRadius: "8px",
+          fontWeight: "600",
+          fontSize: "15px",
+          textDecoration: "none",
+        }}>
+          Begin free practice →
+        </Link>
       </section>
 
-      <footer
-        style={{
-          borderTop: "1px solid var(--color-border)",
-          padding: "24px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          color: "var(--color-text-muted)",
-          fontSize: "13px",
-        }}
-      >
-        <span style={{ fontFamily: "var(--font-serif-display)", color: "var(--color-accent)" }}>KyLaw</span>
-        <span>2026 LSAT format. All questions original.</span>
+      <footer style={{
+        borderTop: "1px solid var(--color-border)",
+        padding: "20px 56px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "var(--color-text-muted)",
+        fontSize: "13px",
+      }}>
+        <span className="serif" style={{ color: "var(--color-accent)", fontSize: "18px" }}>KyLaw</span>
+        <span>2026 LSAT format · All questions original</span>
       </footer>
     </div>
   );

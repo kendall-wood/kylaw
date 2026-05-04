@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import GlobalNav from "@/components/layout/GlobalNav";
 import { useTestSessionStore } from "@/lib/store/testSessionStore";
 import type { Section } from "@/lib/store/testSessionStore";
 
@@ -88,7 +87,6 @@ export default function TestPage() {
 
   return (
     <div style={{ fontFamily: "var(--font-sans)", minHeight: "100vh", background: "var(--color-surface)" }}>
-      <GlobalNav />
       <div className="max-w-5xl mx-auto px-6 py-16">
         <h1
           style={{

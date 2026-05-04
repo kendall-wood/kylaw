@@ -362,7 +362,7 @@ export default function ReviewPage() {
           <div style={{
             fontFamily: "var(--font-serif-display)",
             fontSize: "96px",
-            fontWeight: "700",
+            fontWeight: "400",
             color: scoreReady ? scoreColor : "#D8DCE3",
             lineHeight: 1,
             marginBottom: "12px",
@@ -445,7 +445,7 @@ export default function ReviewPage() {
                   Section {i + 1}
                   {!sec.scored && <span style={{ color: "var(--color-flagged)", marginLeft: "6px" }}>Exp.</span>}
                 </p>
-                <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "700", color: "var(--color-text-primary)", lineHeight: 1, marginBottom: "4px" }}>
+                <p style={{ fontFamily: "var(--font-serif-display)", fontSize: "36px", fontWeight: "400", color: "var(--color-text-primary)", lineHeight: 1, marginBottom: "4px" }}>
                   {sec.correct}/{sec.total}
                 </p>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>{pct}% correct</p>
@@ -460,7 +460,7 @@ export default function ReviewPage() {
         {/* Question type breakdown */}
         {typeBreakdowns.length > 0 && (
           <div style={{ background: "#fff", borderRadius: "12px", border: "1px solid var(--color-border)", padding: "28px 32px" }}>
-            <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "20px", fontWeight: "700", marginBottom: "20px" }}>
+            <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "20px", fontWeight: "400", marginBottom: "20px" }}>
               Performance by Question Type
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>

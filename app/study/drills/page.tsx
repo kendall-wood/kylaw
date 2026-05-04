@@ -96,7 +96,7 @@ export default function DrillsPage() {
       <div style={{ minHeight: "100vh", background: "var(--color-surface)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)" }}>
         <div style={{ background: "#fff", borderRadius: "16px", border: "1px solid var(--color-border)", padding: "48px 40px", maxWidth: "440px", width: "100%", textAlign: "center" }}>
           <div style={{ fontSize: "48px", marginBottom: "16px" }}>📊</div>
-          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "700", marginBottom: "8px" }}>Drill complete</h2>
+          <h2 style={{ fontFamily: "var(--font-serif-display)", fontSize: "28px", fontWeight: "400", marginBottom: "8px" }}>Drill complete</h2>
           <p style={{ fontSize: "32px", fontWeight: "700", color: accuracy >= 80 ? "var(--color-correct)" : accuracy >= 60 ? "var(--color-accent)" : "var(--color-incorrect)", marginBottom: "4px" }}>
             {accuracy}%
           </p>
