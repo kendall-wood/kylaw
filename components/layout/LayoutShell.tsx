@@ -13,7 +13,12 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
       <Sidebar />
-      <main style={{ flex: 1, marginLeft: "224px", minHeight: "100vh" }}>
+      <main style={{
+        flex: 1,
+        marginLeft: "var(--sidebar-current-width, 224px)",
+        minHeight: "100vh",
+        transition: "margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+      }}>
         {children}
       </main>
     </div>

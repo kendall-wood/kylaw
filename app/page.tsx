@@ -1,170 +1,334 @@
 "use client";
 import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 
-const features = [
+function Counter({ to, duration = 1600 }: { to: number; duration?: number }) {
+  const [val, setVal] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      obs.disconnect();
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setVal(Math.round(to * eased));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.3 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, [to, duration]);
+  return <span ref={ref}>{val.toLocaleString()}</span>;
+}
+
+const STATS = [
+  { label: "LR Questions", value: 165, suffix: "+" },
+  { label: "Question Types", value: 12, suffix: "" },
+  { label: "Flashcards", value: 64, suffix: "" },
+  { label: "Study Tools", value: 4, suffix: "" },
+];
+
+const FEATURES = [
   {
-    title: "Test Simulator",
-    desc: "Full 4-section test or single-section practice. Exact LawHub interface: split-screen layout, annotation tools, 35-minute timer, flagging, and answer elimination.",
     href: "/test",
-    tag: "4 sections",
+    icon: "◻",
+    title: "Test Simulator",
+    desc: "Full 4-section LSAT under timed, test-center conditions. Split-screen layout, annotation tools, flagging, and answer elimination — identical to LawHub.",
+    tag: "4 sections · 35 min each",
   },
   {
-    title: "Question Bank",
-    desc: "165+ original LR questions across all 12 question types. Filter by type and difficulty. Instant explanations with every answer.",
     href: "/study/drills",
-    tag: "165 questions",
+    icon: "⚡",
+    title: "Question Drills",
+    desc: "Filter 165+ original questions by type and difficulty. Immediate feedback with detailed explanations for every choice — right and wrong.",
+    tag: "All 12 LR types",
   },
   {
-    title: "Flashcards",
-    desc: "Master all 12 LR question types, 7 RC types, 20 logical fallacies, and 25 key LSAT terms through active recall with 3D flip cards.",
     href: "/study/flashcards",
-    tag: "64 cards",
+    icon: "◈",
+    title: "Flashcards",
+    desc: "3D flip cards for LR question types, logical fallacies, RC types, and key vocabulary. Track what you know and cycle back to what needs work.",
+    tag: "64 cards · 4 decks",
   },
   {
-    title: "Score Dashboard",
-    desc: "Track your score trend. See accuracy by question type. Identify weak areas and drill them directly from your results.",
     href: "/dashboard",
+    icon: "◇",
+    title: "Dashboard",
+    desc: "Score trend, accuracy by question type, and weak-area targeting. Starts tracking on your first session — no account required.",
     tag: "Auto-tracked",
   },
 ];
 
-const formatRows = [
-  { section: "Section 1", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
-  { section: "Section 2", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
-  { section: "Break", type: "10-Minute Break", q: "—", t: "10 min", isBreak: true },
-  { section: "Section 3", type: "Reading Comprehension", q: "26–28", t: "35 min", scored: true },
-  { section: "Section 4", type: "Experimental", q: "22–28", t: "35 min", scored: false },
+const FORMAT = [
+  { label: "Section 1", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
+  { label: "Section 2", type: "Logical Reasoning", q: "24–26", t: "35 min", scored: true },
+  { label: "Break", type: "10-Minute Break", q: "—", t: "10 min", isBreak: true },
+  { label: "Section 3", type: "Reading Comprehension", q: "26–28", t: "35 min", scored: true },
+  { label: "Section 4", type: "Experimental", q: "22–28", t: "35 min", scored: false },
 ];
 
 export default function HomePage() {
+  const [hovered, setHovered] = useState<string | null>(null);
+
   return (
-    <div style={{ fontFamily: "var(--font-sans)" }}>
+    <div style={{ fontFamily: "var(--font-sans)", color: "var(--color-text-primary)" }}>
 
-      {/* Hero */}
+      {/* ── HERO ─────────────────────────────────────── */}
       <section style={{
-        padding: "80px 56px 72px",
+        position: "relative",
+        padding: "88px 60px 80px",
         borderBottom: "1px solid var(--color-border)",
-        maxWidth: "840px",
+        overflow: "hidden",
       }}>
-        <p className="fade-up" style={{
-          fontSize: "11px",
-          fontWeight: "700",
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          color: "var(--color-accent)",
-          marginBottom: "24px",
-        }}>
-          2026 LSAT Prep Platform
-        </p>
+        {/* Dot grid */}
+        <div className="dot-grid" style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.4,
+          pointerEvents: "none",
+        }} />
+        {/* Gradient blob */}
+        <div style={{
+          position: "absolute",
+          top: "-80px",
+          right: "-60px",
+          width: "520px",
+          height: "520px",
+          background: "radial-gradient(circle, rgba(27,79,216,0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
 
-        <h1 className="fade-up fade-up-1 serif" style={{
-          fontSize: "clamp(38px, 5vw, 62px)",
-          lineHeight: "1.08",
-          color: "var(--color-text-primary)",
-          marginBottom: "28px",
-          maxWidth: "680px",
-        }}>
-          The LSAT, exactly as it appears on test day.
-        </h1>
+        <div style={{ position: "relative", maxWidth: "720px" }}>
+          <div className="fade-in" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            background: "var(--color-accent-light)",
+            border: "1px solid rgba(27,79,216,0.2)",
+            borderRadius: "100px",
+            padding: "5px 14px 5px 10px",
+            marginBottom: "32px",
+          }}>
+            <span style={{
+              width: "6px", height: "6px", borderRadius: "50%",
+              background: "var(--color-accent)",
+              boxShadow: "0 0 0 3px rgba(27,79,216,0.2)",
+              display: "inline-block",
+              animation: "pulse-glow 2s infinite",
+            }} />
+            <span style={{ fontSize: "12px", fontWeight: "600", color: "var(--color-accent)", letterSpacing: "0.04em" }}>
+              2026 LSAT Prep Platform
+            </span>
+          </div>
 
-        <p className="fade-up fade-up-2" style={{
-          fontSize: "17px",
-          lineHeight: "1.7",
-          color: "var(--color-text-secondary)",
-          maxWidth: "520px",
-          marginBottom: "44px",
-        }}>
-          KyLaw replicates the 2026 LawHub interface with the real tools, the real timer,
-          and the real format — so test day feels familiar.
-        </p>
+          <h1 className="fade-up delay-1" style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: "400",
+            fontSize: "clamp(42px, 6vw, 68px)",
+            lineHeight: "1.06",
+            letterSpacing: "-0.01em",
+            marginBottom: "28px",
+            color: "var(--color-text-primary)",
+          }}>
+            The LSAT,{" "}
+            <span style={{
+              fontStyle: "italic",
+              background: "linear-gradient(135deg, #1B4FD8 0%, #6366F1 80%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              exactly
+            </span>{" "}
+            as it appears on test day.
+          </h1>
 
-        <div className="fade-up fade-up-3" style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
-          <Link href="/test" style={{
-            background: "var(--color-accent)",
-            color: "#fff",
-            padding: "13px 30px",
-            borderRadius: "8px",
-            fontWeight: "600",
-            fontSize: "15px",
-            textDecoration: "none",
-            transition: "background 0.15s, box-shadow 0.15s",
-            boxShadow: "0 2px 8px rgba(27,79,216,0.2)",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--color-accent-hover)";
-            (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(27,79,216,0.3)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--color-accent)";
-            (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(27,79,216,0.2)";
-          }}
-          >
-            Start practicing free →
-          </Link>
-          <Link href="/study" style={{
+          <p className="fade-up delay-2" style={{
+            fontSize: "17px",
+            lineHeight: "1.7",
             color: "var(--color-text-secondary)",
-            fontSize: "15px",
-            textDecoration: "none",
-            padding: "13px 20px",
-            borderRadius: "8px",
-            transition: "color 0.15s, background 0.15s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
-            (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
-            (e.currentTarget as HTMLElement).style.background = "transparent";
-          }}
-          >
-            Explore study tools
+            maxWidth: "520px",
+            marginBottom: "48px",
+          }}>
+            KyLaw replicates the 2026 LawHub interface with the real tools, real timer,
+            and real format — so test day feels familiar before it begins.
+          </p>
+
+          <div className="fade-up delay-3" style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+            <Link href="/test" style={{ textDecoration: "none" }}>
+              <button style={{
+                background: "linear-gradient(135deg, #1B4FD8, #4F46E5)",
+                color: "#fff",
+                border: "none",
+                padding: "14px 32px",
+                borderRadius: "10px",
+                fontWeight: "600",
+                fontSize: "15px",
+                cursor: "pointer",
+                fontFamily: "var(--font-sans)",
+                boxShadow: "0 4px 16px rgba(27,79,216,0.3)",
+                transition: "opacity var(--t), transform var(--t), box-shadow var(--t)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.opacity = "0.92";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 24px rgba(27,79,216,0.4)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.opacity = "1";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(27,79,216,0.3)";
+              }}
+              >
+                Start practicing free →
+              </button>
+            </Link>
+            <Link href="/study" style={{ textDecoration: "none" }}>
+              <button style={{
+                background: "#fff",
+                color: "var(--color-text-secondary)",
+                border: "1px solid var(--color-border)",
+                padding: "14px 28px",
+                borderRadius: "10px",
+                fontWeight: "500",
+                fontSize: "15px",
+                cursor: "pointer",
+                fontFamily: "var(--font-sans)",
+                transition: "background var(--t), border-color var(--t), color var(--t)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border-strong)";
+                (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = "#fff";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)";
+                (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+              }}
+              >
+                Explore study tools
+              </button>
+            </Link>
+          </div>
+
+          <p className="fade-up delay-4" style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "20px" }}>
+            No account required · All questions original
+          </p>
+        </div>
+      </section>
+
+      {/* ── STATS ────────────────────────────────────── */}
+      <section style={{
+        borderBottom: "1px solid var(--color-border)",
+        padding: "0",
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+      }}>
+        {STATS.map((s, i) => (
+          <div key={s.label} style={{
+            padding: "32px 40px",
+            borderRight: i < STATS.length - 1 ? "1px solid var(--color-border)" : "none",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            <div style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: "400",
+              fontSize: "44px",
+              lineHeight: 1,
+              letterSpacing: "-0.02em",
+              color: "var(--color-text-primary)",
+              marginBottom: "6px",
+            }}>
+              <Counter to={s.value} />{s.suffix}
+            </div>
+            <p style={{ fontSize: "13px", color: "var(--color-text-muted)", fontWeight: "500" }}>{s.label}</p>
+            <div style={{
+              position: "absolute",
+              bottom: 0, left: "40px",
+              width: "24px", height: "2px",
+              background: "var(--color-accent)",
+              borderRadius: "1px",
+            }} />
+          </div>
+        ))}
+      </section>
+
+      {/* ── FEATURES ─────────────────────────────────── */}
+      <section style={{ padding: "72px 60px", borderBottom: "1px solid var(--color-border)" }}>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "48px" }}>
+          <div>
+            <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "12px" }}>
+              Platform
+            </p>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: "400", fontSize: "38px", color: "var(--color-text-primary)" }}>
+              Everything you need to score higher
+            </h2>
+          </div>
+          <Link href="/test" style={{ textDecoration: "none", fontSize: "13px", color: "var(--color-accent)", fontWeight: "600", whiteSpace: "nowrap", marginBottom: "8px" }}>
+            Begin practice →
           </Link>
         </div>
 
-        <p className="fade-up fade-up-4" style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "20px" }}>
-          No account required to start
-        </p>
-      </section>
-
-      {/* Features */}
-      <section style={{ padding: "72px 56px", borderBottom: "1px solid var(--color-border)" }}>
-        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "14px" }}>
-          What's included
-        </p>
-        <h2 className="serif" style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "48px" }}>
-          Everything you need to score higher
-        </h2>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "var(--color-border)", border: "1px solid var(--color-border)", borderRadius: "12px", overflow: "hidden" }}>
-          {features.map((f, i) => (
-            <Link key={f.title} href={f.href} style={{ textDecoration: "none" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
+          {FEATURES.map((f) => (
+            <Link key={f.href} href={f.href} style={{ textDecoration: "none" }}>
               <div
-                className="card-hover"
+                onMouseEnter={() => setHovered(f.title)}
+                onMouseLeave={() => setHovered(null)}
                 style={{
                   background: "#fff",
-                  padding: "32px 36px",
-                  borderRadius: 0,
-                  height: "100%",
+                  border: `1px solid ${hovered === f.title ? "var(--color-accent)" : "var(--color-border)"}`,
+                  borderRadius: "14px",
+                  padding: "32px 32px 28px",
+                  cursor: "pointer",
+                  transition: "border-color var(--t), box-shadow var(--t), transform var(--t)",
+                  boxShadow: hovered === f.title ? "var(--shadow-md), -3px 0 0 var(--color-accent)" : "var(--shadow-sm)",
+                  transform: hovered === f.title ? "translateY(-3px)" : "none",
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                  <h3 className="serif" style={{ fontSize: "20px", color: "var(--color-text-primary)" }}>
-                    {f.title}
-                  </h3>
+                {/* Subtle top gradient on hover */}
+                <div style={{
+                  position: "absolute",
+                  top: 0, left: 0, right: 0,
+                  height: "3px",
+                  background: "linear-gradient(90deg, #1B4FD8, #6366F1)",
+                  opacity: hovered === f.title ? 1 : 0,
+                  transition: "opacity var(--t)",
+                }} />
+
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
                   <span style={{
-                    fontSize: "11px",
-                    fontWeight: "700",
+                    fontSize: "22px",
+                    color: hovered === f.title ? "var(--color-accent)" : "var(--color-text-muted)",
+                    transition: "color var(--t)",
+                  }}>{f.icon}</span>
+                  <span style={{
+                    fontSize: "11px", fontWeight: "700",
                     color: "var(--color-accent)",
                     background: "var(--color-accent-light)",
-                    padding: "3px 10px",
-                    borderRadius: "100px",
-                    whiteSpace: "nowrap",
-                    marginLeft: "12px",
+                    padding: "3px 10px", borderRadius: "100px",
                   }}>
                     {f.tag}
                   </span>
                 </div>
+
+                <h3 style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: "400",
+                  fontSize: "21px",
+                  color: "var(--color-text-primary)",
+                  marginBottom: "10px",
+                  letterSpacing: "-0.01em",
+                }}>
+                  {f.title}
+                </h3>
                 <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: "1.65" }}>
                   {f.desc}
                 </p>
@@ -174,81 +338,128 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Format table */}
-      <section style={{ padding: "72px 56px", borderBottom: "1px solid var(--color-border)" }}>
-        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "14px" }}>
+      {/* ── FORMAT TABLE ─────────────────────────────── */}
+      <section style={{ padding: "72px 60px", borderBottom: "1px solid var(--color-border)" }}>
+        <p style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "12px" }}>
           Test structure
         </p>
-        <h2 className="serif" style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "8px" }}>
+        <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: "400", fontSize: "38px", marginBottom: "8px" }}>
           The 2026 LSAT format
         </h2>
-        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "36px" }}>
+        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "40px" }}>
           Updated for August 2024+ — Logic Games removed, second LR section added
         </p>
 
-        <div style={{ border: "1px solid var(--color-border)", borderRadius: "10px", overflow: "hidden", maxWidth: "680px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "130px 1fr 80px 80px 90px", background: "var(--color-surface)", borderBottom: "1px solid var(--color-border)" }}>
+        <div style={{
+          border: "1px solid var(--color-border)",
+          borderRadius: "14px",
+          overflow: "hidden",
+          maxWidth: "700px",
+          boxShadow: "var(--shadow-sm)",
+        }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "130px 1fr 80px 80px 90px",
+            background: "var(--color-surface)",
+            borderBottom: "1px solid var(--color-border)",
+          }}>
             {["Section", "Type", "Questions", "Time", "Scored"].map((h) => (
-              <div key={h} style={{ padding: "10px 16px", fontSize: "11px", fontWeight: "700", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <div key={h} style={{ padding: "10px 18px", fontSize: "11px", fontWeight: "700", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                 {h}
               </div>
             ))}
           </div>
-          {formatRows.map((row, i) => (
-            <div key={i} style={{
-              display: "grid",
-              gridTemplateColumns: "130px 1fr 80px 80px 90px",
-              borderBottom: i < formatRows.length - 1 ? "1px solid var(--color-border)" : "none",
-              background: row.isBreak ? "var(--color-surface)" : "#fff",
-            }}>
-              <div style={{ padding: "13px 16px", fontSize: "13px", color: "var(--color-text-muted)" }}>{row.section}</div>
-              <div style={{ padding: "13px 16px", fontSize: "14px", color: row.isBreak ? "var(--color-text-muted)" : "var(--color-text-primary)" }}>{row.type}</div>
-              <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.q}</div>
-              <div style={{ padding: "13px 16px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.t}</div>
-              <div style={{ padding: "13px 16px", fontSize: "13px", textAlign: "center" }}>
-                {row.isBreak ? <span style={{ color: "var(--color-text-muted)" }}>—</span>
+          {FORMAT.map((row, i) => (
+            <div
+              key={i}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "130px 1fr 80px 80px 90px",
+                borderBottom: i < FORMAT.length - 1 ? "1px solid var(--color-border)" : "none",
+                background: row.isBreak ? "var(--color-surface)" : "#fff",
+                transition: "background var(--t)",
+              }}
+              onMouseEnter={(e) => {
+                if (!row.isBreak) (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = row.isBreak ? "var(--color-surface)" : "#fff";
+              }}
+            >
+              <div style={{ padding: "14px 18px", fontSize: "12px", color: "var(--color-text-muted)", fontWeight: "500" }}>{row.label}</div>
+              <div style={{ padding: "14px 18px", fontSize: "14px", color: row.isBreak ? "var(--color-text-muted)" : "var(--color-text-primary)" }}>{row.type}</div>
+              <div style={{ padding: "14px 18px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.q}</div>
+              <div style={{ padding: "14px 18px", fontSize: "14px", textAlign: "center", color: "var(--color-text-secondary)" }}>{row.t}</div>
+              <div style={{ padding: "14px 18px", textAlign: "center" }}>
+                {row.isBreak ? <span style={{ color: "var(--color-text-muted)", fontSize: "13px" }}>—</span>
                   : row.scored
-                    ? <span style={{ color: "var(--color-correct)", fontWeight: "500" }}>Scored</span>
-                    : <span style={{ color: "var(--color-text-muted)" }}>Unscored</span>}
+                  ? <span style={{ fontSize: "12px", fontWeight: "700", color: "var(--color-correct)", background: "var(--color-correct-bg)", padding: "2px 8px", borderRadius: "100px" }}>Scored</span>
+                  : <span style={{ fontSize: "12px", fontWeight: "600", color: "var(--color-text-muted)" }}>Unscored</span>}
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: "72px 56px" }}>
-        <h2 className="serif" style={{ fontSize: "36px", color: "var(--color-text-primary)", marginBottom: "16px" }}>
-          Ready to start?
-        </h2>
-        <p style={{ color: "var(--color-text-secondary)", marginBottom: "32px", fontSize: "16px" }}>
-          No account required. Begin practicing immediately.
-        </p>
-        <Link href="/test" style={{
-          display: "inline-block",
-          background: "var(--color-accent)",
-          color: "#fff",
-          padding: "13px 30px",
-          borderRadius: "8px",
-          fontWeight: "600",
-          fontSize: "15px",
-          textDecoration: "none",
-        }}>
-          Begin free practice →
-        </Link>
+      {/* ── CTA ──────────────────────────────────────── */}
+      <section style={{
+        padding: "80px 60px",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: 0.35, pointerEvents: "none" }} />
+        <div style={{ position: "relative" }}>
+          <h2 style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: "400",
+            fontSize: "42px",
+            marginBottom: "16px",
+            maxWidth: "480px",
+            lineHeight: "1.1",
+          }}>
+            Ready to start?
+          </h2>
+          <p style={{ color: "var(--color-text-secondary)", marginBottom: "36px", fontSize: "16px", maxWidth: "400px", lineHeight: "1.6" }}>
+            No account required. Begin practicing immediately and track your progress from session one.
+          </p>
+          <Link href="/test" style={{ textDecoration: "none" }}>
+            <button style={{
+              background: "linear-gradient(135deg, #1B4FD8, #4F46E5)",
+              color: "#fff",
+              border: "none",
+              padding: "15px 36px",
+              borderRadius: "10px",
+              fontWeight: "600",
+              fontSize: "16px",
+              cursor: "pointer",
+              fontFamily: "var(--font-sans)",
+              boxShadow: "0 4px 20px rgba(27,79,216,0.3)",
+              transition: "opacity var(--t), transform var(--t)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = "0.9";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = "1";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+            }}
+            >
+              Begin free practice →
+            </button>
+          </Link>
+        </div>
       </section>
 
       <footer style={{
         borderTop: "1px solid var(--color-border)",
-        padding: "20px 56px",
+        padding: "20px 60px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        color: "var(--color-text-muted)",
-        fontSize: "13px",
       }}>
-        <span className="serif" style={{ color: "var(--color-accent)", fontSize: "18px" }}>KyLaw</span>
-        <span>2026 LSAT format · All questions original</span>
+        <span style={{ fontFamily: "var(--font-serif)", fontSize: "18px", color: "var(--color-accent)" }}>KyLaw</span>
+        <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>2026 LSAT format · All questions original · No copyright infringement</span>
       </footer>
     </div>
   );
