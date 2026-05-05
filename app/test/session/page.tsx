@@ -31,16 +31,39 @@ export default function TestSessionPage() {
   const [activeAnnotationType, setActiveAnnotationType] = useState<Annotation["type"] | null>(null);
   const [showStudyExplanation, setShowStudyExplanation] = useState(false);
   const [breakTimeLeft, setBreakTimeLeft] = useState(10 * 60);
+  const [hydrated, setHydrated] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const didAutoResume = useRef(false);
 
   const sectionLabel = getSectionLabel(mode, sections, currentSectionIndex);
   const sectionProgress = sections.length > 1 ? `${currentSectionIndex + 1} of ${sections.length}` : "";
 
-  // Redirect if no active session
+  // Wait for sessionStorage to rehydrate before acting on status
   useEffect(() => {
+    if (useTestSessionStore.persist.hasHydrated()) {
+      setHydrated(true);
+    } else {
+      const unsub = useTestSessionStore.persist.onFinishHydration(() => setHydrated(true));
+      return unsub;
+    }
+  }, []);
+
+  // Redirect only after hydration so a page refresh doesn't lose the session
+  useEffect(() => {
+    if (!hydrated) return;
     if (status === "idle") router.push("/test");
     if (status === "complete") router.push("/test/review");
-  }, [status, router]);
+  }, [status, router, hydrated]);
+
+  // After hydration: if the session was active and timer is stopped (due to refresh), restart it
+  useEffect(() => {
+    if (!hydrated || didAutoResume.current) return;
+    didAutoResume.current = true;
+    const { status: s, timerRunning: tr, mode: m } = useTestSessionStore.getState();
+    if (s === "active" && !tr && m !== "question_bank") {
+      store.resumeTimer();
+    }
+  }, [hydrated, store]);
 
   // Main timer
   useEffect(() => {
@@ -62,10 +85,15 @@ export default function TestSessionPage() {
     return () => document.removeEventListener("visibilitychange", handler);
   }, [mode, status, store]);
 
-  // Break countdown
+  // Break countdown — seeds from breakStartedAt so refresh restores correct time
   useEffect(() => {
     if (status !== "break") return;
-    setBreakTimeLeft(10 * 60);
+    const bsa = useTestSessionStore.getState().breakStartedAt;
+    const initial = bsa
+      ? Math.max(0, 10 * 60 - Math.floor((Date.now() - bsa) / 1000))
+      : 10 * 60;
+    if (initial <= 0) { endBreak(); return; }
+    setBreakTimeLeft(initial);
     const id = setInterval(() => {
       setBreakTimeLeft((t) => {
         if (t <= 1) { clearInterval(id); endBreak(); return 0; }
@@ -129,72 +157,93 @@ export default function TestSessionPage() {
       : "var(--color-accent)";
 
     return (
-      <div style={{ height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--color-bg)", fontFamily: "var(--font-sans)", gap: 20, padding: 24 }}>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)" }}>
-          {justCompleted} Complete
-        </p>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 28, marginBottom: 0 }}>
-          10-Minute Break
-        </h1>
+      <>
+        <style>{`
+          @keyframes breakFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+          .break-screen { animation: breakFadeIn 0.45s ease both; }
+        `}</style>
 
-        {/* Animated ring + timer */}
-        <div style={{ position: "relative", width: 280, height: 280 }}>
-          <svg width={280} height={280} style={{ transform: "rotate(-90deg)" }}>
-            <circle cx={140} cy={140} r={svgR} fill="none" stroke="var(--color-border)" strokeWidth={7} />
-            <circle
-              cx={140} cy={140} r={svgR}
-              fill="none"
-              stroke={timerColor}
-              strokeWidth={7}
-              strokeDasharray={circ}
-              strokeDashoffset={strokeDashoffset}
-              strokeLinecap="round"
-              style={{ transition: "stroke-dashoffset 1s linear, stroke 0.4s ease" }}
-            />
-          </svg>
-          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 50, fontWeight: 700, letterSpacing: "0.04em", color: timerColor, lineHeight: 1 }}>
-              {String(bm).padStart(2, "0")}:{String(bs).padStart(2, "0")}
+        <div className="break-screen" style={{ height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--color-bg)", fontFamily: "var(--font-sans)", gap: 18, padding: 24 }}>
+
+          {/* Header */}
+          <div style={{ textAlign: "center" }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: 6 }}>
+              {justCompleted} Complete
+            </p>
+            <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 28 }}>
+              10-Minute Break
+            </h1>
+          </div>
+
+          {/* Animated ring + timer */}
+          <div style={{ position: "relative", width: 280, height: 280 }}>
+            <svg width={280} height={280} style={{ transform: "rotate(-90deg)" }}>
+              <circle cx={140} cy={140} r={svgR} fill="none" stroke="var(--color-border)" strokeWidth={7} />
+              <circle
+                cx={140} cy={140} r={svgR}
+                fill="none"
+                stroke={timerColor}
+                strokeWidth={7}
+                strokeDasharray={circ}
+                strokeDashoffset={strokeDashoffset}
+                strokeLinecap="round"
+                style={{ transition: "stroke-dashoffset 1s linear, stroke 0.4s ease" }}
+              />
+            </svg>
+            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 50, fontWeight: 700, letterSpacing: "0.04em", color: timerColor, lineHeight: 1 }}>
+                {String(bm).padStart(2, "0")}:{String(bs).padStart(2, "0")}
+              </div>
+              <div style={{ fontSize: 11, color: "var(--color-text-muted)", marginTop: 6, letterSpacing: "0.05em" }}>remaining</div>
             </div>
-            <div style={{ fontSize: 11, color: "var(--color-text-muted)", marginTop: 6, letterSpacing: "0.05em" }}>remaining</div>
           </div>
-        </div>
 
-        <p style={{ fontSize: 14, color: "var(--color-text-muted)", maxWidth: 380, textAlign: "center", lineHeight: 1.65 }}>
-          You may leave your testing area. The next section begins automatically.
-        </p>
-
-        <div style={{ padding: "9px 18px", background: "var(--color-surface)", borderRadius: 8, border: "1px solid var(--color-border)" }}>
-          <p style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
-            Up next: <strong style={{ color: "var(--color-text-primary)" }}>{upNext}</strong>
+          <p style={{ fontSize: 14, color: "var(--color-text-muted)", maxWidth: 360, textAlign: "center", lineHeight: 1.65 }}>
+            You may leave your testing area. The next section begins automatically when the break ends.
           </p>
-        </div>
 
-        {studyMode && (
-          <button onClick={endBreak} style={{ padding: "10px 24px", background: "var(--color-accent)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans)" }}>
-            End Break Early
-          </button>
-        )}
-
-        {/* Bottom-right section progress */}
-        <div style={{ position: "fixed", bottom: 24, right: 24, background: "#fff", border: "1px solid var(--color-border)", borderRadius: 10, padding: "10px 16px", boxShadow: "var(--shadow-sm)", display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
-            {sections.map((_, i) => (
-              <div key={i} style={{
-                height: 6, borderRadius: 3,
-                width: i <= currentSectionIndex ? 20 : 8,
-                background: i <= currentSectionIndex ? "var(--color-accent)" : "var(--color-border)",
-                transition: "all 0.3s ease",
-              }} />
-            ))}
+          <div style={{ padding: "9px 18px", background: "var(--color-surface)", borderRadius: 8, border: "1px solid var(--color-border)" }}>
+            <p style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
+              Up next: <strong style={{ color: "var(--color-text-primary)" }}>{upNext}</strong>
+            </p>
           </div>
-          <span style={{ fontSize: 12, color: "var(--color-text-muted)", whiteSpace: "nowrap" }}>
-            {currentSectionIndex + 1} of {sections.length} sections
-          </span>
+
+          {/* Skip — always visible */}
+          <button
+            onClick={endBreak}
+            style={{ padding: "10px 28px", background: "var(--color-accent)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans)", transition: "background var(--t), box-shadow var(--t)" }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-accent-hover)"; (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-blue)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-accent)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+          >
+            Skip Break →
+          </button>
+
+          {/* Bottom-right section progress */}
+          <div style={{ position: "fixed", bottom: 24, right: 24, background: "#fff", border: "1px solid var(--color-border)", borderRadius: 10, padding: "10px 16px", boxShadow: "var(--shadow-sm)", display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+              {sections.map((_, i) => (
+                <div key={i} style={{
+                  height: 6, borderRadius: 3,
+                  width: i <= currentSectionIndex ? 20 : 8,
+                  background: i <= currentSectionIndex ? "var(--color-accent)" : "var(--color-border)",
+                  transition: "all 0.3s ease",
+                }} />
+              ))}
+            </div>
+            <span style={{ fontSize: 12, color: "var(--color-text-muted)", whiteSpace: "nowrap" }}>
+              {currentSectionIndex + 1} of {sections.length} sections
+            </span>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
+
+  // Show nothing while sessionStorage hydrates — prevents false "idle" redirect flash
+  if (!hydrated) return null;
 
   if (status !== "active" || !sections.length) return null;
 
