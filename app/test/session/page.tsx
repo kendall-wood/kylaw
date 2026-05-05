@@ -37,6 +37,7 @@ export default function TestSessionPage() {
   });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const didAutoResume = useRef(false);
+  const breakEndedRef = useRef(false);
 
   const sectionLabel = getSectionLabel(mode, sections, currentSectionIndex);
   const sectionProgress = sections.length > 1 ? `${currentSectionIndex + 1} of ${sections.length}` : "";
@@ -95,23 +96,32 @@ export default function TestSessionPage() {
     return () => document.removeEventListener("visibilitychange", handler);
   }, [mode, status, store]);
 
-  // Break countdown — seeds from breakStartedAt so refresh restores correct time
+  // Break countdown — seeds from breakStartedAt so refresh restores correct time.
+  // endBreak() is intentionally NOT called here — calling Zustand actions inside
+  // React state updaters causes double-invocation in Strict Mode (see effect below).
   useEffect(() => {
     if (status !== "break") return;
+    breakEndedRef.current = false;
     const bsa = useTestSessionStore.getState().breakStartedAt;
     const initial = bsa
       ? Math.max(0, 10 * 60 - Math.floor((Date.now() - bsa) / 1000))
       : 10 * 60;
-    if (initial <= 0) { endBreak(); return; }
-    setBreakTimeLeft(initial);
+    setBreakTimeLeft(initial > 0 ? initial : 0);
+    if (initial <= 0) return;
     const id = setInterval(() => {
-      setBreakTimeLeft((t) => {
-        if (t <= 1) { clearInterval(id); endBreak(); return 0; }
-        return t - 1;
-      });
+      setBreakTimeLeft((t) => Math.max(0, t - 1));
     }, 1000);
     return () => clearInterval(id);
-  }, [status, endBreak]);
+  }, [status]);
+
+  // End break when the countdown hits 0 — separate from the timer effect so
+  // endBreak() is never called inside a React state updater.
+  useEffect(() => {
+    if (status === "break" && breakTimeLeft === 0 && !breakEndedRef.current) {
+      breakEndedRef.current = true;
+      endBreak();
+    }
+  }, [status, breakTimeLeft, endBreak]);
 
   // Keyboard shortcuts
   useEffect(() => {
