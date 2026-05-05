@@ -64,7 +64,7 @@ function loadSections(mode: "full_test" | "section" | "question_bank", sectionTy
 }
 
 const STUDY_TOOLS = [
-  { href: "/study/flashcards", Icon: BookOpen, label: "Flashcards", desc: "64 cards across 4 decks" },
+  { href: "/study/flashcards", Icon: BookOpen, label: "Flashcards", desc: "214 cards across 4 decks" },
   { href: "/study/drills", Icon: Zap, label: "Drills", desc: "165 questions by type" },
   { href: "/study/matching", Icon: Shuffle, label: "Matching", desc: "Term recognition game" },
 ];

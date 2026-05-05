@@ -67,7 +67,7 @@ function SparkLine({ scores }: { scores: number[] }) {
 export default function DashboardPage() {
   const [sessions, setSessions] = useState<StoredSession[]>([]);
   const [drillStats, setDrillStats] = useState<Record<string, { correct: number; total: number }>>({});
-  const [flashcardStats, setFlashcardStats] = useState<{ known: number; total: number }>({ known: 0, total: 64 });
+  const [flashcardStats, setFlashcardStats] = useState<{ known: number; total: number }>({ known: 0, total: 214 });
 
   useEffect(() => {
     try {

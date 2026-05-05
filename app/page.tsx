@@ -27,14 +27,14 @@ function Counter({ to, duration = 1400 }: { to: number; duration?: number }) {
 const STATS = [
   { value: 165, suffix: "+", label: "LR questions" },
   { value: 12, suffix: "", label: "Question types" },
-  { value: 64, suffix: "", label: "Flashcards" },
+  { value: 214, suffix: "", label: "Flashcards" },
   { value: 4, suffix: "", label: "Study tools" },
 ];
 
 const FEATURES = [
   { href: "/test", Icon: FileText, title: "Test Simulator", desc: "Full 4-section LSAT under timed conditions — identical to LawHub. Split-screen, annotations, flagging, elimination.", tag: "4 sections" },
   { href: "/study/drills", Icon: Zap, title: "Question Drills", desc: "Practice any of the 12 LR question types in isolation. Instant explanations with every answer.", tag: "165 questions" },
-  { href: "/study/flashcards", Icon: BookOpen, title: "Flashcards", desc: "3D flip cards across 4 decks: question types, fallacies, RC types, and vocabulary.", tag: "64 cards" },
+  { href: "/study/flashcards", Icon: BookOpen, title: "Flashcards", desc: "3D flip cards across 4 decks: question types, fallacies, RC types, and vocabulary.", tag: "214 cards" },
   { href: "/dashboard", Icon: BarChart2, title: "Dashboard", desc: "Score trends, accuracy by type, and weak-area targeting. Tracks automatically.", tag: "Auto-tracked" },
 ];
 

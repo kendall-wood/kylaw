@@ -31,22 +31,32 @@ export default function TestSessionPage() {
   const [activeAnnotationType, setActiveAnnotationType] = useState<Annotation["type"] | null>(null);
   const [showStudyExplanation, setShowStudyExplanation] = useState(false);
   const [breakTimeLeft, setBreakTimeLeft] = useState(10 * 60);
-  const [hydrated, setHydrated] = useState(false);
+  // Seed synchronously — if already hydrated (fresh navigation) we don't flash blank
+  const [hydrated, setHydrated] = useState(() => {
+    try { return useTestSessionStore.persist.hasHydrated(); } catch { return true; }
+  });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const didAutoResume = useRef(false);
 
   const sectionLabel = getSectionLabel(mode, sections, currentSectionIndex);
   const sectionProgress = sections.length > 1 ? `${currentSectionIndex + 1} of ${sections.length}` : "";
 
-  // Wait for sessionStorage to rehydrate before acting on status
+  // On refresh: wait for sessionStorage rehydration; failsafe unblocks after 600ms
   useEffect(() => {
-    if (useTestSessionStore.persist.hasHydrated()) {
-      setHydrated(true);
-    } else {
+    if (hydrated) return;
+    let timeoutId: ReturnType<typeof setTimeout>;
+    try {
+      if (useTestSessionStore.persist.hasHydrated()) {
+        setHydrated(true);
+        return;
+      }
       const unsub = useTestSessionStore.persist.onFinishHydration(() => setHydrated(true));
-      return unsub;
+      timeoutId = setTimeout(() => setHydrated(true), 600);
+      return () => { unsub(); clearTimeout(timeoutId); };
+    } catch {
+      setHydrated(true);
     }
-  }, []);
+  }, [hydrated]);
 
   // Redirect only after hydration so a page refresh doesn't lose the session
   useEffect(() => {
