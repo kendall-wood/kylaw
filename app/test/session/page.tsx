@@ -115,37 +115,82 @@ export default function TestSessionPage() {
   if (status === "break") {
     const bm = Math.floor(breakTimeLeft / 60);
     const bs = breakTimeLeft % 60;
-    // currentSectionIndex is still pointing at lr2 (index 1) during break
     const justCompleted = getSectionLabel("full_test", sections, currentSectionIndex);
+    const upNext = getSectionLabel("full_test", sections, currentSectionIndex + 1);
+
+    const breakTotal = 10 * 60;
+    const svgR = 110;
+    const circ = 2 * Math.PI * svgR;
+    const strokeDashoffset = circ * (1 - breakTimeLeft / breakTotal);
+    const timerColor = breakTimeLeft < 60
+      ? "var(--color-timer-critical)"
+      : breakTimeLeft < 120
+      ? "var(--color-timer-warning)"
+      : "var(--color-accent)";
 
     return (
-      <div style={{ height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--color-bg)", fontFamily: "var(--font-sans)", gap: 16, padding: 24 }}>
+      <div style={{ height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--color-bg)", fontFamily: "var(--font-sans)", gap: 20, padding: 24 }}>
         <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)" }}>
           {justCompleted} Complete
         </p>
-        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 36, marginBottom: 4 }}>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 28, marginBottom: 0 }}>
           10-Minute Break
         </h1>
-        <div style={{
-          fontFamily: "var(--font-mono)", fontSize: 72, fontWeight: 700, letterSpacing: "0.05em",
-          color: breakTimeLeft < 60 ? "var(--color-timer-critical)" : breakTimeLeft < 120 ? "var(--color-timer-warning)" : "var(--color-timer-normal)",
-        }}>
-          {String(bm).padStart(2, "0")}:{String(bs).padStart(2, "0")}
+
+        {/* Animated ring + timer */}
+        <div style={{ position: "relative", width: 280, height: 280 }}>
+          <svg width={280} height={280} style={{ transform: "rotate(-90deg)" }}>
+            <circle cx={140} cy={140} r={svgR} fill="none" stroke="var(--color-border)" strokeWidth={7} />
+            <circle
+              cx={140} cy={140} r={svgR}
+              fill="none"
+              stroke={timerColor}
+              strokeWidth={7}
+              strokeDasharray={circ}
+              strokeDashoffset={strokeDashoffset}
+              strokeLinecap="round"
+              style={{ transition: "stroke-dashoffset 1s linear, stroke 0.4s ease" }}
+            />
+          </svg>
+          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 50, fontWeight: 700, letterSpacing: "0.04em", color: timerColor, lineHeight: 1 }}>
+              {String(bm).padStart(2, "0")}:{String(bs).padStart(2, "0")}
+            </div>
+            <div style={{ fontSize: 11, color: "var(--color-text-muted)", marginTop: 6, letterSpacing: "0.05em" }}>remaining</div>
+          </div>
         </div>
-        <p style={{ fontSize: 14, color: "var(--color-text-muted)", maxWidth: 420, textAlign: "center", lineHeight: 1.6 }}>
-          You may leave your testing area. The next section will begin automatically when the break ends.
+
+        <p style={{ fontSize: 14, color: "var(--color-text-muted)", maxWidth: 380, textAlign: "center", lineHeight: 1.65 }}>
+          You may leave your testing area. The next section begins automatically.
         </p>
+
+        <div style={{ padding: "9px 18px", background: "var(--color-surface)", borderRadius: 8, border: "1px solid var(--color-border)" }}>
+          <p style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
+            Up next: <strong style={{ color: "var(--color-text-primary)" }}>{upNext}</strong>
+          </p>
+        </div>
+
         {studyMode && (
-          <button onClick={endBreak} style={{ marginTop: 8, padding: "10px 24px", background: "var(--color-accent)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans)" }}>
+          <button onClick={endBreak} style={{ padding: "10px 24px", background: "var(--color-accent)", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans)" }}>
             End Break Early
           </button>
         )}
-        <div style={{ marginTop: 16, padding: "10px 20px", background: "var(--color-surface)", borderRadius: 8, border: "1px solid var(--color-border)" }}>
-          <p style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
-            Up next: <strong style={{ color: "var(--color-text-primary)" }}>
-              {getSectionLabel("full_test", sections, currentSectionIndex + 1)}
-            </strong>
-          </p>
+
+        {/* Bottom-right section progress */}
+        <div style={{ position: "fixed", bottom: 24, right: 24, background: "#fff", border: "1px solid var(--color-border)", borderRadius: 10, padding: "10px 16px", boxShadow: "var(--shadow-sm)", display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+            {sections.map((_, i) => (
+              <div key={i} style={{
+                height: 6, borderRadius: 3,
+                width: i <= currentSectionIndex ? 20 : 8,
+                background: i <= currentSectionIndex ? "var(--color-accent)" : "var(--color-border)",
+                transition: "all 0.3s ease",
+              }} />
+            ))}
+          </div>
+          <span style={{ fontSize: 12, color: "var(--color-text-muted)", whiteSpace: "nowrap" }}>
+            {currentSectionIndex + 1} of {sections.length} sections
+          </span>
         </div>
       </div>
     );

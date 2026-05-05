@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTestSessionStore } from "@/lib/store/testSessionStore";
 import type { Section } from "@/lib/store/testSessionStore";
-import { Clock, FileText, BookOpen, Zap, Shuffle, ChevronRight, ArrowRight, Info } from "lucide-react";
+import { Clock, FileText, BookOpen, Zap, Shuffle, ChevronRight, ArrowRight } from "lucide-react";
 import lrData from "@/lib/data/questions_lr.json";
 import rcData from "@/lib/data/rc_passages.json";
 
@@ -76,14 +76,27 @@ export default function TestPage() {
   const [studyMode, setStudyMode] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
-  function handleStart(mode: "full_test" | "section" | "question_bank", sectionType?: string) {
-    setLoading(mode + (sectionType ?? ""));
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("kylaw_study_mode");
+      if (saved !== null) setStudyMode(JSON.parse(saved));
+    } catch {}
+  }, []);
+
+  const toggleStudyMode = (val: boolean) => {
+    setStudyMode(val);
+    try { localStorage.setItem("kylaw_study_mode", JSON.stringify(val)); } catch {}
+  };
+
+  function handleStart(mode: "full_test" | "section" | "question_bank", sectionType?: string, overrideStudyMode?: boolean) {
+    const sm = overrideStudyMode ?? studyMode;
+    setLoading(mode + (sectionType ?? "") + (sm ? "p" : "e"));
     const sections = loadSections(mode, sectionType);
-    startSession(mode, sections, studyMode);
+    startSession(mode, sections, sm);
     router.push("/test/session");
   }
 
-  const isLoading = (mode: string, type?: string) => loading === mode + (type ?? "");
+  const isLoading = (mode: string, type?: string, sm?: boolean) => loading === mode + (type ?? "") + (sm ? "p" : "e");
 
   return (
     <div style={{ fontFamily: "var(--font-sans)", minHeight: "100vh", background: "var(--color-bg)" }}>
@@ -96,8 +109,41 @@ export default function TestPage() {
         <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 38, lineHeight: 1.1, marginBottom: 10, color: "var(--color-text-primary)" }}>
           Choose your session
         </h1>
-        <p style={{ fontSize: 15, color: "var(--color-text-secondary)", lineHeight: 1.65, maxWidth: 480 }}>
+        <p style={{ fontSize: 15, color: "var(--color-text-secondary)", lineHeight: 1.65, maxWidth: 480, marginBottom: 24 }}>
           Full simulations, single-section timed runs, or untimed drilling — all scored and tracked automatically.
+        </p>
+
+        {/* ── Explanation mode toggle ─── */}
+        <div style={{ display: "inline-flex", background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: 10, padding: 4, gap: 4 }}>
+          <button
+            onClick={() => toggleStudyMode(false)}
+            style={{
+              padding: "8px 18px", borderRadius: 7, border: "none", cursor: "pointer",
+              fontSize: 13, fontWeight: 600, fontFamily: "var(--font-sans)",
+              background: !studyMode ? "#fff" : "transparent",
+              color: !studyMode ? "var(--color-text-primary)" : "var(--color-text-muted)",
+              boxShadow: !studyMode ? "var(--shadow-xs)" : "none",
+              transition: "all var(--t)",
+            }}
+          >
+            Exam mode
+          </button>
+          <button
+            onClick={() => toggleStudyMode(true)}
+            style={{
+              padding: "8px 18px", borderRadius: 7, border: "none", cursor: "pointer",
+              fontSize: 13, fontWeight: 600, fontFamily: "var(--font-sans)",
+              background: studyMode ? "var(--color-accent-light)" : "transparent",
+              color: studyMode ? "var(--color-accent)" : "var(--color-text-muted)",
+              boxShadow: studyMode ? "var(--shadow-xs)" : "none",
+              transition: "all var(--t)",
+            }}
+          >
+            Practice mode
+          </button>
+        </div>
+        <p style={{ fontSize: 12, color: "var(--color-text-muted)", marginTop: 8 }}>
+          {studyMode ? "Instant explanations after each answer" : "Explanations shown in review after section ends"}
         </p>
       </section>
 
@@ -191,12 +237,12 @@ export default function TestPage() {
                 onMouseEnter={(e) => { if (!loading) { (e.currentTarget as HTMLElement).style.background = "var(--color-accent-hover)"; (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-blue)"; } }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-accent)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
               >
-                {isLoading("full_test") ? "Loading…" : "Begin full test"}
-                {!isLoading("full_test") && <ArrowRight size={15} />}
+                {isLoading("full_test", undefined, studyMode) ? "Loading…" : "Begin full test"}
+                {!isLoading("full_test", undefined, studyMode) && <ArrowRight size={15} />}
               </button>
 
               <p style={{ fontSize: 11, color: "var(--color-text-muted)", textAlign: "right", maxWidth: 200 }}>
-                No pausing · Scored at end · Identical to LawHub
+                {studyMode ? "Practice mode · instant explanations" : "No pausing · Scored at end · Identical to LawHub"}
               </p>
             </div>
           </div>
@@ -278,46 +324,42 @@ export default function TestPage() {
                   ))}
                 </div>
 
-                <div style={{ marginTop: "auto", display: "flex", alignItems: "center", gap: 10 }}>
+                <div style={{ marginTop: "auto", display: "flex", gap: 8 }}>
                   <button
-                    onClick={() => handleStart(card.mode, card.type)}
+                    onClick={() => handleStart(card.mode, card.type, true)}
                     disabled={loading !== null}
                     style={{
                       flex: 1, padding: "10px 0", borderRadius: 9,
-                      background: "var(--color-accent)", color: "#fff", border: "none",
-                      fontWeight: 600, fontSize: 14, cursor: loading !== null ? "not-allowed" : "pointer",
+                      background: studyMode ? "var(--color-accent)" : "var(--color-accent-light)",
+                      color: studyMode ? "#fff" : "var(--color-accent)",
+                      border: studyMode ? "none" : "1px solid rgba(27,79,216,0.2)",
+                      fontWeight: 600, fontSize: 13, cursor: loading !== null ? "not-allowed" : "pointer",
                       fontFamily: "var(--font-sans)", opacity: loading !== null ? 0.7 : 1,
                       transition: "background var(--t), box-shadow var(--t)",
                     }}
-                    onMouseEnter={(e) => { if (!loading) { (e.currentTarget as HTMLElement).style.background = "var(--color-accent-hover)"; (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-blue)"; } }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-accent)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
-                  >
-                    {busy ? "Loading…" : `Start ${card.type} section`}
-                  </button>
-
-                  {/* Study mode toggle per-card */}
-                  <button
-                    onClick={() => setStudyMode((s) => !s)}
-                    title={studyMode ? "Study mode on — instant explanations" : "Study mode off — explanations after section"}
-                    style={{
-                      width: 40, height: 40, borderRadius: 9, border: "1px solid var(--color-border)",
-                      background: studyMode ? "var(--color-accent-light)" : "#fff",
-                      cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-                      flexShrink: 0, transition: "background var(--t)",
-                      color: studyMode ? "var(--color-accent)" : "var(--color-text-muted)",
-                    }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-sm)"; }}
+                    onMouseEnter={(e) => { if (!loading) (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-sm)"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
                   >
-                    <Info size={15} strokeWidth={1.8} />
+                    {isLoading(card.mode, card.type, true) ? "Loading…" : "Practice"}
+                  </button>
+                  <button
+                    onClick={() => handleStart(card.mode, card.type, false)}
+                    disabled={loading !== null}
+                    style={{
+                      flex: 1, padding: "10px 0", borderRadius: 9,
+                      background: !studyMode ? "var(--color-accent)" : "#fff",
+                      color: !studyMode ? "#fff" : "var(--color-text-secondary)",
+                      border: !studyMode ? "none" : "1px solid var(--color-border)",
+                      fontWeight: 600, fontSize: 13, cursor: loading !== null ? "not-allowed" : "pointer",
+                      fontFamily: "var(--font-sans)", opacity: loading !== null ? 0.7 : 1,
+                      transition: "background var(--t), box-shadow var(--t)",
+                    }}
+                    onMouseEnter={(e) => { if (!loading) (e.currentTarget as HTMLElement).style.boxShadow = "var(--glow-sm)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+                  >
+                    {isLoading(card.mode, card.type, false) ? "Loading…" : "Exam"}
                   </button>
                 </div>
-
-                {studyMode && (
-                  <p style={{ fontSize: 11, color: "var(--color-accent)", marginTop: -6 }}>
-                    Study mode on — explanations shown after each answer
-                  </p>
-                )}
               </div>
             );
           })}

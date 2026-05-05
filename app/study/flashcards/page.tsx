@@ -41,8 +41,16 @@ export default function FlashcardsPage() {
     setFlipped(false);
   }, [cardIndex, activeDeckId]);
 
+  const saveFlashcardStats = (knownSet: Set<string>, totalCards: number) => {
+    try {
+      localStorage.setItem("kylaw_flashcard_stats", JSON.stringify({ known: knownSet.size, total: totalCards }));
+    } catch {}
+  };
+
   const handleGotIt = () => {
-    setKnown((prev) => new Set([...prev, card.id]));
+    const next = new Set([...known, card.id]);
+    setKnown(next);
+    saveFlashcardStats(next, cards.length);
     advance();
   };
 

@@ -232,8 +232,18 @@ export default function DrillsPage() {
   const handleSelect = (choice: string) => {
     if (selected) return;
     setSelected(choice);
+    const isCorrectAnswer = choice === question.correct_answer;
     setAttempted((n) => n + 1);
-    if (choice === question.correct_answer) setCorrect((n) => n + 1);
+    if (isCorrectAnswer) setCorrect((n) => n + 1);
+
+    try {
+      const stored = localStorage.getItem("kylaw_drill_stats");
+      const stats: Record<string, { correct: number; total: number }> = stored ? JSON.parse(stored) : {};
+      const t = question.question_type;
+      const prev = stats[t] ?? { correct: 0, total: 0 };
+      stats[t] = { correct: prev.correct + (isCorrectAnswer ? 1 : 0), total: prev.total + 1 };
+      localStorage.setItem("kylaw_drill_stats", JSON.stringify(stats));
+    } catch {}
   };
 
   const handleNext = () => {
