@@ -109,7 +109,7 @@ export default function ReviewPage() {
 
   const accuracy = rawTotal > 0 ? Math.round((rawCorrect / rawTotal) * 100) : 0;
 
-  // Save session to localStorage once
+  // Save session to localStorage once (with per-type breakdown and per-question results)
   useEffect(() => {
     if (savedRef.current || status !== "complete" || !rawTotal) return;
     savedRef.current = true;
@@ -123,18 +123,27 @@ export default function ReviewPage() {
         rawCorrect,
         rawTotal,
         accuracy,
+        typeBreakdowns: typeBreakdowns.map(({ type, correct, total }) => ({ type, correct, total })),
+        questionResults: allScoredQuestions.map((q) => ({
+          type: q.question_type,
+          correct: answers[q.id] === q.correct_answer,
+          answered: !!answers[q.id],
+        })),
       });
       localStorage.setItem(key, JSON.stringify(prev));
     } catch {}
-  }, [status, rawTotal, scaledScore, rawCorrect, accuracy, store.mode]);
+  }, [status, rawTotal, scaledScore, rawCorrect, accuracy, store.mode, typeBreakdowns, allScoredQuestions, answers]);
 
   // Review mode
   const reviewSection = sections[reviewSectionIdx];
   const reviewQuestion = reviewSection?.questions[reviewQuestionIdx];
   const reviewAnnotations = reviewQuestion ? (annotations[reviewQuestion.id] ?? []) : [];
 
-  const handleNewTest = () => { resetSession(); router.push("/test"); };
-  const handleHome = () => { resetSession(); router.push("/"); };
+  // Don't call resetSession() before navigating — it triggers the status===idle
+  // redirect effect and causes two concurrent router.push calls that crash React 19.
+  // startSession() on the next test resets state automatically.
+  const handleNewTest = () => router.push("/test");
+  const handleHome = () => router.push("/dashboard");
 
   const scoreColor =
     scaledScore >= 170 ? "#059669" :

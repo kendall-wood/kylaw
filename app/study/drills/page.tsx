@@ -1,5 +1,6 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import lrData from "@/lib/data/questions_lr.json";
 import { ArrowLeft, ChevronRight, Zap } from "lucide-react";
 
@@ -46,7 +47,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 type Phase = "landing" | "drilling" | "done";
 
-export default function DrillsPage() {
+function DrillsContent() {
   const allQuestions: Question[] = (lrData as any).questions;
 
   const typeCounts = Object.fromEntries(
@@ -66,6 +67,8 @@ export default function DrillsPage() {
   const [correct, setCorrect] = useState(0);
   const [attempted, setAttempted] = useState(0);
 
+  const searchParams = useSearchParams();
+
   const startDrill = useCallback(
     (type: string) => {
       const filtered =
@@ -83,6 +86,16 @@ export default function DrillsPage() {
     },
     [allQuestions]
   );
+
+  // Auto-start drill when navigating from dashboard with ?type=X
+  useEffect(() => {
+    const type = searchParams.get("type");
+    if (type && (type === "all" || TYPE_LABELS[type])) {
+      startDrill(type);
+    }
+  // Only run on mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /* ── Landing ─────────────────────────────────────── */
   if (phase === "landing") {
@@ -393,5 +406,13 @@ export default function DrillsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function DrillsPage() {
+  return (
+    <Suspense fallback={null}>
+      <DrillsContent />
+    </Suspense>
   );
 }
