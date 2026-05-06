@@ -42,6 +42,13 @@ export default function TestSessionPage() {
   const sectionLabel = getSectionLabel(mode, sections, currentSectionIndex);
   const sectionProgress = sections.length > 1 ? `${currentSectionIndex + 1} of ${sections.length}` : "";
 
+  // Must be above ALL early returns — hooks cannot be called conditionally
+  const currentQuestion = sections[currentSectionIndex]?.questions[currentQuestionIndex] ?? null;
+  const handleAnnotate = useCallback((annotation: Annotation) => {
+    if (!activeAnnotationType || !currentQuestion) return;
+    addAnnotation(currentQuestion.id, { ...annotation, type: activeAnnotationType });
+  }, [activeAnnotationType, addAnnotation, currentQuestion]);
+
   // On refresh: wait for sessionStorage rehydration; failsafe unblocks after 600ms
   useEffect(() => {
     if (hydrated) return;
@@ -278,11 +285,6 @@ export default function TestSessionPage() {
 
   const fontSizeClass = `test-font-${fontSize}`;
   const spacingClass = `test-spacing-${lineSpacing}`;
-
-  const handleAnnotate = useCallback((annotation: Annotation) => {
-    if (!activeAnnotationType) return;
-    addAnnotation(question.id, { ...annotation, type: activeAnnotationType });
-  }, [activeAnnotationType, addAnnotation, question.id]);
 
   const handleNext = () => {
     if (isLastQuestion) {
